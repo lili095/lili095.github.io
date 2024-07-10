@@ -1,302 +1,497 @@
 <!DOCTYPE html>
-<html lang="zh" >
+<html lang="zh-Hans">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<title>markdown - 李梓卓的技术专栏</title>
-    <link rel="alternate" href="" type="application/atom+xml"/>
-	<link rel="shortcut icon" href=""/>
-	
-<link rel="stylesheet" href="/css/style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta property="og:type" content="website">
+<meta property="og:title" content="李梓卓的技术专栏">
+<meta property="og:url" content="https://lili095.github.io/tags/markdown/index.html">
+<meta property="og:site_name" content="李梓卓的技术专栏">
+<meta property="og:locale">
+<meta property="article:author" content="李梓卓">
+<meta name="twitter:card" content="summary">
 
-	
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<title >李梓卓的技术专栏</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="https://unpkg.com/hexo-theme-async@2.2.2/source/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"lili095.github.io","author":"李梓卓","root":"/","typed_text":null,"theme_version":"2.2.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2024-07-10 21:18:22"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.2" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
-	<div class="main-con">
 
-        <div class="nav cl">
-    <ul class="cl nav-list">
-        
-            <li>
-                
-                    <a href="/" class="">
-                        <i class="fa fa-home"></i> 
-                        <span>主页</span>
-                    </a>
-                
-            </li>
-        
-            <li>
-                
-                    <a href="/archives/" class="">
-                        <i class=" fa-"></i> 
-                        <span>归档</span>
-                    </a>
-                
-            </li>
-        
-            <li>
-                
-                    
-                    <a href="javascript:void(0)" class="">
-                    
-                        <i class=" fa-"></i> 
-                        <span>关于</span>
-                        <span class="drop-flag fa fa-angle-down"></span>
-                    </a>
-                    <dl>
-                        
-                            <li>
-                                <a href="/about" class="">
-                                    <i class=" fa-"></i>
-                                    <span>关于本站</span>
-                                </a>
-                            </li>
-                        
-                    </dl>
-                
-            </li>
-        
-    </ul>
-    <ul class="cl nav-tool">
-        
-            <li>
-                <a href="/github">
-                    <i class="fa fa-github"></i>
-                </a>
-            </li>
-        
-            <li>
-                <a href="/mail">
-                    <i class="fa fa-envelope"></i>
-                </a>
-            </li>
-        
-            <li>
-                <a href="/twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-        
-        
-        <li>
-            <a href="javascript:void(0)" class="nav-search-btn">
-                <i class="fa fa-search"></i>
-            </a>
-        </li>
-        
-    </ul>
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="nav-search"><input type="search" name="q" class="nav-search-input" placeholder="search..."><input type="hidden" name="sitesearch" value="https://lili095.github.io"></form>
-</div>
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
 
-        <header class="top" id="fallEle" style="background-image: url(/imgs/head.jpg)">
-    <i class="fa fa-bars" id="media-toggle" style="display: none"></i>
-    <div class="top-info cl fadeToBottom">
-        <h2 class="site-name"><a href="/">mokusei</a> <small id="type-data">This is a hexo theme</small></h2>
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-</header>
-
-        <div class="column-title fadeToTop">
-    <h3><span class="title-info">标签</span> markdown</h3>
 </div>
+    <!-- page preloader end -->
 
-<div class="con-wrap fadeToTop">
-    
-    <section class="article-area">
-    
-        
-            <article class="article">
-    <div class="article-wrap">
-        
-            <h2 class="article-title cl">
-                <a href="/2024/07/09/Markdown语法/" title="Markdown语法">
-                    Markdown语法
-                </a>
-            </h2>
-        
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
 
-        <ul class="article-extra" style="margin-bottom: 20px">
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Async<span>Theme</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
             
-            <li class="article-time">
-                2024-07-09
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    home
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/archives2/" target="">
+                            archives2
+                        </a>
+                    </li>
+                    
+                </ul>
+                
             </li>
             
-
-            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    archives
+                </a>
                 
-                <li class="article-category">
-                    <ol class="category-list cl">
-                        <i class="fa fa-folder-o"></i>
-                        
-                            
-                            <li><a href="/categories/Markdown/">Markdown</a></li>
-                            
-                        
-                    </ol>
-                </li>
-                
+            </li>
             
-
-
         </ul>
-        <div class="article-description">
-            
-            <h2 id="0-使用markdown的第0步"><a href="#0-使用markdown的第0步" class="headerlink" title="0.使用markdown的第0步"></a>0.使用markdown的第0步</h2><p>在使用markdown时，要使用半角标点（即中文符号），使用CTRL＋＂＋＂进行全半角切换。</p>
-<h2 id="1-标题【多个“-”-空格注意要前置】"><a href="#1-标题【多个“-”-空格注意要前置】" class="headerlink" title="1.标题【多个“#” +空格	注意要前置】"></a>1.标题【多个“#” +空格	注意要前置】</h2><p>另外，在开启严格模式的情况下，要在打完“#”后加上空格。</p>
-<h2 id="2-强调（用“-”或“-”包围）"><a href="#2-强调（用“-”或“-”包围）" class="headerlink" title="2. 强调（用“**”或“__”包围）"></a>2. 强调（用“**”或“__”包围）</h2><p><strong>这是一段强调文字</strong>	<strong>这也是强调文字</strong></p>
-<p>或者按下<strong>ctrl+b</strong></p>
-<h2 id="3-斜体（用”-“或”-”包围）"><a href="#3-斜体（用”-“或”-”包围）" class="headerlink" title="3.斜体（用”*“或”_”包围）"></a>3.斜体（用”*“或”_”包围）</h2><h2 id="4-删除线（用-包围）"><a href="#4-删除线（用-包围）" class="headerlink" title="4.删除线（用~~包围）"></a>4.删除线（用~~包围）</h2><p><del>这是删除文字</del></p>
-<h2 id="5-高亮（用-包围）"><a href="#5-高亮（用-包围）" class="headerlink" title="5.高亮（用&#x3D;&#x3D;包围）"></a>5.高亮（用&#x3D;&#x3D;包围）</h2><p>&#x3D;&#x3D;注意：这个很少有软件适配&#x3D;&#x3D;</p>
-<h2 id="6-代码（用”-”包围，只有用英文能够打出）"><a href="#6-代码（用”-”包围，只有用英文能够打出）" class="headerlink" title="6.代码（用”&#96;”包围，只有用英文能够打出）"></a>6.代码（用”&#96;”包围，只有用英文能够打出）</h2><p><code>print(&#39;hello,world!&#39;)</code></p>
-<h2 id="7-代码块（用”-”包围，只有用英文能够打出）"><a href="#7-代码块（用”-”包围，只有用英文能够打出）" class="headerlink" title="7.代码块（用”&#96;&#96;&#96;”包围，只有用英文能够打出）"></a>7.代码块（用”&#96;&#96;&#96;”包围，只有用英文能够打出）</h2><pre><code class="hljs c">​```
-<span class="hljs-comment">// 这里就可以开始输入你要的代码了</span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;
-    <span class="hljs-built_in">printf</span> (“Hello, world!\n<span class="hljs-string">&quot;);</span>
-<span class="hljs-string">    retrun 0;</span>
-<span class="hljs-string">&#125;</span>
-<span class="hljs-string">​``` // (这三个&quot;</span>`<span class="hljs-string">&quot;文本编辑器会帮你自动补全 一般不用手动输)</span></code></pre>
-
-<h2 id="8-引用-“-”-空格-前置"><a href="#8-引用-“-”-空格-前置" class="headerlink" title="8.引用 [“&gt;” + 空格 前置]"></a>8.引用 [“&gt;” + 空格 前置]</h2><blockquote>
-<p>引用1：鲁迅曾经说过…</p>
-<p>鲁迅干的事关我周树人什么事？</p>
-</blockquote>
-<h2 id="9-无序列表-“-“-或-“-”-空格-前置"><a href="#9-无序列表-“-“-或-“-”-空格-前置" class="headerlink" title="9.无序列表 [“-“ 或 “+” + 空格 前置]"></a>9.无序列表 [“-“ 或 “+” + 空格 前置]</h2><ul>
-<li><p>解决问题</p>
-</li>
-<li><p>是问题的关键</p>
-<ul>
-<li>按下Tab是子集</li>
-<li>按下enter关闭列表</li>
-</ul>
-</li>
-</ul>
-<h2 id="10-有序列表-数字-“-”-空格-前置"><a href="#10-有序列表-数字-“-”-空格-前置" class="headerlink" title="10. 有序列表 [数字 + “.” + 空格 前置]"></a>10. 有序列表 [数字 + “.” + 空格 前置]</h2><ol>
-<li>公平！</li>
-<li>公平1</li>
-<li>还是tm的公平！</li>
-<li>按下enter关闭列表。</li>
-</ol>
-<h2 id="11-链接-使用-“-”-“-”-分别包围文本与链接"><a href="#11-链接-使用-“-”-“-”-分别包围文本与链接" class="headerlink" title="11. 链接 [使用 “[ ]” + “( )” 分别包围文本与链接]"></a>11. 链接 [使用 “[ ]” + “( )” 分别包围文本与链接]</h2><p><code>[Python基础课](https://github.com/jackfrued/Python-for-Freshmen-2023/tree/master)</code></p>
-<p><a href="https://github.com/jackfrued/Python-for-Freshmen-2023/tree/master">Python基础课</a></p>
-<p><a href="https://github.com/jackfrued/Python-100-Days">100天学会Python</a></p>
-<p>支持网页链接与文内跳转, 按住 <code>Ctrl</code> 并 <code>单击鼠标左键</code> 即可跳转.</p>
-<h2 id="12-任务列表-“-”-空格-前置"><a href="#12-任务列表-“-”-空格-前置" class="headerlink" title="12.任务列表 [“- [ ]” + 空格 前置]"></a>12.任务列表 [“- [ ]” + 空格 前置]</h2><pre><code class="hljs plaintext">TodoList:
-- [ ] 刷B站
-- [ ] 写代码
-- [x] 起床</code></pre>
-
-<p>TodoList:</p>
-<ul>
-<li><input disabled="" type="checkbox"> 刷B站</li>
-<li><input disabled="" type="checkbox"> 写代码</li>
-<li><input checked="" disabled="" type="checkbox"> 起床</li>
-</ul>
-<h2 id="13-表格-用-“-”-绘制表格边框"><a href="#13-表格-用-“-”-绘制表格边框" class="headerlink" title="13.表格[用 “|” 绘制表格边框]"></a>13.表格[用 “|” 绘制表格边框]</h2><pre><div class="caption"><span>学号 | 姓名  | 年龄 |</span></div><code class="hljs |">| 学号 | 姓名  | 年龄 |
-| :--- | :---: | ---: | (引号的位置代表着 左对齐, 居中, 右对齐)
-|114514|田所|24|
-|1919810|浩三|25|</code></pre>
-
-<table>
-<thead>
-<tr>
-<th align="left">学号</th>
-<th align="center">姓名</th>
-<th align="right">年龄</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">114514</td>
-<td align="center">田所</td>
-<td align="right">24</td>
-</tr>
-<tr>
-<td align="left">1919810</td>
-<td align="center">浩三</td>
-<td align="right">25</td>
-</tr>
-</tbody></table>
-<h2 id="14-分割线-按三个-“-”-或-“-“-或-“-”-并敲回车"><a href="#14-分割线-按三个-“-”-或-“-“-或-“-”-并敲回车" class="headerlink" title="14.分割线 [按三个 “*” 或 “-“ 或 “_” 并敲回车]"></a>14.分割线 [按三个 “*” 或 “-“ 或 “_” 并敲回车]</h2><p>实例：</p>
-<hr>
-<hr>
-
-        </div>
-        
-            
-        
-        
-    </div>
-</article>
-
-        
-        <ul class="pagination clear">
-    <span class="page-number current">1</span>
-</ul>
-    </section>
-    
-<section class="tool-area">
-
-    <div class="toolbar">
-        
-
-        
-        <div class="widget-post widget" style="order: 1 ">
-            <h2 class="widget-title"><i class="fa fa-file-text"></i> 近期文章</h2>
-            <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/HTTP%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/">HTTP协议入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/Markdown%E8%AF%AD%E6%B3%95/">Markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/Python%E6%A0%87%E5%87%86%E5%BA%93%E5%88%9D%E6%8E%A2/">Python标准库初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E4%BD%BF%E7%94%A8Python%E6%93%8D%E4%BD%9C%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/">使用Python操作各类文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">函数的应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/XML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">XML入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E5%88%86%E6%94%AF%E5%92%8C%E5%BE%AA%E7%8E%AF%E6%A1%88%E4%BE%8B/">分支和循环案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/">模块综合</a></li></ul>
-        </div>
-        
-
-        
-        <div class="widget-tags widget" style="order: 2 ">
-            <h2 class="widget-title"><i class="fa fa-tags"></i> 标签</h2>
-            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a>
-        </div>
-        
-
-        
-        <div class="widget-categories widget" style="order: 3 ">
-            <h2 class="widget-title"><i class="fa fa-folder-open"></i> 分类</h2>
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E7%BB%BC%E5%90%88/">Python综合</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xml/">Xml</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">1</span></li></ul></li></ul>
-        </div>
-        
-
-    </div>
-</section>
+    </nav>
 </div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
 
-    
-        <footer class="footer">
-	<p class="footer-intro">
-		
-		@2024 李梓卓的技术专栏.
-	</p>
-	<p class="footer-intro">
-			Powered By <a href="https://hexo.io/zh-cn/" target="_blank">hexo</a>
-			theme <a href="https://github.com/iengu/hexo-theme-mokusei" target="_blank">mokusei</a> by <a href="https://www.iengu.com" target="blank">iengu</a>
-	</p>
-</footer>
-
-
-
-
-        <div class="extend-tools" id="extend-tools" style="display: none;">
-    <ul>
-        <li class="tools-returnTop" title="返回顶部"><i class="fa fa-angle-double-up"></i></li>
-    </ul>
-</div>
-
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
 	</div>
+</header>
+            <!-- top bar end -->
 
-	
-<script src="/js/org/jquery.min.js"></script>
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            The article archive
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            云间连下榻，<br>天上接行杯。
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        tags
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        李梓卓
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/lili095" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                南京
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                24
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:1046876792@qq.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="row">
+    <div class="col-lg-12">
+        <div class="trm-card">
+            <div style="padding: 0 20px;">
+                
+                    <ul class="trm-tag-list" itemprop="keywords"><li class="trm-tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="trm-tag-list-item"><a class="tag-list-link" href="/tags/Other/" rel="tag">Other</a><span class="tag-list-count">1</span></li><li class="trm-tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">6</span></li><li class="trm-tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a><span class="tag-list-count">1</span></li><li class="trm-tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li></ul>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- history -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            
+                markdown
+            
+            <span data-number="01"></span>
+        </h5>
+    </div>
+    <div class="col-lg-12">
+        <!-- timeline -->
+        <div class="trm-timeline">
+            
+            <div class="trm-timeline-item trm-scroll-animation">
+                <div class="trm-timeline-mark-light"></div>
+                <div class="trm-timeline-mark"></div>
+                <div class="trm-timeline-content more">
+                    
+                        <div class="trm-card-header">
+                            <div class="trm-left-side">
+                                <h6>
+                                    <a href="/2024/07/09/Markdown%E8%AF%AD%E6%B3%95/" class="trm-anima-link">
+                                        Markdown语法
+                                    </a>
+                                </h6>
+                                <div class="trm-text-sm trm-accent-color trm-mt-15">
+                                    <ul class="trm-card-data trm-label ">
+                                        <li class="trm-accent-color">07/09</li>
+                                        <li class="trm-accent-color">00:00</li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+            </div>
+            
+        </div>
+        <!-- timeline end -->
+    </div>
+</div>
+
+<!-- history end -->
+
+
+    <div class="trm-pagination">
+        <span class="page-number current">1</span>
+    </div>
+
+
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
 
     
-<script src="/js/extend.js"></script>
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.2
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+    
+        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="https://unpkg.com/hexo-theme-async@2.2.2/source/js/main.js?v=2.2.2"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
 
 </body>
+
 </html>

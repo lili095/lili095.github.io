@@ -1,1085 +1,497 @@
 <!DOCTYPE html>
-<html lang="zh" >
+<html lang="zh-Hans">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<title>Python综合 - 李梓卓的技术专栏</title>
-    <link rel="alternate" href="" type="application/atom+xml"/>
-	<link rel="shortcut icon" href=""/>
-	
-<link rel="stylesheet" href="/css/style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta property="og:type" content="website">
+<meta property="og:title" content="李梓卓的技术专栏">
+<meta property="og:url" content="https://lili095.github.io/categories/Python%E7%BB%BC%E5%90%88/index.html">
+<meta property="og:site_name" content="李梓卓的技术专栏">
+<meta property="og:locale">
+<meta property="article:author" content="李梓卓">
+<meta name="twitter:card" content="summary">
 
-	
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<title >李梓卓的技术专栏</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="https://unpkg.com/hexo-theme-async@2.2.2/source/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"lili095.github.io","author":"李梓卓","root":"/","typed_text":null,"theme_version":"2.2.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2024-07-10 21:18:22"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.2" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
-	<div class="main-con">
 
-        <div class="nav cl">
-    <ul class="cl nav-list">
-        
-            <li>
-                
-                    <a href="/" class="">
-                        <i class="fa fa-home"></i> 
-                        <span>主页</span>
-                    </a>
-                
-            </li>
-        
-            <li>
-                
-                    <a href="/archives/" class="">
-                        <i class=" fa-"></i> 
-                        <span>归档</span>
-                    </a>
-                
-            </li>
-        
-            <li>
-                
-                    
-                    <a href="javascript:void(0)" class="">
-                    
-                        <i class=" fa-"></i> 
-                        <span>关于</span>
-                        <span class="drop-flag fa fa-angle-down"></span>
-                    </a>
-                    <dl>
-                        
-                            <li>
-                                <a href="/about" class="">
-                                    <i class=" fa-"></i>
-                                    <span>关于本站</span>
-                                </a>
-                            </li>
-                        
-                    </dl>
-                
-            </li>
-        
-    </ul>
-    <ul class="cl nav-tool">
-        
-            <li>
-                <a href="/github">
-                    <i class="fa fa-github"></i>
-                </a>
-            </li>
-        
-            <li>
-                <a href="/mail">
-                    <i class="fa fa-envelope"></i>
-                </a>
-            </li>
-        
-            <li>
-                <a href="/twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-        
-        
-        <li>
-            <a href="javascript:void(0)" class="nav-search-btn">
-                <i class="fa fa-search"></i>
-            </a>
-        </li>
-        
-    </ul>
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="nav-search"><input type="search" name="q" class="nav-search-input" placeholder="search..."><input type="hidden" name="sitesearch" value="https://lili095.github.io"></form>
-</div>
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
 
-        <header class="top" id="fallEle" style="background-image: url(/imgs/head.jpg)">
-    <i class="fa fa-bars" id="media-toggle" style="display: none"></i>
-    <div class="top-info cl fadeToBottom">
-        <h2 class="site-name"><a href="/">mokusei</a> <small id="type-data">This is a hexo theme</small></h2>
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-</header>
-
-        <div class="column-title fadeToTop">
-    <h3><span class="title-info">分类</span> Python综合</h3>
 </div>
+    <!-- page preloader end -->
 
-<div class="con-wrap fadeToTop">
-    
-    <section class="article-area">
-    
-        
-            <article class="article">
-    <div class="article-wrap">
-        
-            <h2 class="article-title cl">
-                <a href="/2024/07/09/模块收集/" title="模块综合">
-                    模块综合
-                </a>
-            </h2>
-        
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
 
-        <ul class="article-extra" style="margin-bottom: 20px">
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Async<span>Theme</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
             
-            <li class="article-time">
-                2024-07-09
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    home
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/archives2/" target="">
+                            archives2
+                        </a>
+                    </li>
+                    
+                </ul>
+                
             </li>
             
-
-            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    archives
+                </a>
                 
-                <li class="article-category">
-                    <ol class="category-list cl">
-                        <i class="fa fa-folder-o"></i>
-                        
-                            
-                            <li><a href="/categories/Python综合/">Python综合</a></li>
-                            
-                        
-                    </ol>
-                </li>
-                
+            </li>
             
-
-
         </ul>
-        <div class="article-description">
-            
-            <h2 id="排序函数-sorted函数"><a href="#排序函数-sorted函数" class="headerlink" title="排序函数_sorted函数"></a>排序函数_sorted函数</h2><p><code>sorted</code> 函数是 Python 内置的用于排序的函数。它可以对任何可迭代对象进行排序，并返回一个新的已排序的列表，而不会改变原始对象。</p>
-<h3 id="sorted-函数的语法"><a href="#sorted-函数的语法" class="headerlink" title="sorted 函数的语法"></a><code>sorted</code> 函数的语法</h3><pre><code class="hljs python"><span class="hljs-built_in">sorted</span>(iterable, *, key=<span class="hljs-literal">None</span>, reverse=<span class="hljs-literal">False</span>)</code></pre>
-
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ol>
-<li><strong>iterable</strong>：要排序的可迭代对象（如列表、元组、字符串等）。</li>
-<li><strong>key</strong>：一个函数，它将用于从 iterable 的每个元素中提取用于比较的键。默认值为 None，即直接比较元素的值。</li>
-<li><strong>reverse</strong>：一个布尔值。如果设为 True，将按降序排序。默认值为 False，即按升序排序。</li>
-</ol>
-<h3 id="示例和详细解释"><a href="#示例和详细解释" class="headerlink" title="示例和详细解释"></a>示例和详细解释</h3><ol>
-<li><p><strong>基本使用</strong>：</p>
-<pre><code class="hljs python">numbers = [<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
-sorted_numbers = <span class="hljs-built_in">sorted</span>(numbers)
-<span class="hljs-built_in">print</span>(sorted_numbers)  <span class="hljs-comment"># 输出: [1, 2, 5, 5, 6, 9]</span></code></pre>
-<p>这个示例将一个数字列表按升序排序。</p>
-</li>
-<li><p><strong>使用 key 参数</strong>：</p>
-<pre><code class="hljs python">words = [<span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]
-sorted_words = <span class="hljs-built_in">sorted</span>(words, key=<span class="hljs-built_in">len</span>)
-<span class="hljs-built_in">print</span>(sorted_words)  <span class="hljs-comment"># 输出: [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;]</span></code></pre>
-<p>在这个例子中，列表按单词的长度进行排序。</p>
-</li>
-<li><p><strong>按降序排序</strong>：</p>
-<pre><code class="hljs python">numbers = [<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
-sorted_numbers = <span class="hljs-built_in">sorted</span>(numbers, reverse=<span class="hljs-literal">True</span>)
-<span class="hljs-built_in">print</span>(sorted_numbers)  <span class="hljs-comment"># 输出: [9, 6, 5, 5, 2, 1]</span></code></pre>
-<p>这个示例按降序对数字列表进行排序。</p>
-</li>
-<li><p><strong>结合使用 key 和 reverse</strong>：</p>
-<pre><code class="hljs python">words = [<span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]
-sorted_words = <span class="hljs-built_in">sorted</span>(words, key=<span class="hljs-built_in">len</span>, reverse=<span class="hljs-literal">True</span>)
-<span class="hljs-built_in">print</span>(sorted_words)  <span class="hljs-comment"># 输出: [&#x27;banana&#x27;, &#x27;cherry&#x27;, &#x27;apple&#x27;]</span></code></pre>
-<p>这个示例先按单词长度排序，再按降序排列。</p>
-</li>
-<li><p><strong>复杂数据结构排序</strong>：</p>
-<pre><code class="hljs python">students = [
-    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;John&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">25</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;B&#x27;</span>&#125;,
-    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Jane&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">22</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;A&#x27;</span>&#125;,
-    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Dave&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">23</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;C&#x27;</span>&#125;,
-]
-sorted_students = <span class="hljs-built_in">sorted</span>(students, key=<span class="hljs-keyword">lambda</span> student: student[<span class="hljs-string">&#x27;age&#x27;</span>])
-<span class="hljs-built_in">print</span>(sorted_students)</code></pre>
-<p>输出：</p>
-<pre><code class="hljs python">[&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Jane&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">22</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;A&#x27;</span>&#125;,
- &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Dave&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">23</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;C&#x27;</span>&#125;,
- &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;John&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">25</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;B&#x27;</span>&#125;]</code></pre>
-<p>在这个示例中，学生列表按年龄排序。</p>
-</li>
-</ol>
-<h3 id="内置和自定义排序键"><a href="#内置和自定义排序键" class="headerlink" title="内置和自定义排序键"></a>内置和自定义排序键</h3><h4 id="按字符串排序："><a href="#按字符串排序：" class="headerlink" title="按字符串排序："></a>按字符串排序：</h4><pre><code class="hljs python">names = [<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Charlie&quot;</span>]
-sorted_names = <span class="hljs-built_in">sorted</span>(names)
-<span class="hljs-built_in">print</span>(sorted_names)  <span class="hljs-comment"># 输出: [&#x27;Alice&#x27;, &#x27;Bob&#x27;, &#x27;Charlie&#x27;]</span></code></pre>
-
-<h4 id="按字符串长度排序："><a href="#按字符串长度排序：" class="headerlink" title="按字符串长度排序："></a>按字符串长度排序：</h4><pre><code class="hljs python">names = [<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Charlie&quot;</span>]
-sorted_names = <span class="hljs-built_in">sorted</span>(names, key=<span class="hljs-built_in">len</span>)
-<span class="hljs-built_in">print</span>(sorted_names)  <span class="hljs-comment"># 输出: [&#x27;Bob&#x27;, &#x27;Alice&#x27;, &#x27;Charlie&#x27;]</span></code></pre>
-
-<h4 id="自定义排序函数："><a href="#自定义排序函数：" class="headerlink" title="自定义排序函数："></a>自定义排序函数：</h4><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">custom_sort</span>(<span class="hljs-params">item</span>):
-    <span class="hljs-keyword">return</span> item.lower()
-
-names = [<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;charlie&quot;</span>]
-sorted_names = <span class="hljs-built_in">sorted</span>(names, key=custom_sort)
-<span class="hljs-built_in">print</span>(sorted_names)  <span class="hljs-comment"># 输出: [&#x27;alice&#x27;, &#x27;Bob&#x27;, &#x27;charlie&#x27;]</span></code></pre>
-
-<h3 id="进一步说明"><a href="#进一步说明" class="headerlink" title="进一步说明"></a>进一步说明</h3><ul>
-<li><strong>稳定排序</strong>：<code>sorted</code> 函数保证是稳定排序，这意味着当有多个记录具有相同键值时，它们的相对顺序在排序后会保持不变。</li>
-<li><strong>复杂度</strong>：<code>sorted</code> 函数的时间复杂度为 O(n log n)，这是由于其底层实现是 Timsort，一种混合排序算法，结合了归并排序和插入排序的优点。</li>
-</ul>
-<h2 id="string-模块"><a href="#string-模块" class="headerlink" title="string 模块"></a>string 模块</h2><p>Python 的 <code>string</code> 模块提供了许多有用的字符串操作功能和常量，方便进行字符串处理。下面是 <code>string</code> 模块的一些主要功能和内容：</p>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul>
-<li><code>string.ascii_letters</code>: 包含所有 ASCII 字母（大写和小写）。</li>
-<li><code>string.ascii_lowercase</code>: 包含所有 ASCII 小写字母。</li>
-<li><code>string.ascii_uppercase</code>: 包含所有 ASCII 大写字母。</li>
-<li><code>string.digits</code>: 包含所有十进制数字（0-9）。</li>
-<li><code>string.hexdigits</code>: 包含所有十六进制数字（0-9 和 a-f 和 A-F）。</li>
-<li><code>string.octdigits</code>: 包含所有八进制数字（0-7）。</li>
-<li><code>string.punctuation</code>: 包含所有 ASCII 标点符号。</li>
-<li><code>string.printable</code>: 包含所有可打印字符（包括数字、字母、标点符号和空白字符）。</li>
-<li><code>string.whitespace</code>: 包含所有空白字符（如空格、制表符、换行符等）。</li>
-</ul>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
-<li><code>string.capwords(s, sep=None)</code>: 将字符串 <code>s</code> 中的单词首字母大写，其他字母小写。单词以 <code>sep</code> 作为分隔符（默认为空格）。</li>
-</ul>
-<h2 id="join方法"><a href="#join方法" class="headerlink" title="join方法"></a>join方法</h2><p><code>join</code> 方法是 Python 中字符串对象的一个方法，用于将一个可迭代对象（如列表、元组等）中的元素连接成一个字符串。连接时，元素之间会插入调用 <code>join</code> 方法的字符串。常见的用法为将列表中的字符串元素连接成一个长字符串。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code class="hljs python"><span class="hljs-built_in">str</span>.join(iterable)</code></pre>
-
-<ul>
-<li><code>str</code>：调用 <code>join</code> 方法的字符串，用作连接符。</li>
-<li><code>iterable</code>：一个可迭代对象，其元素是要连接成一个字符串的子字符串。</li>
-</ul>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>将一个字符串列表用逗号连接成一个字符串：</p>
-<pre><code class="hljs python">words = [<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;world&quot;</span>, <span class="hljs-string">&quot;python&quot;</span>]
-result = <span class="hljs-string">&quot;,&quot;</span>.join(words)
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: hello,world,python</span></code></pre>
-
-<p>在这个例子中，<code>&quot;,&quot;.join(words)</code> 会将 <code>words</code> 列表中的每个字符串元素连接起来，每两个元素之间插入一个逗号。</p>
-<h4 id="用空格连接"><a href="#用空格连接" class="headerlink" title="用空格连接"></a>用空格连接</h4><p>将一个字符串列表用空格连接成一个字符串：</p>
-<pre><code class="hljs python">words = [<span class="hljs-string">&quot;join&quot;</span>, <span class="hljs-string">&quot;method&quot;</span>, <span class="hljs-string">&quot;in&quot;</span>, <span class="hljs-string">&quot;python&quot;</span>]
-result = <span class="hljs-string">&quot; &quot;</span>.join(words)
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: join method in python</span></code></pre>
-
-<h4 id="用换行符连接"><a href="#用换行符连接" class="headerlink" title="用换行符连接"></a>用换行符连接</h4><p>将一个字符串列表用换行符连接成一个字符串：</p>
-<pre><code class="hljs python">lines = [<span class="hljs-string">&quot;line1&quot;</span>, <span class="hljs-string">&quot;line2&quot;</span>, <span class="hljs-string">&quot;line3&quot;</span>]
-result = <span class="hljs-string">&quot;\n&quot;</span>.join(lines)
-<span class="hljs-built_in">print</span>(result)
-<span class="hljs-comment"># 输出:</span>
-<span class="hljs-comment"># line1</span>
-<span class="hljs-comment"># line2</span>
-<span class="hljs-comment"># line3</span></code></pre>
-
-<h4 id="连接字符"><a href="#连接字符" class="headerlink" title="连接字符"></a>连接字符</h4><p>将一个字符列表连接成一个字符串：</p>
-<pre><code class="hljs python">chars = [<span class="hljs-string">&#x27;P&#x27;</span>, <span class="hljs-string">&#x27;y&#x27;</span>, <span class="hljs-string">&#x27;t&#x27;</span>, <span class="hljs-string">&#x27;h&#x27;</span>, <span class="hljs-string">&#x27;o&#x27;</span>, <span class="hljs-string">&#x27;n&#x27;</span>]
-result = <span class="hljs-string">&quot;&quot;</span>.join(chars)
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: Python</span></code></pre>
-
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
-<li><p><strong>元素必须是字符串</strong>：<code>join</code> 方法只能连接字符串类型的元素。如果可迭代对象中的元素不是字符串类型，会引发 <code>TypeError</code>。</p>
- <pre><code class="hljs python">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
-result = <span class="hljs-string">&quot;,&quot;</span>.join(numbers)  <span class="hljs-comment"># 会引发 TypeError</span></code></pre>
-<p> 如果需要连接非字符串类型的元素，可以先将它们转换为字符串：</p>
- <pre><code class="hljs python">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
-result = <span class="hljs-string">&quot;,&quot;</span>.join(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">str</span>, numbers))
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: 1,2,3,4</span></code></pre>
-</li>
-<li><p><strong>可迭代对象</strong>：<code>join</code> 方法可以处理任何可迭代对象（如列表、元组、集合等），只要其中的元素是字符串。</p>
- <pre><code class="hljs python">words = (<span class="hljs-string">&quot;tuple&quot;</span>, <span class="hljs-string">&quot;example&quot;</span>, <span class="hljs-string">&quot;join&quot;</span>)
-result = <span class="hljs-string">&quot; &quot;</span>.join(words)
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: tuple example join</span></code></pre>
-</li>
-<li><p><strong>性能</strong>：<code>join</code> 方法比使用循环和字符串拼接（如使用 <code>+</code> 运算符）效率更高，尤其是在连接大量字符串时，<code>join</code> 方法的性能优势更加明显，因为它避免了创建多个中间字符串。</p>
-</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><code>join</code> 方法是一个非常实用的字符串方法，用于将可迭代对象中的字符串元素连接成一个字符串。通过灵活使用 <code>join</code> 方法，可以方便地处理字符串的连接和拼接操作。</p>
-<h2 id="statistics模块"><a href="#statistics模块" class="headerlink" title="statistics模块"></a>statistics模块</h2><p><code>statistics</code> 模块是 Python 的标准库模块之一，用于执行基本的统计运算。这个模块提供了多种函数，帮助用户对数据进行统计分析，例如求平均值、中位数、标准差等。</p>
-<h3 id="功能概述"><a href="#功能概述" class="headerlink" title="功能概述"></a>功能概述</h3><p><code>statistics</code> 模块包含的功能主要分为以下几类：</p>
-<ol>
-<li><strong>均值和中位数计算</strong></li>
-<li><strong>方差和标准差计算</strong></li>
-<li><strong>分位数和百分位数计算</strong></li>
-<li><strong>其他统计函数</strong></li>
-</ol>
-<h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><h4 id="均值和中位数"><a href="#均值和中位数" class="headerlink" title="均值和中位数"></a>均值和中位数</h4><ul>
-<li><code>mean(data)</code>: 返回数据的算术平均值。</li>
-<li><code>median(data)</code>: 返回数据的中位数。</li>
-<li><code>mode(data)</code>: 返回数据的众数（出现次数最多的值）。</li>
-<li><code>harmonic_mean(data)</code>: 返回数据的调和平均值。</li>
-</ul>
-<h4 id="方差和标准差"><a href="#方差和标准差" class="headerlink" title="方差和标准差"></a>方差和标准差</h4><ul>
-<li><code>variance(data, xbar=None)</code>: 返回数据的样本方差。</li>
-<li><code>stdev(data, xbar=None)</code>: 返回数据的样本标准差。</li>
-<li><code>pstdev(data, mu=None)</code>: 返回数据的总体标准差。</li>
-<li><code>pvariance(data, mu=None)</code>: 返回数据的总体方差。</li>
-</ul>
-<h4 id="分位数和百分位数"><a href="#分位数和百分位数" class="headerlink" title="分位数和百分位数"></a>分位数和百分位数</h4><ul>
-<li><code>median_low(data)</code>: 返回数据的低中位数（当数据个数为偶数时，返回较小的那个中位数）。</li>
-<li><code>median_high(data)</code>: 返回数据的高中位数（当数据个数为偶数时，返回较大的那个中位数）。</li>
-<li><code>median_grouped(data, interval=1)</code>: 返回分组数据的中位数。</li>
-<li><code>quantiles(data, n=4, method=&#39;exclusive&#39;)</code>: 返回数据的分位数。</li>
-</ul>
-<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><p>以下是使用 <code>statistics</code> 模块的几个示例：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> statistics <span class="hljs-keyword">as</span> stats
-
-data = [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>]
-
-<span class="hljs-comment"># 均值</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Mean:&quot;</span>, stats.mean(data))  <span class="hljs-comment"># 输出: Mean: 5</span>
-
-<span class="hljs-comment"># 中位数</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Median:&quot;</span>, stats.median(data))  <span class="hljs-comment"># 输出: Median: 4.5</span>
-
-<span class="hljs-comment"># 众数</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Mode:&quot;</span>, stats.mode(data))  <span class="hljs-comment"># 输出: Mode: 4</span>
-
-<span class="hljs-comment"># 方差</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Variance:&quot;</span>, stats.variance(data))  <span class="hljs-comment"># 输出: Variance: 4.571428571428571</span>
-
-<span class="hljs-comment"># 标准差</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Standard Deviation:&quot;</span>, stats.stdev(data))  <span class="hljs-comment"># 输出: Standard Deviation: 2.138089935299395</span>
-
-<span class="hljs-comment"># 分位数</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Quantiles:&quot;</span>, stats.quantiles(data))  <span class="hljs-comment"># 输出: Quantiles: [4.0, 4.5, 5.0]</span></code></pre>
-
-<h3 id="使用注意事项"><a href="#使用注意事项" class="headerlink" title="使用注意事项"></a>使用注意事项</h3><ol>
-<li><strong>输入数据</strong>：大部分函数的参数是一个可迭代对象（如列表、元组等），其中的元素应该是数值类型。</li>
-<li><strong>样本与总体</strong>：方差和标准差的计算函数区分了样本和总体。<code>variance</code> 和 <code>stdev</code> 计算样本的方差和标准差，而 <code>pvariance</code> 和 <code>pstdev</code> 计算总体的方差和标准差。</li>
-<li><strong>异常处理</strong>：在使用这些函数时，如果数据中包含非数值类型或数据为空，会引发 <code>StatisticsError</code> 异常。</li>
-</ol>
-<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p><code>statistics</code> 模块是进行基础统计分析的有力工具，涵盖了从简单的平均值计算到复杂的方差和分位数计算的广泛功能。它使得统计运算在 Python 中变得简单和高效，适用于各种数据分析和科学计算的场景。</p>
-<h2 id="operator模块"><a href="#operator模块" class="headerlink" title="operator模块"></a>operator模块</h2><p><code>operator</code> 模块是 Python 的一个标准库模块，提供了一系列函数对应于 Python 中的标准运算符。这些函数可以使代码更具可读性，并且在需要传递函数作为参数时尤其有用。<code>operator</code> 模块的功能包括基本的算术运算、比较运算、逻辑运算、序列操作等。</p>
-<h3 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h3><p><code>operator</code> 模块包含以下几类操作函数：</p>
-<ol>
-<li><strong>算术运算</strong></li>
-<li><strong>比较运算</strong></li>
-<li><strong>逻辑运算</strong></li>
-<li><strong>序列和映射操作</strong></li>
-<li><strong>属性和方法操作</strong></li>
-</ol>
-<h3 id="主要函数"><a href="#主要函数" class="headerlink" title="主要函数"></a>主要函数</h3><h4 id="算术运算函数"><a href="#算术运算函数" class="headerlink" title="算术运算函数"></a>算术运算函数</h4><ul>
-<li><code>add(a, b)</code>: 返回 <code>a + b</code></li>
-<li><code>sub(a, b)</code>: 返回 <code>a - b</code></li>
-<li><code>mul(a, b)</code>: 返回 <code>a * b</code></li>
-<li><code>truediv(a, b)</code>: 返回 <code>a / b</code>（浮点除法）</li>
-<li><code>floordiv(a, b)</code>: 返回 <code>a // b</code>（整数除法）</li>
-<li><code>mod(a, b)</code>: 返回 <code>a % b</code></li>
-<li><code>pow(a, b)</code>: 返回 <code>a ** b</code></li>
-</ul>
-<h4 id="比较运算函数"><a href="#比较运算函数" class="headerlink" title="比较运算函数"></a>比较运算函数</h4><ul>
-<li><code>eq(a, b)</code>: 返回 <code>a == b</code></li>
-<li><code>ne(a, b)</code>: 返回 <code>a != b</code></li>
-<li><code>lt(a, b)</code>: 返回 <code>a &lt; b</code></li>
-<li><code>le(a, b)</code>: 返回 <code>a &lt;= b</code></li>
-<li><code>gt(a, b)</code>: 返回 <code>a &gt; b</code></li>
-<li><code>ge(a, b)</code>: 返回 <code>a &gt;= b</code></li>
-</ul>
-<h4 id="逻辑运算函数"><a href="#逻辑运算函数" class="headerlink" title="逻辑运算函数"></a>逻辑运算函数</h4><ul>
-<li><code>and_(a, b)</code>: 返回 <code>a and b</code></li>
-<li><code>or_(a, b)</code>: 返回 <code>a or b</code></li>
-<li><code>not_(a)</code>: 返回 <code>not a</code></li>
-</ul>
-<h4 id="序列和映射操作函数"><a href="#序列和映射操作函数" class="headerlink" title="序列和映射操作函数"></a>序列和映射操作函数</h4><ul>
-<li><code>getitem(obj, key)</code>: 返回 <code>obj[key]</code></li>
-<li><code>setitem(obj, key, value)</code>: 设置 <code>obj[key] = value</code></li>
-<li><code>delitem(obj, key)</code>: 删除 <code>obj[key]</code></li>
-<li><code>contains(obj, key)</code>: 返回 <code>key in obj</code></li>
-<li><code>concat(a, b)</code>: 返回 <code>a + b</code>（序列连接）</li>
-<li><code>countOf(a, b)</code>: 返回 <code>a</code> 中 <code>b</code> 的个数</li>
-<li><code>indexOf(a, b)</code>: 返回 <code>a</code> 中第一次出现 <code>b</code> 的索引</li>
-</ul>
-<h4 id="属性和方法操作函数"><a href="#属性和方法操作函数" class="headerlink" title="属性和方法操作函数"></a>属性和方法操作函数</h4><ul>
-<li><code>attrgetter(attr)</code>: 返回一个可调用对象，从对象获取名为 <code>attr</code> 的属性</li>
-<li><code>itemgetter(*items)</code>: 返回一个可调用对象，从对象获取指定的多个值</li>
-<li><code>methodcaller(name, *args, **kwargs)</code>: 返回一个可调用对象，对对象调用名为 <code>name</code> 的方法，并传递给定的参数和关键字参数</li>
-</ul>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><p>以下是使用 <code>operator</code> 模块的一些示例：</p>
-<h4 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> operator
-
-a, b = <span class="hljs-number">5</span>, <span class="hljs-number">3</span>
-
-<span class="hljs-built_in">print</span>(operator.add(a, b))  <span class="hljs-comment"># 输出: 8</span>
-<span class="hljs-built_in">print</span>(operator.mul(a, b))  <span class="hljs-comment"># 输出: 15</span>
-<span class="hljs-built_in">print</span>(operator.<span class="hljs-built_in">pow</span>(a, b))  <span class="hljs-comment"># 输出: 125</span></code></pre>
-
-<h4 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> operator
-
-a, b = <span class="hljs-number">5</span>, <span class="hljs-number">3</span>
-
-<span class="hljs-built_in">print</span>(operator.lt(a, b))  <span class="hljs-comment"># 输出: False</span>
-<span class="hljs-built_in">print</span>(operator.ge(a, b))  <span class="hljs-comment"># 输出: True</span>
-<span class="hljs-built_in">print</span>(operator.eq(a, b))  <span class="hljs-comment"># 输出: False</span></code></pre>
-
-<h4 id="序列和映射操作"><a href="#序列和映射操作" class="headerlink" title="序列和映射操作"></a>序列和映射操作</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> operator
-
-lst = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-
-<span class="hljs-built_in">print</span>(operator.getitem(lst, <span class="hljs-number">2</span>))  <span class="hljs-comment"># 输出: 3</span>
-operator.setitem(lst, <span class="hljs-number">2</span>, <span class="hljs-number">10</span>)
-<span class="hljs-built_in">print</span>(lst)  <span class="hljs-comment"># 输出: [1, 2, 10, 4, 5]</span>
-operator.delitem(lst, <span class="hljs-number">2</span>)
-<span class="hljs-built_in">print</span>(lst)  <span class="hljs-comment"># 输出: [1, 2, 4, 5]</span>
-
-d = &#123;<span class="hljs-string">&#x27;a&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;b&#x27;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;c&#x27;</span>: <span class="hljs-number">3</span>&#125;
-<span class="hljs-built_in">print</span>(operator.getitem(d, <span class="hljs-string">&#x27;b&#x27;</span>))  <span class="hljs-comment"># 输出: 2</span></code></pre>
-
-<h4 id="属性和方法操作"><a href="#属性和方法操作" class="headerlink" title="属性和方法操作"></a>属性和方法操作</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> operator
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>:
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, age</span>):
-        <span class="hljs-variable language_">self</span>.name = name
-        <span class="hljs-variable language_">self</span>.age = age
-
-p = Person(<span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-number">30</span>)
-
-name = operator.attrgetter(<span class="hljs-string">&#x27;name&#x27;</span>)
-<span class="hljs-built_in">print</span>(name(p))  <span class="hljs-comment"># 输出: Alice</span>
-
-data = [(<span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-number">30</span>), (<span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-number">25</span>), (<span class="hljs-string">&#x27;Charlie&#x27;</span>, <span class="hljs-number">35</span>)]
-data.sort(key=operator.itemgetter(<span class="hljs-number">1</span>))
-<span class="hljs-built_in">print</span>(data)  <span class="hljs-comment"># 输出: [(&#x27;Bob&#x27;, 25), (&#x27;Alice&#x27;, 30), (&#x27;Charlie&#x27;, 35)]</span></code></pre>
-
-<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p><code>operator</code> 模块提供了对 Python 内置运算符的函数接口，使得代码在处理操作时更加清晰和灵活。特别是在需要将函数作为参数传递的情况下，这些函数显得尤为有用。通过使用 <code>operator</code> 模块，可以提高代码的可读性和可维护性。</p>
-<h2 id="random模块"><a href="#random模块" class="headerlink" title="random模块"></a>random模块</h2><p>Python 的 <code>random</code> 模块提供了各种生成随机数和执行随机操作的函数。以下是 <code>random</code> 模块中的主要功能和使用方法：</p>
-<h3 id="1-生成随机数"><a href="#1-生成随机数" class="headerlink" title="1. 生成随机数"></a>1. 生成随机数</h3><ul>
-<li><p><strong>随机浮点数</strong></p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> random
-
-<span class="hljs-comment"># 生成 0 到 1 之间的随机浮点数</span>
-random_float = random.random()
-<span class="hljs-built_in">print</span>(random_float)  <span class="hljs-comment"># 例如 0.37444887175646646</span></code></pre>
-</li>
-<li><p><strong>指定范围内的随机浮点数</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 生成 [a, b] 之间的随机浮点数</span>
-random_float = random.uniform(a, b)
-<span class="hljs-built_in">print</span>(random_float)</code></pre>
-</li>
-<li><p><strong>随机整数</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 生成 [a, b] 之间的随机整数</span>
-random_int = random.randint(a, b)
-<span class="hljs-built_in">print</span>(random_int)</code></pre>
-</li>
-<li><p><strong>指定步长的随机整数</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 生成 range(start, stop, step) 范围内的随机整数</span>
-random_int = random.randrange(start, stop, step)
-<span class="hljs-built_in">print</span>(random_int)</code></pre></li>
-</ul>
-<h3 id="2-随机选择"><a href="#2-随机选择" class="headerlink" title="2. 随机选择"></a>2. 随机选择</h3><ul>
-<li><p><strong>从序列中随机选择一个元素</strong></p>
-<pre><code class="hljs python">choices = [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;cherry&#x27;</span>]
-random_choice = random.choice(choices)
-<span class="hljs-built_in">print</span>(random_choice)  <span class="hljs-comment"># 例如 &#x27;banana&#x27;</span></code></pre>
-</li>
-<li><p><strong>从序列中随机选择多个元素</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 从序列中随机选择 k 个元素，可以有重复</span>
-random_choices = random.choices(choices, k=<span class="hljs-number">3</span>)
-<span class="hljs-built_in">print</span>(random_choices)  <span class="hljs-comment"># 例如 [&#x27;cherry&#x27;, &#x27;banana&#x27;, &#x27;banana&#x27;]</span></code></pre>
-</li>
-<li><p><strong>从序列中随机选择多个不重复元素</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 从序列中随机选择 k 个不重复元素</span>
-random_sample = random.sample(choices, k=<span class="hljs-number">2</span>)
-<span class="hljs-built_in">print</span>(random_sample)  <span class="hljs-comment"># 例如 [&#x27;banana&#x27;, &#x27;apple&#x27;]</span></code></pre></li>
-</ul>
-<h3 id="3-打乱顺序"><a href="#3-打乱顺序" class="headerlink" title="3. 打乱顺序"></a>3. 打乱顺序</h3><ul>
-<li><p><strong>就地打乱列表中的元素顺序</strong></p>
-<pre><code class="hljs python">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-random.shuffle(numbers)
-<span class="hljs-built_in">print</span>(numbers)  <span class="hljs-comment"># 例如 [3, 5, 1, 2, 4]</span></code></pre></li>
-</ul>
-<h3 id="4-生成随机分布"><a href="#4-生成随机分布" class="headerlink" title="4. 生成随机分布"></a>4. 生成随机分布</h3><ul>
-<li><p><strong>正态分布（高斯分布）</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 生成均值为 mu，标准差为 sigma 的随机浮点数</span>
-random_gauss = random.gauss(mu, sigma)
-<span class="hljs-built_in">print</span>(random_gauss)</code></pre>
-</li>
-<li><p><strong>其他分布</strong></p>
-<ul>
-<li><p><strong>Beta 分布</strong></p>
-<pre><code class="hljs python">random_beta = random.betavariate(alpha, beta)
-<span class="hljs-built_in">print</span>(random_beta)</code></pre>
-</li>
-<li><p><strong>Gamma 分布</strong></p>
-<pre><code class="hljs python">random_gamma = random.gammavariate(alpha, beta)
-<span class="hljs-built_in">print</span>(random_gamma)</code></pre>
-</li>
-<li><p><strong>指数分布</strong></p>
-<pre><code class="hljs python">random_exp = random.expovariate(lambd)
-<span class="hljs-built_in">print</span>(random_exp)</code></pre>
-</li>
-<li><p><strong>对数正态分布</strong></p>
-<pre><code class="hljs python">random_lognorm = random.lognormvariate(mu, sigma)
-<span class="hljs-built_in">print</span>(random_lognorm)</code></pre>
-</li>
-<li><p><strong>Pareto 分布</strong></p>
-<pre><code class="hljs python">random_pareto = random.paretovariate(alpha)
-<span class="hljs-built_in">print</span>(random_pareto)</code></pre>
-</li>
-<li><p><strong>维布尔分布</strong></p>
-<pre><code class="hljs python">random_weibull = random.weibullvariate(alpha, beta)
-<span class="hljs-built_in">print</span>(random_weibull)</code></pre></li>
-</ul>
-</li>
-</ul>
-<h3 id="5-种子控制"><a href="#5-种子控制" class="headerlink" title="5. 种子控制"></a>5. 种子控制</h3><ul>
-<li><p><strong>设置随机数生成器的种子</strong></p>
-<pre><code class="hljs python">random.seed(a)</code></pre>
-
-<p>使用相同的种子可以确保生成的随机数序列相同，对于调试和测试非常有用。</p>
-</li>
-</ul>
-<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>Python 的 <code>random</code> 模块提供了丰富的随机数生成和操作函数，涵盖了基本的随机数生成、序列操作和多种随机分布。通过这些函数，可以方便地在各种应用中实现随机行为。</p>
-<h2 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h2><p>Python 的 <code>time</code> 模块提供了多种与时间相关的函数，用于处理时间和日期。以下是 <code>time</code> 模块中的主要功能和使用方法：</p>
-<h3 id="1-获取当前时间"><a href="#1-获取当前时间" class="headerlink" title="1. 获取当前时间"></a>1. 获取当前时间</h3><ul>
-<li><p><strong>获取当前时间的时间戳</strong></p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> time <span class="hljs-comment">#返回当前时间的时间戳（自 Unix 纪元（1970年1月1日）以来的秒数）</span>
-  <span class="hljs-built_in">print</span>(current_time)  <span class="hljs-comment"># 例如 1623673923.786348</span></code></pre>
-</li>
-<li><p><strong>获取当前时间的结构化时间（本地时间）</strong></p>
-<pre><code class="hljs python">local_time = time.localtime() <span class="hljs-comment"># 返回当前时间的本地时间结构</span>
-<span class="hljs-built_in">print</span>(local_time)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre>
-</li>
-<li><p><strong>获取当前时间的结构化时间（UTC 时间）</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 返回当前时间的 UTC 时间结构</span>
-utc_time = time.gmtime()
-<span class="hljs-built_in">print</span>(utc_time)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre></li>
-</ul>
-<h3 id="2-格式化时间"><a href="#2-格式化时间" class="headerlink" title="2. 格式化时间"></a>2. 格式化时间</h3><ul>
-<li><p><strong>将时间结构转换为字符串</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 将当前本地时间转换为字符串</span>
-formatted_time = time.strftime(<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, local_time)
-<span class="hljs-built_in">print</span>(formatted_time)  <span class="hljs-comment"># 例如 &#x27;2021-06-14 10:32:03&#x27;</span></code></pre>
-</li>
-<li><p><strong>将字符串解析为时间结构</strong></p>
-<pre><code class="hljs python">time_string = <span class="hljs-string">&quot;2021-06-14 10:32:03&quot;</span>
-<span class="hljs-comment"># 将字符串解析为时间结构</span>
-parsed_time = time.strptime(time_string, <span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)
-<span class="hljs-built_in">print</span>(parsed_time)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre></li>
-</ul>
-<h3 id="3-时间戳和时间结构之间的转换"><a href="#3-时间戳和时间结构之间的转换" class="headerlink" title="3. 时间戳和时间结构之间的转换"></a>3. 时间戳和时间结构之间的转换</h3><ul>
-<li><p><strong>时间戳转换为本地时间结构</strong></p>
-<pre><code class="hljs python">timestamp = <span class="hljs-number">1623673923.786348</span>
-local_time_from_timestamp = time.localtime(timestamp)
-<span class="hljs-built_in">print</span>(local_time_from_timestamp)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre>
-</li>
-<li><p><strong>时间戳转换为 UTC 时间结构</strong></p>
-<pre><code class="hljs python">utc_time_from_timestamp = time.gmtime(timestamp)
-<span class="hljs-built_in">print</span>(utc_time_from_timestamp)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre>
-</li>
-<li><p><strong>时间结构转换为时间戳</strong></p>
-<pre><code class="hljs python">timestamp_from_local_time = time.mktime(local_time)
-<span class="hljs-built_in">print</span>(timestamp_from_local_time)  <span class="hljs-comment"># 例如 1623673923.0</span></code></pre></li>
-</ul>
-<h3 id="4-暂停程序执行"><a href="#4-暂停程序执行" class="headerlink" title="4. 暂停程序执行"></a>4. 暂停程序执行</h3><ul>
-<li><p><strong>暂停程序执行指定秒数</strong></p>
-<pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Start&quot;</span>)
-time.sleep(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 暂停程序执行 2 秒</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;End&quot;</span>)</code></pre></li>
-</ul>
-<h3 id="5-其他实用功能"><a href="#5-其他实用功能" class="headerlink" title="5. 其他实用功能"></a>5. 其他实用功能</h3><ul>
-<li><p><strong>获取 CPU 时间</strong></p>
-<pre><code class="hljs python">cpu_time = time.process_time()
-<span class="hljs-built_in">print</span>(cpu_time)  <span class="hljs-comment"># 例如 0.015625</span></code></pre>
-</li>
-<li><p><strong>测量时间间隔</strong></p>
-<pre><code class="hljs python">start_time = time.perf_counter()
-<span class="hljs-comment"># 进行一些操作</span>
-end_time = time.perf_counter()
-<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;操作耗时: <span class="hljs-subst">&#123;end_time - start_time&#125;</span> 秒&quot;</span>)</code></pre>
-</li>
-<li><p><strong>获取系统时区偏移量</strong></p>
-<pre><code class="hljs python">timezone_offset = time.timezone  <span class="hljs-comment"># 返回本地时区相对于 UTC 的偏移量（秒）</span>
-<span class="hljs-built_in">print</span>(timezone_offset)  <span class="hljs-comment"># 例如 -28800（对于 UTC-8 时区）</span></code></pre>
-</li>
-<li><p><strong>获取夏令时标志</strong></p>
-<pre><code class="hljs python">daylight_saving_flag = time.daylight  <span class="hljs-comment"># 返回夏令时是否被定义</span>
-<span class="hljs-built_in">print</span>(daylight_saving_flag)  <span class="hljs-comment"># 例如 1（表示夏令时定义）</span></code></pre></li>
-</ul>
-<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><p>Python 的 <code>time</code> 模块提供了丰富的时间和日期操作功能，包括获取当前时间、格式化时间、时间戳和结构化时间的转换、暂停程序执行、测量时间间隔等。通过这些函数，可以在各种应用场景中方便地处理时间相关的数据。</p>
-<h2 id="装饰器详细解释"><a href="#装饰器详细解释" class="headerlink" title="装饰器详细解释"></a>装饰器详细解释</h2><h3 id="装饰器的基本结构"><a href="#装饰器的基本结构" class="headerlink" title="装饰器的基本结构"></a>装饰器的基本结构</h3><p>装饰器是一个用于包裹另一个函数以增强或修改其行为的函数。装饰器本身是一个高阶函数，因为它接受一个函数作为参数，并返回一个新的函数。下面是一个最简单的装饰器结构：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">decorator</span>(<span class="hljs-params">func</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):
-        <span class="hljs-comment"># 在这里添加增强功能的代码</span>
-        result = func(*args, **kwargs)
-        <span class="hljs-comment"># 在这里添加增强功能的代码</span>
-        <span class="hljs-keyword">return</span> result
-    <span class="hljs-keyword">return</span> wrapper</code></pre>
-
-<h3 id="详细解释"><a href="#详细解释" class="headerlink" title="详细解释"></a>详细解释</h3><ol>
-<li><p><strong>decorator 函数</strong>：</p>
-<ul>
-<li><code>decorator(func)</code> 是装饰器函数，它接受一个函数 <code>func</code> 作为参数。</li>
-<li><code>func</code> 是你想要增强或修改的函数。</li>
-</ul>
-</li>
-<li><p><strong>wrapper 函数</strong>：</p>
-<ul>
-<li>在 <code>decorator</code> 函数内部定义了一个 <code>wrapper</code> 函数。</li>
-<li><code>wrapper(*args, **kwargs)</code> 是一个包装函数，它接受任意数量的参数和关键字参数，并将它们传递给原始函数 <code>func</code>。</li>
-<li><code>*args</code> 和 <code>**kwargs</code> 确保 <code>wrapper</code> 能处理所有类型的参数（位置参数和关键字参数），与 <code>func</code> 的参数一致。</li>
-</ul>
-</li>
-<li><p><strong>增强功能</strong>：</p>
-<ul>
-<li>在 <code>wrapper</code> 函数中，你可以在调用原始函数 <code>func</code> 前后添加增强功能的代码。</li>
-<li>例如，你可以在调用 <code>func</code> 前记录开始时间，在调用 <code>func</code> 后记录结束时间，并计算运行时间。</li>
-</ul>
-</li>
-<li><p><strong>返回值</strong>：</p>
-<ul>
-<li><code>wrapper</code> 函数调用 <code>func(*args, **kwargs)</code> 并将结果存储在 <code>result</code> 变量中。</li>
-<li><code>wrapper</code> 函数最终返回 <code>result</code>，即原始函数的返回值。</li>
-</ul>
-</li>
-<li><p><strong>返回 wrapper</strong>：</p>
-<ul>
-<li><code>decorator</code> 函数返回 <code>wrapper</code> 函数。</li>
-<li>这意味着当你用 <code>@decorator</code> 语法装饰一个函数时，这个函数会被 <code>wrapper</code> 替代，增强功能也随之生效。</li>
-</ul>
-</li>
-</ol>
-<h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><p>我们来看一个实际应用的例子，使用装饰器来记录函数的执行时间：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> time
-
-<span class="hljs-comment"># 定义装饰器函数</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">record_time</span>(<span class="hljs-params">func</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):
-        start_time = time.time()  <span class="hljs-comment"># 计时开始</span>
-        result = func(*args, **kwargs)
-        end_time = time.time()    <span class="hljs-comment"># 计时结束</span>
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;func.__name__&#125;</span> executed in <span class="hljs-subst">&#123;end_time - start_time&#125;</span> seconds&quot;</span>)
-        <span class="hljs-keyword">return</span> result
-    <span class="hljs-keyword">return</span> wrapper
-
-<span class="hljs-comment"># 使用装饰器</span>
-<span class="hljs-meta">@record_time</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">upload</span>(<span class="hljs-params">file</span>):
-    time.sleep(<span class="hljs-number">1</span>)  <span class="hljs-comment"># 模拟上传文件的延时</span>
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Uploading <span class="hljs-subst">&#123;file&#125;</span>&quot;</span>)
-
-<span class="hljs-meta">@record_time</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">download</span>(<span class="hljs-params">file</span>):
-    time.sleep(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 模拟下载文件的延时</span>
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Downloading <span class="hljs-subst">&#123;file&#125;</span>&quot;</span>)
-
-<span class="hljs-comment"># 调用被装饰的函数</span>
-upload(<span class="hljs-string">&quot;file1.txt&quot;</span>)
-download(<span class="hljs-string">&quot;file2.txt&quot;</span>)</code></pre>
-
-<h3 id="详细解释实际应用"><a href="#详细解释实际应用" class="headerlink" title="详细解释实际应用"></a>详细解释实际应用</h3><ol>
-<li><p><strong>定义装饰器</strong>：</p>
-<ul>
-<li><code>record_time</code> 函数是装饰器，它接受一个函数 <code>func</code> 作为参数。</li>
-</ul>
-</li>
-<li><p><strong>定义 wrapper</strong>：</p>
-<ul>
-<li><code>wrapper(*args, **kwargs)</code> 函数在 <code>record_time</code> 内部定义。</li>
-<li><code>start_time = time.time()</code> 记录函数执行开始时间。</li>
-<li><code>result = func(*args, **kwargs)</code> 调用原始函数 <code>func</code>，并传递所有参数。</li>
-<li><code>end_time = time.time()</code> 记录函数执行结束时间。</li>
-<li><code>print(f&quot;&#123;func.__name__&#125; executed in &#123;end_time - start_time&#125; seconds&quot;)</code> 打印函数的执行时间。</li>
-<li><code>return result</code> 返回原始函数的返回值。</li>
-</ul>
-</li>
-<li><p><strong>返回 wrapper</strong>：</p>
-<ul>
-<li><code>record_time</code> 函数返回 <code>wrapper</code> 函数。</li>
-</ul>
-</li>
-<li><p><strong>使用装饰器</strong>：</p>
-<ul>
-<li>使用 <code>@record_time</code> 语法将 <code>upload</code> 和 <code>download</code> 函数装饰。</li>
-<li>这意味着 <code>upload</code> 和 <code>download</code> 函数实际上是 <code>wrapper</code> 函数。</li>
-</ul>
-</li>
-<li><p><strong>调用被装饰的函数</strong>：</p>
-<ul>
-<li>调用 <code>upload(&quot;file1.txt&quot;)</code> 时，实际上调用的是 <code>wrapper(&quot;file1.txt&quot;)</code>。</li>
-<li><code>wrapper</code> 函数记录开始时间，调用原始 <code>upload</code> 函数，记录结束时间，并打印执行时间。</li>
-<li><code>download(&quot;file2.txt&quot;)</code> 的过程相同。</li>
-</ul>
-</li>
-</ol>
-<p>通过这种方式，我们将记录时间的逻辑与具体的业务逻辑分离，使代码更加清晰和模块化。</p>
-<h2 id="itertools模块"><a href="#itertools模块" class="headerlink" title="itertools模块"></a>itertools模块</h2><p><code>itertools</code> 模块是 Python 的一个标准库模块，提供了许多用于高效循环和迭代的函数工具。这个模块包含了一组用于处理迭代器的函数，能够实现复杂的迭代逻辑。以下是 <code>itertools</code> 模块中一些常用功能及其简要介绍：</p>
-<h3 id="常用函数-1"><a href="#常用函数-1" class="headerlink" title="常用函数"></a>常用函数</h3><ol>
-<li><p>**<code>count(start=0, step=1)</code>**：</p>
-<ul>
-<li>创建一个无限迭代器，从 <code>start</code> 开始，步长为 <code>step</code>。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> itertools.count(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>):
-    <span class="hljs-keyword">if</span> i &gt; <span class="hljs-number">20</span>:
-        <span class="hljs-keyword">break</span>
-    <span class="hljs-built_in">print</span>(i)</code></pre></li>
-</ul>
-</li>
-<li><p>**<code>cycle(iterable)</code>**：</p>
-<ul>
-<li>创建一个无限迭代器，从给定的 <code>iterable</code> 中重复迭代元素。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-count = <span class="hljs-number">0</span>
-<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> itertools.cycle(<span class="hljs-string">&#x27;AB&#x27;</span>):
-    <span class="hljs-keyword">if</span> count &gt; <span class="hljs-number">5</span>:
-        <span class="hljs-keyword">break</span>
-    <span class="hljs-built_in">print</span>(item)
-    count += <span class="hljs-number">1</span></code></pre></li>
-</ul>
-</li>
-<li><p>**<code>repeat(object, times=None)</code>**：</p>
-<ul>
-<li>创建一个迭代器，重复给定的对象 <code>times</code> 次。如果 <code>times</code> 为 <code>None</code>，则无限重复。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> itertools.repeat(<span class="hljs-string">&#x27;Hello&#x27;</span>, <span class="hljs-number">3</span>):
-    <span class="hljs-built_in">print</span>(item)</code></pre></li>
-</ul>
-</li>
-<li><p>**<code>chain(*iterables)</code>**：</p>
-<ul>
-<li>将多个迭代器连接成一个迭代器。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> itertools.chain(<span class="hljs-string">&#x27;ABC&#x27;</span>, <span class="hljs-string">&#x27;DEF&#x27;</span>):
-    <span class="hljs-built_in">print</span>(item)</code></pre></li>
-</ul>
-</li>
-<li><p>**<code>islice(iterable, start, stop, step=1)</code>**：</p>
-<ul>
-<li>创建一个迭代器，从 <code>iterable</code> 中切片，类似于列表切片。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> itertools.islice(<span class="hljs-string">&#x27;ABCDEFG&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>):
-    <span class="hljs-built_in">print</span>(item)		<span class="hljs-comment">#C	D	E	F</span></code></pre></li>
-</ul>
-</li>
-<li><p>**<code>compress(data, selectors)</code>**：</p>
-<ul>
-<li>过滤 <code>data</code> 中的元素，只保留与 <code>selectors</code> 中的<strong>真值</strong>对应的元素。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-data = <span class="hljs-string">&#x27;ABCDEF&#x27;</span>
-selectors = [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.compress(data, selectors)))		<span class="hljs-comment">#[&#x27;A&#x27;, &#x27;C&#x27;, &#x27;E&#x27;]</span></code></pre></li>
-</ul>
-</li>
-<li><p>**<code>permutations(iterable, r=None)</code>**：</p>
-<ul>
-<li>返回 <code>iterable</code> 中元素的所有可能排列，长度为 <code>r</code>。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.permutations(<span class="hljs-string">&#x27;ABC&#x27;</span>, <span class="hljs-number">2</span>)))</code></pre></li>
-</ul>
-</li>
-<li><p>**<code>combinations(iterable, r)</code>**：</p>
-<ul>
-<li>返回 <code>iterable</code> 中元素的所有可能组合，长度为 <code>r</code>。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.combinations(<span class="hljs-string">&#x27;ABC&#x27;</span>, <span class="hljs-number">2</span>)))	<span class="hljs-comment">#[(&#x27;A&#x27;, &#x27;B&#x27;), (&#x27;A&#x27;, &#x27;C&#x27;), (&#x27;B&#x27;, &#x27;C&#x27;)]</span></code></pre></li>
-</ul>
-</li>
-<li><p>**<code>combinations_with_replacement(iterable, r)</code>**：</p>
-<ul>
-<li>返回 <code>iterable</code> 中元素的所有可能组合，长度为 <code>r</code>，允许元素重复。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.combinations_with_replacement(<span class="hljs-string">&#x27;ABC&#x27;</span>, <span class="hljs-number">2</span>)))
-<span class="hljs-comment"># [(&#x27;A&#x27;, &#x27;A&#x27;), (&#x27;A&#x27;, &#x27;B&#x27;), (&#x27;A&#x27;, &#x27;C&#x27;), (&#x27;B&#x27;, &#x27;B&#x27;), (&#x27;B&#x27;, &#x27;C&#x27;), (&#x27;C&#x27;, &#x27;C&#x27;)]</span></code></pre></li>
-</ul>
-</li>
-<li><p>**<code>product(*iterables, repeat=1)</code>**：</p>
-<ul>
-<li>返回多个迭代器的笛卡尔积，可以通过 <code>repeat</code> 参数指定重复次数。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.product(<span class="hljs-string">&#x27;AB&#x27;</span>, <span class="hljs-string">&#x27;CD&#x27;</span>)))</code></pre></li>
-</ul>
-</li>
-<li><p>**<code>groupby(iterable, key=None)</code>**：</p>
-<ul>
-<li>对 <code>iterable</code> 中的相邻元素进行分组，<code>key</code> 为分组依据的函数。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-data = [(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-number">1</span>), (<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-number">2</span>), (<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-number">3</span>), (<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-number">4</span>)]
-<span class="hljs-keyword">for</span> key, group <span class="hljs-keyword">in</span> itertools.groupby(data, key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">0</span>]):
-    <span class="hljs-built_in">print</span>(key, <span class="hljs-built_in">list</span>(group))</code></pre></li>
-</ul>
-</li>
-</ol>
-<h3 id="总结-5"><a href="#总结-5" class="headerlink" title="总结"></a>总结</h3><p><code>itertools</code> 模块提供了一组非常有用的迭代器工具，这些工具在处理大数据集、生成无限序列、组合和排列等任务中非常高效。通过这些工具，能够简化代码、提高执行效率，同时保持代码的可读性和可维护性。</p>
-<h2 id="re模块"><a href="#re模块" class="headerlink" title="re模块"></a>re模块</h2><p>Python提供了<code>re</code>模块来支持正则表达式相关操作，下面是<code>re</code>模块中的核心函数。</p>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>compile(pattern, flags=0)</code></td>
-<td>编译正则表达式返回正则表达式对象</td>
-</tr>
-<tr>
-<td><code>match(pattern, string, flags=0)</code></td>
-<td>用正则表达式匹配字符串 成功返回匹配对象 否则返回<code>None</code></td>
-</tr>
-<tr>
-<td><code>search(pattern, string, flags=0)</code></td>
-<td>搜索字符串中第一次出现正则表达式的模式 成功返回匹配对象 否则返回<code>None</code></td>
-</tr>
-<tr>
-<td><code>split(pattern, string, maxsplit=0, flags=0)</code></td>
-<td>用正则表达式指定的模式分隔符拆分字符串 返回列表</td>
-</tr>
-<tr>
-<td><code>sub(pattern, repl, string, count=0, flags=0)</code></td>
-<td>用指定的字符串替换原字符串中与正则表达式匹配的模式 可以用<code>count</code>指定替换的次数</td>
-</tr>
-<tr>
-<td><code>fullmatch(pattern, string, flags=0)</code></td>
-<td><code>match</code>函数的完全匹配（从字符串开头到结尾）版本</td>
-</tr>
-<tr>
-<td><code>findall(pattern, string, flags=0)</code></td>
-<td>查找字符串所有与正则表达式匹配的模式 返回字符串的列表</td>
-</tr>
-<tr>
-<td><code>finditer(pattern, string, flags=0)</code></td>
-<td>查找字符串所有与正则表达式匹配的模式 返回一个迭代器</td>
-</tr>
-<tr>
-<td><code>purge()</code></td>
-<td>清除隐式编译的正则表达式的缓存</td>
-</tr>
-<tr>
-<td><code>re.I</code> &#x2F; <code>re.IGNORECASE</code></td>
-<td>忽略大小写匹配标记</td>
-</tr>
-<tr>
-<td><code>re.M</code> &#x2F; <code>re.MULTILINE</code></td>
-<td>多行匹配标记</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p><strong>说明：</strong> 上面提到的<code>re</code>模块中的这些函数，实际开发中也可以用正则表达式对象（<code>Pattern</code>对象）的方法替代对这些函数的使用，如果一个正则表达式需要重复的使用，那么先通过<code>compile</code>函数编译正则表达式并创建出正则表达式对象无疑是更为明智的选择。</p>
-</blockquote>
-<p>正则表达式对象（<code>Pattern</code> 对象）的方法主要包括以下几个：</p>
-<ol>
-<li><strong><code>match</code></strong>: 尝试从字符串的开始位置匹配模式。</li>
-<li><strong><code>search</code></strong>: 在字符串中搜索模式的第一次出现。</li>
-<li><strong><code>findall</code></strong>: 返回字符串中所有非重叠匹配的列表。</li>
-<li><strong><code>finditer</code></strong>: 返回一个迭代器，产生字符串中所有非重叠匹配的<code>Match</code>对象。</li>
-<li><strong><code>split</code></strong>: 根据模式匹配分割字符串，并返回分割后的列表。</li>
-<li><strong><code>sub</code></strong>: 使用替换字符串替换模式匹配的所有部分。</li>
-<li><strong><code>subn</code></strong>: 执行和<code>sub</code>方法相同的操作，但返回一个元组，其中包含新字符串和替换总数。</li>
-</ol>
-<p>以下是每个方法的简单示例：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> re
-
-<span class="hljs-comment"># 定义一个Pattern对象</span>
-pattern = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;\d+&#x27;</span>)	<span class="hljs-comment">#匹配数字</span>
-
-<span class="hljs-comment"># match方法</span>
-m = pattern.<span class="hljs-keyword">match</span>(<span class="hljs-string">&quot;123abc&quot;</span>)
-<span class="hljs-keyword">if</span> m:
-    <span class="hljs-built_in">print</span>(m.group())  <span class="hljs-comment"># 输出: 123</span>
-
-<span class="hljs-comment"># search方法</span>
-s = pattern.search(<span class="hljs-string">&quot;abc123&quot;</span>)
-<span class="hljs-keyword">if</span> s:
-    <span class="hljs-built_in">print</span>(s.group())  <span class="hljs-comment"># 输出: 123</span>
-
-<span class="hljs-comment"># findall方法</span>
-f = pattern.findall(<span class="hljs-string">&quot;abc123def456&quot;</span>)
-<span class="hljs-built_in">print</span>(f)  <span class="hljs-comment"># 输出: [&#x27;123&#x27;, &#x27;456&#x27;]</span>
-
-<span class="hljs-comment"># finditer方法</span>
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">match</span> <span class="hljs-keyword">in</span> pattern.finditer(<span class="hljs-string">&quot;abc123def456&quot;</span>):
-    <span class="hljs-built_in">print</span>(<span class="hljs-keyword">match</span>.group())  <span class="hljs-comment"># 输出: 123  456</span>
-
-<span class="hljs-comment"># split方法</span>
-split_result = pattern.split(<span class="hljs-string">&quot;abc123def456&quot;</span>)
-<span class="hljs-built_in">print</span>(split_result)  <span class="hljs-comment"># 输出: [&#x27;abc&#x27;, &#x27;def&#x27;, &#x27;&#x27;]</span>
-
-<span class="hljs-comment"># sub方法</span>
-sub_result = pattern.sub(<span class="hljs-string">&#x27;-&#x27;</span>, <span class="hljs-string">&quot;abc123def456&quot;</span>)
-<span class="hljs-built_in">print</span>(sub_result)  <span class="hljs-comment"># 输出: abc-def-</span>
-
-<span class="hljs-comment"># subn方法</span>
-subn_result = pattern.subn(<span class="hljs-string">&#x27;-&#x27;</span>, <span class="hljs-string">&quot;abc123def456&quot;</span>)
-<span class="hljs-built_in">print</span>(subn_result)  <span class="hljs-comment"># 输出: (&#x27;abc-def-&#x27;, 2)</span></code></pre>
-
-<p>这些方法提供了强大的文本处理能力，使正则表达式在字符串操作中非常有用。</p>
-<h2 id="asyncio模块"><a href="#asyncio模块" class="headerlink" title="asyncio模块"></a>asyncio模块</h2><p>[python] <code>asyncio</code>模块是Python标准库中的一个库，用于编写并发代码。它主要用于构建异步I&#x2F;O操作，可以用来处理网络连接、文件读写等需要等待的任务。通过<code>asyncio</code>，你可以编写非阻塞代码，这样可以提高程序的效率和响应速度。以下是<code>asyncio</code>模块的一些主要功能和概念：</p>
-<h3 id="主要功能和概念"><a href="#主要功能和概念" class="headerlink" title="主要功能和概念"></a>主要功能和概念</h3><ol>
-<li><p><strong>事件循环</strong> (<code>Event Loop</code>):</p>
-<ul>
-<li><code>asyncio</code>的核心是事件循环。事件循环负责调度和执行异步任务。你可以通过<code>asyncio.get_event_loop()</code>获取当前的事件循环。</li>
-</ul>
-</li>
-<li><p><strong>协程</strong> (<code>Coroutine</code>):</p>
-<ul>
-<li>协程是Python中实现异步编程的基础。协程通过<code>async def</code>定义，可以使用<code>await</code>关键字等待异步操作完成。</li>
-</ul>
-</li>
-<li><p><strong>任务</strong> (<code>Task</code>):</p>
-<ul>
-<li>任务是对协程的进一步封装，使其可以被调度执行。你可以使用<code>asyncio.create_task()</code>或<code>loop.create_task()</code>来创建一个任务。</li>
-</ul>
-</li>
-<li><p><strong>未来对象</strong> (<code>Future</code>):</p>
-<ul>
-<li><code>Future</code>对象是一个低级别的同步原语，表示一个将来可能完成的操作。通常不直接使用，而是通过更高级的任务和协程来间接使用。</li>
-</ul>
-</li>
-<li><p><strong>异步I&#x2F;O操作</strong>:</p>
-<ul>
-<li><code>asyncio</code>提供了一组异步I&#x2F;O操作的API，如<code>asyncio.open_connection()</code>、<code>asyncio.start_server()</code>等，用于处理网络连接。</li>
-</ul>
-</li>
-<li><p><strong>同步原语</strong>:</p>
-<ul>
-<li><code>asyncio</code>还提供了一些用于协程间同步的原语，如锁、事件、条件变量和信号量。</li>
-</ul>
-</li>
-</ol>
-<h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><p>以下是一个简单的<code>asyncio</code>示例，展示如何定义和运行协程：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> asyncio
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">say_hello</span>():
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello&quot;</span>)
-    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">1</span>)
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;World&quot;</span>)
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
-    <span class="hljs-comment"># 创建多个任务</span>
-    task1 = asyncio.create_task(say_hello())
-    task2 = asyncio.create_task(say_hello())
-    
-    <span class="hljs-comment"># 等待所有任务完成</span>
-    <span class="hljs-keyword">await</span> task1
-    <span class="hljs-keyword">await</span> task2
-
-<span class="hljs-comment"># 获取事件循环并运行主协程</span>
-asyncio.run(main())</code></pre>
-
-<h3 id="详细功能介绍"><a href="#详细功能介绍" class="headerlink" title="详细功能介绍"></a>详细功能介绍</h3><ol>
-<li><p><strong>事件循环</strong>:</p>
- <pre><code class="hljs python">loop = asyncio.get_event_loop()  <span class="hljs-comment"># 获取事件循环</span>
-loop.run_until_complete(main())  <span class="hljs-comment"># 运行直到主协程完成</span>
-loop.close()  <span class="hljs-comment"># 关闭事件循环</span></code></pre>
-</li>
-<li><p><strong>协程</strong>:</p>
- <pre><code class="hljs python"><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">fetch_data</span>():
-    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 模拟I/O操作</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Data&quot;</span>
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
-    data = <span class="hljs-keyword">await</span> fetch_data()  <span class="hljs-comment"># 等待协程完成</span>
-    <span class="hljs-built_in">print</span>(data)
-
-asyncio.run(main())</code></pre>
-</li>
-<li><p><strong>任务</strong>:</p>
- <pre><code class="hljs python"><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">say_hello</span>():
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello&quot;</span>)
-    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">1</span>)
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;World&quot;</span>)
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
-    task = asyncio.create_task(say_hello())  <span class="hljs-comment"># 创建任务</span>
-    <span class="hljs-keyword">await</span> task  <span class="hljs-comment"># 等待任务完成</span>
-
-asyncio.run(main())</code></pre>
-</li>
-<li><p><strong>同步原语</strong>:</p>
- <pre><code class="hljs python"><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">worker</span>(<span class="hljs-params">lock</span>):
-    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> lock:
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Worker is working&quot;</span>)
-        <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">2</span>)
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Worker is done&quot;</span>)
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
-    lock = asyncio.Lock()  <span class="hljs-comment"># 创建锁</span>
-    <span class="hljs-keyword">await</span> asyncio.gather(worker(lock), worker(lock))  <span class="hljs-comment"># 并发运行两个工作协程</span>
-
-asyncio.run(main())</code></pre></li>
-</ol>
-<p>通过<code>asyncio</code>模块，Python程序可以更高效地处理并发任务，特别是那些涉及大量I&#x2F;O操作的任务。它是Python异步编程的一个重要工具。</p>
-<h2 id="Aiohttp库"><a href="#Aiohttp库" class="headerlink" title="Aiohttp库"></a>Aiohttp库</h2><p>Aiohttp 是一个用于 Python 编程的异步 HTTP 客户端和服务器库。它使用 Python 的 <code>asyncio</code> 库实现异步编程，从而允许处理大量并发请求而不阻塞程序执行。Aiohttp 的主要功能包括：</p>
-<ol>
-<li><p><strong>异步 HTTP 客户端</strong>：</p>
-<ul>
-<li>可以发送 HTTP 请求并异步接收响应。</li>
-<li>支持 HTTP&#x2F;1.1 和 WebSocket 协议。</li>
-<li>提供了丰富的功能，例如会话处理、cookie、代理等。</li>
-</ul>
-</li>
-<li><p><strong>异步 HTTP 服务器</strong>：</p>
-<ul>
-<li>可以创建高效的异步 Web 服务器来处理 HTTP 请求。</li>
-<li>支持路由、URL 参数、查询字符串、表单数据等。</li>
-<li>提供了中间件、请求和响应对象等功能，便于处理和扩展。</li>
-</ul>
-</li>
-<li><p><strong>WebSocket 支持</strong>：</p>
-<ul>
-<li>支持 WebSocket 协议，方便创建实时通信应用。</li>
-<li>可以在客户端和服务器之间进行全双工通信。</li>
-</ul>
-</li>
-</ol>
-
-        </div>
-        
-            
-        
-        
-    </div>
-</article>
-
-        
-        <ul class="pagination clear">
-    <span class="page-number current">1</span>
-</ul>
-    </section>
-    
-<section class="tool-area">
-
-    <div class="toolbar">
-        
-
-        
-        <div class="widget-post widget" style="order: 1 ">
-            <h2 class="widget-title"><i class="fa fa-file-text"></i> 近期文章</h2>
-            <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/HTTP%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/">HTTP协议入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/Markdown%E8%AF%AD%E6%B3%95/">Markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/Python%E6%A0%87%E5%87%86%E5%BA%93%E5%88%9D%E6%8E%A2/">Python标准库初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E4%BD%BF%E7%94%A8Python%E6%93%8D%E4%BD%9C%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/">使用Python操作各类文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">函数的应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/XML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">XML入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E5%88%86%E6%94%AF%E5%92%8C%E5%BE%AA%E7%8E%AF%E6%A1%88%E4%BE%8B/">分支和循环案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/">模块综合</a></li></ul>
-        </div>
-        
-
-        
-        <div class="widget-tags widget" style="order: 2 ">
-            <h2 class="widget-title"><i class="fa fa-tags"></i> 标签</h2>
-            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a>
-        </div>
-        
-
-        
-        <div class="widget-categories widget" style="order: 3 ">
-            <h2 class="widget-title"><i class="fa fa-folder-open"></i> 分类</h2>
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E7%BB%BC%E5%90%88/">Python综合</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xml/">Xml</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">1</span></li></ul></li></ul>
-        </div>
-        
-
-    </div>
-</section>
-    
+    </nav>
 </div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
 
-
-    
-        <footer class="footer">
-	<p class="footer-intro">
-		
-		@2024 李梓卓的技术专栏.
-	</p>
-	<p class="footer-intro">
-			Powered By <a href="https://hexo.io/zh-cn/" target="_blank">hexo</a>
-			theme <a href="https://github.com/iengu/hexo-theme-mokusei" target="_blank">mokusei</a> by <a href="https://www.iengu.com" target="blank">iengu</a>
-	</p>
-</footer>
-
-
-
-
-        <div class="extend-tools" id="extend-tools" style="display: none;">
-    <ul>
-        <li class="tools-returnTop" title="返回顶部"><i class="fa fa-angle-double-up"></i></li>
-    </ul>
-</div>
-
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
 	</div>
+</header>
+            <!-- top bar end -->
 
-	
-<script src="/js/org/jquery.min.js"></script>
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            The article archive
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            云间连下榻，<br>天上接行杯。
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        categories
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        李梓卓
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/lili095" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                南京
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                24
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:1046876792@qq.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="row">
+    <div class="col-lg-12">
+        <div class="trm-card">
+            <div style="padding: 0 20px;">
+                
+                    <ul class="trm-tag-list"><li class="trm-tag-list-item "><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">（1）</span></li><li class="trm-tag-list-item "><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">（1）</span></li><li class="trm-tag-list-item "><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">（5）</span></li><li class="trm-tag-list-item "><a class="category-list-link" href="/categories/Python%E7%BB%BC%E5%90%88/">Python综合</a><span class="category-list-count">（1）</span></li><li class="trm-tag-list-item "><a class="category-list-link" href="/categories/Xml/">Xml</a><span class="category-list-count">（1）</span></li><li class="trm-tag-list-item "><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a><span class="category-list-count">（1）</span><ul class="trm-tag-list"><li class="trm-tag-list-item "><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">（1）</span></li></ul></li></ul>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- history -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            
+                Python综合
+            
+            <span data-number="01"></span>
+        </h5>
+    </div>
+    <div class="col-lg-12">
+        <!-- timeline -->
+        <div class="trm-timeline">
+            
+            <div class="trm-timeline-item trm-scroll-animation">
+                <div class="trm-timeline-mark-light"></div>
+                <div class="trm-timeline-mark"></div>
+                <div class="trm-timeline-content more">
+                    
+                        <div class="trm-card-header">
+                            <div class="trm-left-side">
+                                <h6>
+                                    <a href="/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/" class="trm-anima-link">
+                                        模块综合
+                                    </a>
+                                </h6>
+                                <div class="trm-text-sm trm-accent-color trm-mt-15">
+                                    <ul class="trm-card-data trm-label ">
+                                        <li class="trm-accent-color">07/09</li>
+                                        <li class="trm-accent-color">00:00</li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+            </div>
+            
+        </div>
+        <!-- timeline end -->
+    </div>
+</div>
+
+<!-- history end -->
+
+
+    <div class="trm-pagination">
+        <span class="page-number current">1</span>
+    </div>
+
+
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
 
     
-<script src="/js/extend.js"></script>
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.2
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+    
+        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="https://unpkg.com/hexo-theme-async@2.2.2/source/js/main.js?v=2.2.2"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
 
 </body>
+
 </html>

@@ -1,147 +1,354 @@
 <!DOCTYPE html>
-<html lang="zh" >
+<html lang="zh-Hans">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<title>正则表达式入门 - 李梓卓的技术专栏</title>
-    <link rel="alternate" href="" type="application/atom+xml"/>
-	<link rel="shortcut icon" href=""/>
-	
-<link rel="stylesheet" href="/css/style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。 如何使用本教程别被下面那些复杂的表达式吓倒，只要跟着我一步一步来，你会发现正则表达式其实并没有想像中的那么困难。当然，如果你看完了这篇教程之后，发现自己明白了很多，却又几乎什么都记不得，那也是很正常的——我认为，没接触过正则表达式的人在看完这篇教程后，能把提到过的语法记住80%以上的可能性为零。这里只">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式入门">
+<meta property="og:url" content="https://lili095.github.io/2024/07/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="李梓卓的技术专栏">
+<meta property="og:description" content="30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。 如何使用本教程别被下面那些复杂的表达式吓倒，只要跟着我一步一步来，你会发现正则表达式其实并没有想像中的那么困难。当然，如果你看完了这篇教程之后，发现自己明白了很多，却又几乎什么都记不得，那也是很正常的——我认为，没接触过正则表达式的人在看完这篇教程后，能把提到过的语法记住80%以上的可能性为零。这里只">
+<meta property="og:locale">
+<meta property="og:image" content="https://lili095.github.io/img/404.jpg">
+<meta property="article:published_time" content="2024-07-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-07-09T13:13:15.718Z">
+<meta property="article:author" content="李梓卓">
+<meta property="article:tag" content="Other">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lili095.github.io/img/404.jpg">
 
-	
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<title >正则表达式入门</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="https://unpkg.com/hexo-theme-async@2.2.2/source/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"lili095.github.io","author":"李梓卓","root":"/","typed_text":null,"theme_version":"2.2.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-07-09 21:13:15"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.2" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
-	<div class="main-con">
 
-        <div class="nav cl">
-    <ul class="cl nav-list">
-        
-            <li>
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Async<span>Theme</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    home
+                </a>
                 
-                    <a href="/" class="">
-                        <i class="fa fa-home"></i> 
-                        <span>主页</span>
-                    </a>
-                
-            </li>
-        
-            <li>
-                
-                    <a href="/archives/" class="">
-                        <i class=" fa-"></i> 
-                        <span>归档</span>
-                    </a>
-                
-            </li>
-        
-            <li>
-                
+                <ul>
                     
-                    <a href="javascript:void(0)" class="">
+                    <li>
+                        <a  href="/archives2/" target="">
+                            archives2
+                        </a>
+                    </li>
                     
-                        <i class=" fa-"></i> 
-                        <span>关于</span>
-                        <span class="drop-flag fa fa-angle-down"></span>
-                    </a>
-                    <dl>
-                        
-                            <li>
-                                <a href="/about" class="">
-                                    <i class=" fa-"></i>
-                                    <span>关于本站</span>
-                                </a>
-                            </li>
-                        
-                    </dl>
+                </ul>
                 
             </li>
-        
-    </ul>
-    <ul class="cl nav-tool">
-        
-            <li>
-                <a href="/github">
-                    <i class="fa fa-github"></i>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    archives
                 </a>
+                
             </li>
-        
-            <li>
-                <a href="/mail">
-                    <i class="fa fa-envelope"></i>
-                </a>
-            </li>
-        
-            <li>
-                <a href="/twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-        
-        
-        <li>
-            <a href="javascript:void(0)" class="nav-search-btn">
-                <i class="fa fa-search"></i>
-            </a>
-        </li>
-        
-    </ul>
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="nav-search"><input type="search" name="q" class="nav-search-input" placeholder="search..."><input type="hidden" name="sitesearch" value="https://lili095.github.io"></form>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            正则表达式入门
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        李梓卓
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/lili095" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
 </div>
 
-        <header class="top" id="fallEle" style="background-image: url(/imgs/head.jpg)">
-    <i class="fa fa-bars" id="media-toggle" style="display: none"></i>
-    <div class="top-info cl fadeToBottom">
-        <h2 class="site-name"><a href="/">mokusei</a> <small id="type-data">This is a hexo theme</small></h2>
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                南京
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                24
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:1046876792@qq.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
     </div>
-</header>
+    <!-- action button end -->
 
-        <div class="con-wrap fadeToTop">
-    
-    <section class="article-area">
-    
-        <article class="article">
-    <div class="article-wrap">
-        
-            <h2 class="article-title cl">
-                正则表达式入门
-            </h2>
-        
-
-        <ul class="article-extra" style="margin-bottom: 20px">
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
             
-            <li class="article-time">
-                2024-07-09
-            </li>
-            
-
-            
-                
-                <li class="article-category">
-                    <ol class="category-list cl">
-                        <i class="fa fa-folder-o"></i>
-                        
-                            
-                            <li><a href="/categories/正则表达式/">正则表达式</a></li>
-                            
-                        
-                            
-                        
-                    </ol>
-                </li>
-                
-            
-
-
-        </ul>
-        <div class="article-description">
-            
-            <p>30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。</p>
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            07/09
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            00:00
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            李梓卓
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p>30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。</p>
 <h2 id="如何使用本教程"><a href="#如何使用本教程" class="headerlink" title="如何使用本教程"></a>如何使用本教程</h2><p>别被下面那些复杂的表达式吓倒，只要跟着我一步一步来，你会发现正则表达式其实并没有想像中的那么困难。当然，如果你看完了这篇教程之后，发现自己明白了很多，却又几乎什么都记不得，那也是很正常的——我认为，没接触过正则表达式的人在看完这篇教程后，能把提到过的语法记住80%以上的可能性为零。这里只是让你明白基本的原理，以后你还需要多练习，多使用，才能熟练掌握正则表达式。</p>
 <p>除了作为入门教程之外，本文还试图成为可以在日常工作中使用的正则表达式语法参考手册。就作者本人的经历来说，这个目标还是完成得不错的——你看，我自己也没能把所有的东西记下来，不是吗？</p>
 <p><a href="https://deerchao.cn/tutorials/regex/regex.htm">清除格式</a> 文本格式约定：<strong>专业术语</strong> 元字符&#x2F;语法格式 正则表达式 正则表达式中的一部分(用于分析) <em>对其进行匹配的源字符串</em> 对正则表达式或其中一部分的说明</p>
@@ -167,7 +374,7 @@
 <h2 id="测试正则表达式"><a href="#测试正则表达式" class="headerlink" title="测试正则表达式"></a>测试正则表达式</h2><p>如果你不觉得正则表达式很难读写的话，要么你是一个天才，要么，你不是地球人。正则表达式的语法很令人头疼，即使对经常使用它的人来说也是如此。由于难于读写，容易出错，所以找一种工具对正则表达式进行测试是很有必要的。</p>
 <p>不同的环境下正则表达式的一些细节是不相同的，本教程介绍的是微软 .Net Framework 4.x 下正则表达式的行为，所以，我向你推荐我编写的.Net下的工具 <a href="https://deerchao.cn/tools/regester/">Regester</a>。请参考该页面的说明来安装和运行该软件。</p>
 <p>下面是Regester运行时的截图：</p>
-<p><a href="https://deerchao.cn/tools/regester/"><img src="https://deerchao.cn/tools/regester/zh.png" alt="正则表达式测试器运行截图"></a></p>
+<p><a href="https://deerchao.cn/tools/regester/"><img src="https://deerchao.cn/tools/regester/zh.png" alt="正则表达式测试器运行截图"  data-tag='post-image' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></a></p>
 <p>你也可以试试这个在线测试工具：<a href="https://deerchao.cn/tools/wegester/">Wegester, JavaScript正则表达式测试器。</a></p>
 <h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><p>现在你已经知道几个很有用的元字符了，如\b,.,*，还有\d.正则表达式里还有更多的元字符，比如\s匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等。\w匹配字母或数字或下划线或汉字等。</p>
 <p>对中文&#x2F;汉字的特殊处理是由.Net提供的正则表达式引擎支持的，其它环境下的具体情况请查看相关文档。</p>
@@ -380,15 +587,15 @@
 <p>一个更复杂的例子：(?&lt;&#x3D;&lt;(\w+)&gt;).<em>(?&#x3D;&lt;/\1&gt;)匹配不包含属性的简单HTML标签内里的内容。(?&lt;&#x3D;&lt;(\w+)&gt;)指定了这样的<strong>前缀</strong>：被尖括号括起来的单词(比如可能是<b>)，然后是.</em>(任意的字符串),最后是一个<strong>后缀</strong>(?&#x3D;&lt;/\1&gt;)。注意后缀里的/，它用到了前面提过的字符转义；\1则是一个反向引用，引用的正是捕获的第一组，前面的(\w+)匹配的内容，这样如果前缀实际上是<b>的话，后缀就是</b>了。整个表达式匹配的是<b>和</b>之间的内容(再次提醒，不包括前缀和后缀本身)。</p>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>小括号的另一种用途是通过语法(?#comment)来包含注释。例如：2[0-4]\d(?#200-249)|25<a href="?#250-255">0-5</a>|[01]?\d\d?(?#0-199)。</p>
 <p>要包含注释的话，最好是启用“忽略模式里的空白符”选项，这样在编写表达式时能任意的添加空格，Tab，换行，而实际使用时这些都将被忽略。启用这个选项后，在#后面到这一行结束的所有文本都将被当成注释忽略掉。例如，我们可以前面的一个表达式写成这样：</p>
-<pre><code class="hljs plaintext">(?&lt;=    # 断言要匹配的文本的前缀
-&lt;(\w+)&gt; # 查找尖括号括起来的内容
-        # (即HTML/XML标签)
-)       # 前缀结束
-.*      # 匹配任意文本
-(?=     # 断言要匹配的文本的后缀
-&lt;\/\1&gt;  # 查找尖括号括起来的内容
-        # 查找尖括号括起来的内容
-)       # 后缀结束</code></pre>
+<pre><code class="hljs ruby">(<span class="hljs-string">?&lt;</span>=    <span class="hljs-comment"># 断言要匹配的文本的前缀</span>
+&lt;(\w+)&gt; <span class="hljs-comment"># 查找尖括号括起来的内容</span>
+        <span class="hljs-comment"># (即HTML/XML标签)</span>
+)       <span class="hljs-comment"># 前缀结束</span>
+.*      <span class="hljs-comment"># 匹配任意文本</span>
+(<span class="hljs-string">?=</span>     <span class="hljs-comment"># 断言要匹配的文本的后缀</span>
+&lt;\/\<span class="hljs-number">1</span>&gt;  <span class="hljs-comment"># 查找尖括号括起来的内容</span>
+        <span class="hljs-comment"># 查找尖括号括起来的内容</span>
+)       <span class="hljs-comment"># 后缀结束</span></code></pre>
 
 <h2 id="贪婪与懒惰"><a href="#贪婪与懒惰" class="headerlink" title="贪婪与懒惰"></a>贪婪与懒惰</h2><p>当正则表达式中包含能接受重复的限定符时，通常的行为是（在使整个表达式能得到匹配的前提下）匹配<strong>尽可能多</strong>的字符。以这个表达式为例：a.<em>b，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索</em>aabab*的话，它会匹配整个字符串aabab。这被称为<strong>贪婪</strong>匹配。</p>
 <p>有时，我们更需要<strong>懒惰</strong>匹配，也就是匹配<strong>尽可能少</strong>的字符。前面给出的限定符都可以被转化为懒惰匹配模式，只要在它后面加上一个问号?。这样.*?就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。现在看看懒惰版的例子吧：</p>
@@ -465,20 +672,20 @@
 <li>(?!) 零宽负向先行断言，由于没有后缀表达式，试图匹配总是失败</li>
 </ul>
 <p>我们需要做的是每碰到了左括号，就在压入一个”Open”,每碰到一个右括号，就弹出一个，到了最后就看看堆栈是否为空－－如果不为空那就证明左括号比右括号多，那匹配就应该失败。正则表达式引擎会进行回溯(放弃最前面或最后面的一些字符)，尽量使整个表达式得到匹配。</p>
-<pre><code class="hljs plaintext">&lt;                   #最外层的左括号
+<pre><code class="hljs clean">&lt;                   #最外层的左括号
   [^&lt;&gt;]*            #它后面非括号的内容
   (
       (
-        (?&#x27;Open&#x27;&lt;)  #左括号，压入&quot;Open&quot;
+        (?<span class="hljs-string">&#x27;Open&#x27;</span>&lt;)  #左括号，压入<span class="hljs-string">&quot;Open&quot;</span>
         [^&lt;&gt;]*      #左括号后面的内容
       )+
       (
-        (?&#x27;-Open&#x27;&gt;) #右括号，弹出一个&quot;Open&quot;
+        (?<span class="hljs-string">&#x27;-Open&#x27;</span>&gt;) #右括号，弹出一个<span class="hljs-string">&quot;Open&quot;</span>
         [^&lt;&gt;]*      #右括号后面的内容
       )+
   )*
   (?(Open)(?!))     #最外层的右括号前检查
-                    #若还有未弹出的&quot;Open&quot;
+                    #若还有未弹出的<span class="hljs-string">&quot;Open&quot;</span>
                     #则匹配失败
 
 &gt;                #最外层的右括号</code></pre>
@@ -602,95 +809,174 @@
 <li><a href="http://weblogs.asp.net/whaggard/archive/2005/02/20/377025.aspx">关于.Net下的平衡组的详细讨论（英文）</a></li>
 </ul>
 
-        </div>
-        
-        
-        
-        <div class="article-tags">
-            <ul class="tags-list cl">
-                
-                <li><a href="/tags/Other/"><i class="fa fa-tag"></i>Other</a></li>
-                
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/2024/07/09/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+                </span>
+                <h6 class="trm-op-title">面向编程应用</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/07/09</li>
+                <li>00:00</li>
+                <li>Python基础</li>
             </ul>
         </div>
-        
-        <div class="article-pagination cl">
-        
-            <div class="pagination-prev">
-                <a href="/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/">模块综合</a>
-            </div>
-        
-        
-            <div class="pagination-next">
-                <a href="/2024/07/09/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8/">面向编程应用</a>
-            </div>
-        
-        </div>
-
-        
     </div>
-</article>
-
-    </section>
+</div>
     
-<section class="tool-area">
-
-    <div class="toolbar">
-        
-
-        
-        <div class="widget-post widget" style="order: 1 ">
-            <h2 class="widget-title"><i class="fa fa-file-text"></i> 近期文章</h2>
-            <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/HTTP%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/">HTTP协议入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/Markdown%E8%AF%AD%E6%B3%95/">Markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/Python%E6%A0%87%E5%87%86%E5%BA%93%E5%88%9D%E6%8E%A2/">Python标准库初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E4%BD%BF%E7%94%A8Python%E6%93%8D%E4%BD%9C%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/">使用Python操作各类文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">函数的应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/XML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">XML入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E5%88%86%E6%94%AF%E5%92%8C%E5%BE%AA%E7%8E%AF%E6%A1%88%E4%BE%8B/">分支和循环案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/">模块综合</a></li></ul>
-        </div>
-        
-
-        
-        <div class="widget-tags widget" style="order: 2 ">
-            <h2 class="widget-title"><i class="fa fa-tags"></i> 标签</h2>
-            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a>
-        </div>
-        
-
-        
-        <div class="widget-categories widget" style="order: 3 ">
-            <h2 class="widget-title"><i class="fa fa-folder-open"></i> 分类</h2>
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E7%BB%BC%E5%90%88/">Python综合</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xml/">Xml</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">1</span></li></ul></li></ul>
-        </div>
-        
-
-    </div>
-</section>
+    
 </div>
 
     
-        <footer class="footer">
-	<p class="footer-intro">
-		
-		@2024 李梓卓的技术专栏.
-	</p>
-	<p class="footer-intro">
-			Powered By <a href="https://hexo.io/zh-cn/" target="_blank">hexo</a>
-			theme <a href="https://github.com/iengu/hexo-theme-mokusei" target="_blank">mokusei</a> by <a href="https://www.iengu.com" target="blank">iengu</a>
-	</p>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.2
+            </span>
+        </div>
+      
+
+     
+
+     
 </footer>
+                    <!-- footer end -->
 
-
-
-
-        <div class="extend-tools" id="extend-tools" style="display: none;">
-    <ul>
-        <li class="tools-returnTop" title="返回顶部"><i class="fa fa-angle-double-up"></i></li>
-    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+            <!-- body end -->
 
-	</div>
+            
 
-	
-<script src="/js/org/jquery.min.js"></script>
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="如何使用本教程"><a rel="nofollow" class="trm-toc-link" href="#如何使用本教程"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">如何使用本教程</span></a></li><li class="trm-toc-item trm-toc-level-2" title="正则表达式到底是什么东西？"><a rel="nofollow" class="trm-toc-link" href="#正则表达式到底是什么东西？"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">正则表达式到底是什么东西？</span></a></li><li class="trm-toc-item trm-toc-level-2" title="入门"><a rel="nofollow" class="trm-toc-link" href="#入门"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">入门</span></a></li><li class="trm-toc-item trm-toc-level-2" title="测试正则表达式"><a rel="nofollow" class="trm-toc-link" href="#测试正则表达式"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">测试正则表达式</span></a></li><li class="trm-toc-item trm-toc-level-2" title="元字符"><a rel="nofollow" class="trm-toc-link" href="#元字符"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">元字符</span></a></li><li class="trm-toc-item trm-toc-level-2" title="字符转义"><a rel="nofollow" class="trm-toc-link" href="#字符转义"><span class="trm-toc-number">6.</span> <span class="trm-toc-text">字符转义</span></a></li><li class="trm-toc-item trm-toc-level-2" title="重复"><a rel="nofollow" class="trm-toc-link" href="#重复"><span class="trm-toc-number">7.</span> <span class="trm-toc-text">重复</span></a></li><li class="trm-toc-item trm-toc-level-2" title="字符类"><a rel="nofollow" class="trm-toc-link" href="#字符类"><span class="trm-toc-number">8.</span> <span class="trm-toc-text">字符类</span></a></li><li class="trm-toc-item trm-toc-level-2" title="分枝条件"><a rel="nofollow" class="trm-toc-link" href="#分枝条件"><span class="trm-toc-number">9.</span> <span class="trm-toc-text">分枝条件</span></a></li><li class="trm-toc-item trm-toc-level-2" title="分组"><a rel="nofollow" class="trm-toc-link" href="#分组"><span class="trm-toc-number">10.</span> <span class="trm-toc-text">分组</span></a></li><li class="trm-toc-item trm-toc-level-2" title="反义"><a rel="nofollow" class="trm-toc-link" href="#反义"><span class="trm-toc-number">11.</span> <span class="trm-toc-text">反义</span></a></li><li class="trm-toc-item trm-toc-level-2" title="后向引用"><a rel="nofollow" class="trm-toc-link" href="#后向引用"><span class="trm-toc-number">12.</span> <span class="trm-toc-text">后向引用</span></a></li><li class="trm-toc-item trm-toc-level-2" title="零宽断言"><a rel="nofollow" class="trm-toc-link" href="#零宽断言"><span class="trm-toc-number">13.</span> <span class="trm-toc-text">零宽断言</span></a></li><li class="trm-toc-item trm-toc-level-2" title="负向零宽断言"><a rel="nofollow" class="trm-toc-link" href="#负向零宽断言"><span class="trm-toc-number">14.</span> <span class="trm-toc-text">负向零宽断言</span></a></li><li class="trm-toc-item trm-toc-level-2" title="注释"><a rel="nofollow" class="trm-toc-link" href="#注释"><span class="trm-toc-number">15.</span> <span class="trm-toc-text">注释</span></a></li><li class="trm-toc-item trm-toc-level-2" title="贪婪与懒惰"><a rel="nofollow" class="trm-toc-link" href="#贪婪与懒惰"><span class="trm-toc-number">16.</span> <span class="trm-toc-text">贪婪与懒惰</span></a></li><li class="trm-toc-item trm-toc-level-2" title="处理选项"><a rel="nofollow" class="trm-toc-link" href="#处理选项"><span class="trm-toc-number">17.</span> <span class="trm-toc-text">处理选项</span></a></li><li class="trm-toc-item trm-toc-level-2" title="平衡组&#x2F;递归匹配"><a rel="nofollow" class="trm-toc-link" href="#平衡组-递归匹配"><span class="trm-toc-number">18.</span> <span class="trm-toc-text">平衡组&#x2F;递归匹配</span></a></li><li class="trm-toc-item trm-toc-level-2" title="还有些什么东西没提到"><a rel="nofollow" class="trm-toc-link" href="#还有些什么东西没提到"><span class="trm-toc-number">19.</span> <span class="trm-toc-text">还有些什么东西没提到</span></a></li><li class="trm-toc-item trm-toc-level-2" title="网上的资源及本文参考文献"><a rel="nofollow" class="trm-toc-link" href="#网上的资源及本文参考文献"><span class="trm-toc-number">20.</span> <span class="trm-toc-text">网上的资源及本文参考文献</span></a></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
 
     
-<script src="/js/extend.js"></script>
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="https://unpkg.com/hexo-theme-async@2.2.2/source/js/main.js?v=2.2.2"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
 
 </body>
+
 </html>

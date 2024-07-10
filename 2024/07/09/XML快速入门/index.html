@@ -1,145 +1,354 @@
 <!DOCTYPE html>
-<html lang="zh" >
+<html lang="zh-Hans">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<title>XML入门 - 李梓卓的技术专栏</title>
-    <link rel="alternate" href="" type="application/atom+xml"/>
-	<link rel="shortcut icon" href=""/>
-	
-<link rel="stylesheet" href="/css/style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="什么是 XML？ XML 指可扩展标记语言（EXtensible Markup Language）。 XML 是一种很像HTML的标记语言。 XML 的设计宗旨是传输数据，而不是显示数据。 XML 标签没有被预定义。您需要自行定义标签。 XML 被设计为具有自我描述性。 XML 是 W3C 的推荐标准。   XML 和 HTML 之间的差异XML 不是 HTML 的替代。 XML 和 HTML 为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XML入门">
+<meta property="og:url" content="https://lili095.github.io/2024/07/09/XML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="李梓卓的技术专栏">
+<meta property="og:description" content="什么是 XML？ XML 指可扩展标记语言（EXtensible Markup Language）。 XML 是一种很像HTML的标记语言。 XML 的设计宗旨是传输数据，而不是显示数据。 XML 标签没有被预定义。您需要自行定义标签。 XML 被设计为具有自我描述性。 XML 是 W3C 的推荐标准。   XML 和 HTML 之间的差异XML 不是 HTML 的替代。 XML 和 HTML 为">
+<meta property="og:locale">
+<meta property="og:image" content="https://lili095.github.io/img/404.jpg">
+<meta property="article:published_time" content="2024-07-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-07-09T13:14:56.090Z">
+<meta property="article:author" content="李梓卓">
+<meta property="article:tag" content="XML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lili095.github.io/img/404.jpg">
 
-	
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<title >XML入门</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="https://unpkg.com/hexo-theme-async@2.2.2/source/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"lili095.github.io","author":"李梓卓","root":"/","typed_text":null,"theme_version":"2.2.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-07-09 21:14:56"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.2" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
-	<div class="main-con">
 
-        <div class="nav cl">
-    <ul class="cl nav-list">
-        
-            <li>
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Async<span>Theme</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    home
+                </a>
                 
-                    <a href="/" class="">
-                        <i class="fa fa-home"></i> 
-                        <span>主页</span>
-                    </a>
-                
-            </li>
-        
-            <li>
-                
-                    <a href="/archives/" class="">
-                        <i class=" fa-"></i> 
-                        <span>归档</span>
-                    </a>
-                
-            </li>
-        
-            <li>
-                
+                <ul>
                     
-                    <a href="javascript:void(0)" class="">
+                    <li>
+                        <a  href="/archives2/" target="">
+                            archives2
+                        </a>
+                    </li>
                     
-                        <i class=" fa-"></i> 
-                        <span>关于</span>
-                        <span class="drop-flag fa fa-angle-down"></span>
-                    </a>
-                    <dl>
-                        
-                            <li>
-                                <a href="/about" class="">
-                                    <i class=" fa-"></i>
-                                    <span>关于本站</span>
-                                </a>
-                            </li>
-                        
-                    </dl>
+                </ul>
                 
             </li>
-        
-    </ul>
-    <ul class="cl nav-tool">
-        
-            <li>
-                <a href="/github">
-                    <i class="fa fa-github"></i>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    archives
                 </a>
+                
             </li>
-        
-            <li>
-                <a href="/mail">
-                    <i class="fa fa-envelope"></i>
-                </a>
-            </li>
-        
-            <li>
-                <a href="/twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-        
-        
-        <li>
-            <a href="javascript:void(0)" class="nav-search-btn">
-                <i class="fa fa-search"></i>
-            </a>
-        </li>
-        
-    </ul>
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="nav-search"><input type="search" name="q" class="nav-search-input" placeholder="search..."><input type="hidden" name="sitesearch" value="https://lili095.github.io"></form>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            XML入门
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        李梓卓
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/lili095" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
 </div>
 
-        <header class="top" id="fallEle" style="background-image: url(/imgs/head.jpg)">
-    <i class="fa fa-bars" id="media-toggle" style="display: none"></i>
-    <div class="top-info cl fadeToBottom">
-        <h2 class="site-name"><a href="/">mokusei</a> <small id="type-data">This is a hexo theme</small></h2>
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                南京
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                24
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:1046876792@qq.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
     </div>
-</header>
+    <!-- action button end -->
 
-        <div class="con-wrap fadeToTop">
-    
-    <section class="article-area">
-    
-        <article class="article">
-    <div class="article-wrap">
-        
-            <h2 class="article-title cl">
-                XML入门
-            </h2>
-        
-
-        <ul class="article-extra" style="margin-bottom: 20px">
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
             
-            <li class="article-time">
-                2024-07-09
-            </li>
-            
-
-            
-                
-                <li class="article-category">
-                    <ol class="category-list cl">
-                        <i class="fa fa-folder-o"></i>
-                        
-                            
-                            <li><a href="/categories/Xml/">Xml</a></li>
-                            
-                        
-                    </ol>
-                </li>
-                
-            
-
-
-        </ul>
-        <div class="article-description">
-            
-            <h2 id="什么是-XML？"><a href="#什么是-XML？" class="headerlink" title="什么是 XML？"></a>什么是 XML？</h2><ul>
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            07/09
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            00:00
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            李梓卓
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h2 id="什么是-XML？"><a href="#什么是-XML？" class="headerlink" title="什么是 XML？"></a>什么是 XML？</h2><ul>
 <li>XML 指可扩展标记语言（EXtensible Markup Language）。</li>
 <li>XML 是一种很像HTML的标记语言。</li>
 <li>XML 的设计宗旨是传输数据，而不是显示数据。</li>
@@ -210,7 +419,7 @@
 
 <p>父、子以及同胞等术语用于描述<strong>元素之间的关系</strong>。父元素拥有子元素。相同层级上的子元素成为<strong>同胞</strong>（兄弟或姐妹）。</p>
 <p>所有的元素都可以有文本内容和属性（类似 HTML 中）。</p>
-<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><p><img src="C:\Users\lili\Desktop\Python_exercise\nodetree.gif" alt="nodetree"></p>
+<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><p><img src="C:\Users\lili\Desktop\Python_exercise\nodetree.gif" alt="nodetree"  data-tag='post-image' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <p>上图表示下面的 XML 中的一本书：</p>
 <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bookstore</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">book</span> <span class="hljs-attr">category</span>=<span class="hljs-string">&quot;COOKING&quot;</span>&gt;</span>
@@ -398,7 +607,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">bookstore</span>&gt;</span></code></pre>
 
 <p>title 内容读取显示如下：</p>
-<pre><code class="hljs plaintext">xx       xxx</code></pre>
+<pre><code class="hljs ebnf"><span class="hljs-attribute">xx       xxx</span></code></pre>
 
 <hr>
 <h2 id="XML-以-LF-存储换行"><a href="#XML-以-LF-存储换行" class="headerlink" title="XML 以 LF 存储换行"></a>XML 以 LF 存储换行</h2><p>在 Windows 应用程序中，换行通常以一对字符来存储：回车符（CR）和换行符（LF）。</p>
@@ -694,95 +903,1252 @@ Don&#x27;t forget me this weekend!</code></pre>
 <p>在使用 XSLT 来转换 XML 时，不同的浏览器可能会产生不同结果。为了减少这种问题，可以在服务器上进行 XSLT 转换。</p>
 <p><a href="https://www.runoob.com/try/xml/simple.php">查看结果</a>。</p>
 
-        </div>
-        
-        
-        
-        <div class="article-tags">
-            <ul class="tags-list cl">
-                
-                <li><a href="/tags/XML/"><i class="fa fa-tag"></i>XML</a></li>
-                
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/2024/07/09/%E5%88%86%E6%94%AF%E5%92%8C%E5%BE%AA%E7%8E%AF%E6%A1%88%E4%BE%8B/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+                </span>
+                <h6 class="trm-op-title">分支和循环案例</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/07/09</li>
+                <li>00:00</li>
+                <li>Python基础</li>
             </ul>
         </div>
-        
-        <div class="article-pagination cl">
-        
-            <div class="pagination-prev">
-                <a href="/2024/07/09/%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">函数的应用</a>
-            </div>
-        
-        
-            <div class="pagination-next">
-                <a href="/2024/07/09/%E5%88%86%E6%94%AF%E5%92%8C%E5%BE%AA%E7%8E%AF%E6%A1%88%E4%BE%8B/">分支和循环案例</a>
-            </div>
-        
-        </div>
-
-        
     </div>
-</article>
-
-    </section>
+</div>
     
-<section class="tool-area">
-
-    <div class="toolbar">
-        
-
-        
-        <div class="widget-post widget" style="order: 1 ">
-            <h2 class="widget-title"><i class="fa fa-file-text"></i> 近期文章</h2>
-            <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/HTTP%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/">HTTP协议入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/Markdown%E8%AF%AD%E6%B3%95/">Markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/Python%E6%A0%87%E5%87%86%E5%BA%93%E5%88%9D%E6%8E%A2/">Python标准库初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E4%BD%BF%E7%94%A8Python%E6%93%8D%E4%BD%9C%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/">使用Python操作各类文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">函数的应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/XML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">XML入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E5%88%86%E6%94%AF%E5%92%8C%E5%BE%AA%E7%8E%AF%E6%A1%88%E4%BE%8B/">分支和循环案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/">模块综合</a></li></ul>
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+                </span>
+                <h6 class="trm-op-title">模块综合</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/07/09</li>
+                <li>00:00</li>
+                <li>Python综合</li>
+            </ul>
         </div>
-        
-
-        
-        <div class="widget-tags widget" style="order: 2 ">
-            <h2 class="widget-title"><i class="fa fa-tags"></i> 标签</h2>
-            <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a>
-        </div>
-        
-
-        
-        <div class="widget-categories widget" style="order: 3 ">
-            <h2 class="widget-title"><i class="fa fa-folder-open"></i> 分类</h2>
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E7%BB%BC%E5%90%88/">Python综合</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xml/">Xml</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">1</span></li></ul></li></ul>
-        </div>
-        
-
     </div>
-</section>
+</div>
+    
 </div>
 
     
-        <footer class="footer">
-	<p class="footer-intro">
-		
-		@2024 李梓卓的技术专栏.
-	</p>
-	<p class="footer-intro">
-			Powered By <a href="https://hexo.io/zh-cn/" target="_blank">hexo</a>
-			theme <a href="https://github.com/iengu/hexo-theme-mokusei" target="_blank">mokusei</a> by <a href="https://www.iengu.com" target="blank">iengu</a>
-	</p>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.2
+            </span>
+        </div>
+      
+
+     
+
+     
 </footer>
+                    <!-- footer end -->
 
-
-
-
-        <div class="extend-tools" id="extend-tools" style="display: none;">
-    <ul>
-        <li class="tools-returnTop" title="返回顶部"><i class="fa fa-angle-double-up"></i></li>
-    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+            <!-- body end -->
 
-	</div>
+            
 
-	
-<script src="/js/org/jquery.min.js"></script>
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="什么是 XML？"><a rel="nofollow" class="trm-toc-link" href="#什么是-XML？"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">什么是 XML？</span></a></li><li class="trm-toc-item trm-toc-level-2" title="XML 和 HTML 之间的差异"><a rel="nofollow" class="trm-toc-link" href="#XML-和-HTML-之间的差异"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">XML 和 HTML 之间的差异</span></a></li><li class="trm-toc-item trm-toc-level-2" title="XML 不会做任何事情"><a rel="nofollow" class="trm-toc-link" href="#XML-不会做任何事情"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">XML 不会做任何事情</span></a></li><li class="trm-toc-item trm-toc-level-2" title="通过 XML 您可以发明自己的标签"><a rel="nofollow" class="trm-toc-link" href="#通过-XML-您可以发明自己的标签"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">通过 XML 您可以发明自己的标签</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title=" 等等）。
+XML 允许创作者定义自己的标签和自己的文档结构。
+
+XML 不是对 HTML 的替代XML 是对 HTML 的补充。
+XML 不会替代 HTML，理解这一点很重要。在大多数 Web 应用程序中，XML 用于传输数据，而 HTML 用于格式化并显示数据。
+对 XML 最好的描述是：
+XML 是独立于软件和硬件的信息传输工具。
+XML 树结构
+XML 文档形成了一种树结构，它从”根部”开始，然后扩展到”枝叶”。
+
+一个 XML 文档实例XML 文档使用简单的具有自我描述性的语法：
+&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;&#x2F;to&gt;
+&lt;from&gt;Jani&lt;&#x2F;from&gt;
+&lt;heading&gt;Reminder&lt;&#x2F;heading&gt;
+&lt;body&gt;Don&#39;t forget me this weekend!&lt;&#x2F;body&gt;
+&lt;&#x2F;note&gt;
+
+第一行是 XML 声明。它定义 XML 的版本（1.0）和所使用的编码（UTF-8 : 万国码, 可显示各种语言）。
+下一行描述文档的根元素（像在说：”本文档是一个便签”）：
+&lt;note&gt;
+
+接下来 4 行描述根的 4 个子元素（to, from, heading 以及 body）：
+&lt;to&gt;Tove&lt;&#x2F;to&gt;
+&lt;from&gt;Jani&lt;&#x2F;from&gt;
+&lt;heading&gt;Reminder&lt;&#x2F;heading&gt;
+&lt;body&gt;Don&#39;t forget me this weekend!&lt;&#x2F;body&gt;
+
+最后一行定义根元素的结尾：
+&lt;&#x2F;note&gt;
+
+您可以假设，从这个实例中，XML 文档包含了一张 Jani 写给 Tove 的便签。
+XML 具有出色的自我描述性，您同意吗？
+
+XML 文档形成一种树结构XML 文档必须包含根元素。该元素是所有其他元素的父元素。
+XML 文档中的元素形成了一棵文档树。这棵树从根部开始，并扩展到树的最底端。
+所有的元素都可以有子元素：
+&lt;root&gt;
+&lt;child&gt;
+&lt;subchild&gt;.....&lt;&#x2F;subchild&gt;
+&lt;&#x2F;child&gt;
+&lt;&#x2F;root&gt;
+
+父、子以及同胞等术语用于描述元素之间的关系。父元素拥有子元素。相同层级上的子元素成为同胞（兄弟或姐妹）。
+所有的元素都可以有文本内容和属性（类似 HTML 中）。
+实例：
+上图表示下面的 XML 中的一本书：
+&lt;bookstore&gt;
+    &lt;book category&#x3D;&quot;COOKING&quot;&gt;
+        &lt;title lang&#x3D;&quot;en&quot;&gt;Everyday Italian&lt;&#x2F;title&gt;
+        &lt;author&gt;Giada De Laurentiis&lt;&#x2F;author&gt;
+        &lt;year&gt;2005&lt;&#x2F;year&gt;
+        &lt;price&gt;30.00&lt;&#x2F;price&gt;
+    &lt;&#x2F;book&gt;
+    &lt;book category&#x3D;&quot;CHILDREN&quot;&gt;
+        &lt;title lang&#x3D;&quot;en&quot;&gt;Harry Potter&lt;&#x2F;title&gt;
+        &lt;author&gt;J K. Rowling&lt;&#x2F;author&gt;
+        &lt;year&gt;2005&lt;&#x2F;year&gt;
+        &lt;price&gt;29.99&lt;&#x2F;price&gt;
+    &lt;&#x2F;book&gt;
+    &lt;book category&#x3D;&quot;WEB&quot;&gt;
+        &lt;title lang&#x3D;&quot;en&quot;&gt;Learning XML&lt;&#x2F;title&gt;
+        &lt;author&gt;Erik T. Ray&lt;&#x2F;author&gt;
+        &lt;year&gt;2003&lt;&#x2F;year&gt;
+        &lt;price&gt;39.95&lt;&#x2F;price&gt;
+    &lt;&#x2F;book&gt;
+&lt;&#x2F;bookstore&gt;
+
+实例中的根元素是 ，这是整个 XML 文档的根元素，包含所有书籍的集合。所有其他元素都是该根元素的子元素。文档中的所有  元素都被包含在  中。
+每本书由一个 &lt;book&gt; 元素表示，包含书的详细信息。每个 &lt;book&gt; 元素具有一个 category 属性，表示书籍的类别。例如，第一个 &lt;book&gt; 元素的 category 属性值为 &quot;COOKING&quot;。
+ 元素有 4 个子元素：、&lt;author&gt;、&lt;year&gt;、&lt;price&gt;。每个 &lt;code&gt;&lt;book&gt;&lt;&#x2F;code&gt; 元素包含以下子元素来描述书籍的具体信息：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&lt;title&gt;&lt;&#x2F;code&gt;：表示书名，具有一个 &lt;code&gt;lang&lt;&#x2F;code&gt; 属性，表示书名的语言。例如，第一个书的书名是 “Everyday Italian”，语言为英语（&lt;code&gt;lang&#x3D;&quot;en&quot;&lt;&#x2F;code&gt;）。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&lt;author&gt;&lt;&#x2F;code&gt;：表示书的作者。例如，第一个书的作者是 Giada De Laurentiis。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&lt;year&gt;&lt;&#x2F;code&gt;：表示书的出版年份。例如，第一个书的出版年份是 2005 年。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&lt;price&gt;&lt;&#x2F;code&gt;：表示书的价格。例如，第一个书的价格是 30.00 美元。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id&#x3D;&quot;XML-语法规则&quot;&gt;&lt;a href&#x3D;&quot;#XML-语法规则&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 语法规则&quot;&gt;&lt;&#x2F;a&gt;XML 语法规则&lt;&#x2F;h1&gt;&lt;p&gt;XML 的语法规则很简单，且很有逻辑。&lt;&#x2F;p&gt;
+&lt;p&gt;这些规则很容易学习，也很容易使用。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-声明&quot;&gt;&lt;a href&#x3D;&quot;#XML-声明&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 声明&quot;&gt;&lt;&#x2F;a&gt;XML 声明&lt;&#x2F;h2&gt;&lt;p&gt;XML 声明文件的可选部分，如果存在需要放在文档的第一行，如下所示：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;utf-8&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;以上实例包含 XML 版本（version&#x3D;”1.0”），甚至包含字符编码（encoding&#x3D;”utf-8”）。&lt;&#x2F;p&gt;
+&lt;p&gt;UTF-8 也是 HTML5, CSS, JavaScript, PHP, 和 SQL 的默认编码。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-文档必须有根元素&quot;&gt;&lt;a href&#x3D;&quot;#XML-文档必须有根元素&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 文档必须有根元素&quot;&gt;&lt;&#x2F;a&gt;XML 文档必须有根元素&lt;&#x2F;h2&gt;&lt;p&gt;XML 必须包含根元素，它是所有其他元素的父元素，比如以下实例中 root 就是根元素：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;root&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;child&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;subchild&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;.....&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;subchild&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;child&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;root&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;以下实例中 note 是根元素：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;UTF-8&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;XML文档由元素构成，每个元素包括开始标签、结束标签和元素内容。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;属性&quot;&gt;&lt;a href&#x3D;&quot;#属性&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;属性&quot;&gt;&lt;&#x2F;a&gt;属性&lt;&#x2F;h2&gt;&lt;p&gt;元素可以包含属性，属性提供有关元素的附加信息。&lt;&#x2F;p&gt;
+&lt;p&gt;属性位于开始标签中，例如：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;age&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;30&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;gender&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;male&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;John Doe&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一个元素可以有多个属性，它的基本格式为：&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;元素名&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;属性名1&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;属性值1&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;属性名2&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;属性值2&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;特定的属性名称在同一个元素标记中只能出现一次&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;p&gt;属性值不能包括 &lt;,&gt;,&amp;，如果一定要包含，也要使用实体&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-单标签&quot;&gt;&lt;a href&#x3D;&quot;#XML-单标签&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 单标签&quot;&gt;&lt;&#x2F;a&gt;XML 单标签&lt;&#x2F;h2&gt;&lt;p&gt;所有的 XML 元素一般都有一个关闭标签，但也允许单标签的使用的。&lt;&#x2F;p&gt;
+&lt;p&gt;单标签是指在一个标签中同时包含了开始和结束标签，形式类似于HTML中的空元素标签。&lt;&#x2F;p&gt;
+&lt;p&gt;在XML中，你可以使用以下两种方式表示单标签：&lt;&#x2F;p&gt;
+&lt;p&gt;使用空元素标签：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;exampleTag&lt;&#x2F;span&gt; &#x2F;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;使用开始和结束标签，但是不包含任何内容：&lt;&#x2F;p&gt;
+&lt;p&gt;这两种表示方式是等效的，你可以根据个人或项目的约定选择使用其中之一。&lt;&#x2F;p&gt;
+&lt;p&gt;在许多XML解析器中，它们都会将这两种形式解释为相同的结构。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-标签对大小写敏感&quot;&gt;&lt;a href&#x3D;&quot;#XML-标签对大小写敏感&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 标签对大小写敏感&quot;&gt;&lt;&#x2F;a&gt;XML 标签对大小写敏感&lt;&#x2F;h2&gt;&lt;p&gt;XML 标签对大小写敏感。标签 &lt;Letter&gt; 与标签 &lt;letter&gt; 是不同的。&lt;&#x2F;p&gt;
+&lt;p&gt;必须使用相同的大小写来编写打开标签和关闭标签：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;Message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;这是错误的&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;这是正确的&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;&lt;strong&gt;注释：&lt;&#x2F;strong&gt;打开标签和关闭标签通常被称为开始标签和结束标签。不论您喜欢哪种术语，它们的概念都是相同的。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-必须正确嵌套&quot;&gt;&lt;a href&#x3D;&quot;#XML-必须正确嵌套&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 必须正确嵌套&quot;&gt;&lt;&#x2F;a&gt;XML 必须正确嵌套&lt;&#x2F;h2&gt;&lt;p&gt;在 HTML 中，常会看到没有正确嵌套的元素：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;b&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;i&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;This text is bold and italic&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;b&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;i&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在 XML 中，所有元素都&lt;strong&gt;必须彼此正确&lt;&#x2F;strong&gt;地嵌套：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;b&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;i&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;This text is bold and italic&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;i&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;b&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;在上面的实例中，正确嵌套的意思是：由于 &lt;i&gt; 元素是在 &lt;b&gt; 元素内打开的，那么它必须在 &lt;b&gt; 元素内关闭。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-属性值必须加引号-关键&quot;&gt;&lt;a href&#x3D;&quot;#XML-属性值必须加引号-关键&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 属性值必须加引号(关键)&quot;&gt;&lt;&#x2F;a&gt;&lt;strong&gt;XML 属性值必须加引号&lt;&#x2F;strong&gt;(关键)&lt;&#x2F;h2&gt;&lt;p&gt;与 HTML 类似，XML 元素也可拥有属性（名称&#x2F;值的对）。&lt;&#x2F;p&gt;
+&lt;p&gt;在 XML 中，XML 的属性值必须加引号。&lt;&#x2F;p&gt;
+&lt;p&gt;请研究下面的两个 XML 文档。 第一个是错误的，第二个是正确的：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;date&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;12&#x2F;11&#x2F;2007&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;date&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;12&#x2F;11&#x2F;2007&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在第一个文档中的错误是，note 元素中的 date 属性没有加引号。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;实体引用&quot;&gt;&lt;a href&#x3D;&quot;#实体引用&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;实体引用&quot;&gt;&lt;&#x2F;a&gt;实体引用&lt;&#x2F;h2&gt;&lt;p&gt;在 XML 中，一些字符拥有特殊的意义。&lt;&#x2F;p&gt;
+&lt;p&gt;如果您把字符 “&lt;” 放在 XML 元素中，会发生错误，这是因为解析器会把它当作新元素的开始。&lt;&#x2F;p&gt;
+&lt;p&gt;这样会产生 XML 错误：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;if salary &lt; 1000 then&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;为了避免这个错误，请用&lt;strong&gt;实体引用&lt;&#x2F;strong&gt;来代替 “&lt;” 字符：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;if salary &lt;span class&#x3D;&quot;hljs-symbol&quot;&gt;&lt;&lt;&#x2F;span&gt; 1000 then&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在 XML 中，有 5 个预定义的实体引用：&lt;&#x2F;p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&lt;&lt;&#x2F;code&gt;&lt;&#x2F;th&gt;
+&lt;th align&#x3D;&quot;center&quot;&gt;&lt;&lt;&#x2F;th&gt;
+&lt;th align&#x3D;&quot;center&quot;&gt;less than&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;greater than&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&amp;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&amp;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;ampersand&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&apos;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;‘&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;apostrophe&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&quot;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;“&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;quotation mark&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 XML 中，只有字符 “&lt;” 和 “&amp;” 确实是非法的。大于号是合法的，但是用实体引用来代替它是一个好习惯。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-中的注释&quot;&gt;&lt;a href&#x3D;&quot;#XML-中的注释&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 中的注释&quot;&gt;&lt;&#x2F;a&gt;XML 中的注释&lt;&#x2F;h2&gt;&lt;p&gt;在 XML 中编写注释的语法与 HTML 的语法很相似。&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-comment&quot;&gt;&lt;!-- This is a comment &#x2F;这是一个注释--&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;在-XML-中，空格会被保留&quot;&gt;&lt;a href&#x3D;&quot;#在-XML-中，空格会被保留&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;在 XML 中，空格会被保留&quot;&gt;&lt;&#x2F;a&gt;在 XML 中，空格会被保留&lt;&#x2F;h2&gt;&lt;p&gt;HTML 会把多个连续的空格字符裁减（合并）为一个：&lt;&#x2F;p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;HTML:&lt;&#x2F;th&gt;
+&lt;th&gt;&lt;code&gt;Hello           Tove&lt;&#x2F;code&gt;&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;输出结果:&lt;&#x2F;td&gt;
+&lt;td&gt;Hello Tove&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;在 XML 中，文档中的空格不会被删减：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;bookstore&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;xx       xxx&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;John Doe&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;29.99&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;bookstore&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;title 内容读取显示如下：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs ebnf&quot;&gt;&lt;span class&#x3D;&quot;hljs-attribute&quot;&gt;xx       xxx&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-以-LF-存储换行&quot;&gt;&lt;a href&#x3D;&quot;#XML-以-LF-存储换行&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 以 LF 存储换行&quot;&gt;&lt;&#x2F;a&gt;XML 以 LF 存储换行&lt;&#x2F;h2&gt;&lt;p&gt;在 Windows 应用程序中，换行通常以一对字符来存储：回车符（CR）和换行符（LF）。&lt;&#x2F;p&gt;
+&lt;p&gt;在 Unix 和 Mac OSX 中，使用 LF 来存储新行。&lt;&#x2F;p&gt;
+&lt;p&gt;在旧的 Mac 系统中，使用 CR 来存储新行。&lt;&#x2F;p&gt;
+&lt;p&gt;XML 以 LF 存储换行。&lt;&#x2F;p&gt;
+&lt;h1 id&#x3D;&quot;XML-元素&quot;&gt;&lt;a href&#x3D;&quot;#XML-元素&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 元素&quot;&gt;&lt;&#x2F;a&gt;XML 元素&lt;&#x2F;h1&gt;&lt;h2 id&#x3D;&quot;什么是-XML-元素？&quot;&gt;&lt;a href&#x3D;&quot;#什么是-XML-元素？&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;什么是 XML 元素？&quot;&gt;&lt;&#x2F;a&gt;什么是 XML 元素？&lt;&#x2F;h2&gt;&lt;p&gt;XML 元素指的是从（且包括）开始标签直到（且包括）结束标签的部分。&lt;&#x2F;p&gt;
+&lt;p&gt;一个元素可以包含：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;其他元素&lt;&#x2F;li&gt;
+&lt;li&gt;文本&lt;&#x2F;li&gt;
+&lt;li&gt;属性&lt;&#x2F;li&gt;
+&lt;li&gt;或混合以上所有…&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;bookstore&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;category&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;CHILDREN&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Harry Potter&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;J K. Rowling&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;2005&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;29.99&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;category&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;WEB&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Learning XML&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Erik T. Ray&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;2003&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;39.95&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;bookstore&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在上面的实例中，&lt;bookstore&gt; 和 &lt;book&gt; 都有 &lt;strong&gt;元素内容&lt;&#x2F;strong&gt;，因为他们包含其他元素。&lt;book&gt; 元素也有&lt;strong&gt;属性&lt;&#x2F;strong&gt;（category&#x3D;”CHILDREN”）。&lt;title&gt;、&lt;author&gt;、&lt;year&gt; 和 &lt;price&gt; 有&lt;strong&gt;文本内容&lt;&#x2F;strong&gt;，因为他们包含文本。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-命名规则&quot;&gt;&lt;a href&#x3D;&quot;#XML-命名规则&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 命名规则&quot;&gt;&lt;&#x2F;a&gt;XML 命名规则&lt;&#x2F;h2&gt;&lt;p&gt;XML 元素必须遵循以下命名规则：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;名称可以包含字母、数字以及其他的字符&lt;&#x2F;li&gt;
+&lt;li&gt;名称不能以数字或者标点符号开始&lt;&#x2F;li&gt;
+&lt;li&gt;名称不能以字母 xml（或者 XML、Xml 等等）开始&lt;&#x2F;li&gt;
+&lt;li&gt;名称&lt;strong&gt;不能包含空格&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;可使用任何名称，没有保留的字词。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;最佳命名习惯&quot;&gt;&lt;a href&#x3D;&quot;#最佳命名习惯&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;最佳命名习惯&quot;&gt;&lt;&#x2F;a&gt;最佳命名习惯&lt;&#x2F;h2&gt;&lt;p&gt;使名称具有描述性。使用下划线的名称也很不错：&lt;first_name&gt;、&lt;last_name&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;名称应简短和简单，比如：&lt;book_title&gt;，而不是：&lt;the_title_of_the_book&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;避免 “-“ 字符。&lt;&#x2F;strong&gt;如果您按照这样的方式进行命名：”first-name”，一些软件会认为您想要从 first 里边减去 name。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;避免 “.” 字符。&lt;&#x2F;strong&gt;如果您按照这样的方式进行命名：”first.name”，一些软件会认为 “name” 是对象 “first” 的属性。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;避免 “:” 字符。&lt;&#x2F;strong&gt;冒号会被转换为命名空间来使用（稍后介绍）。&lt;&#x2F;p&gt;
+&lt;p&gt;XML 文档经常有一个对应的数据库，其中的字段会对应 XML 文档中的元素。有一个实用的经验，即使用数据库的命名规则来命名 XML 文档中的元素。&lt;&#x2F;p&gt;
+&lt;p&gt;在 XML 中，éòá 等非英语字母是完全合法的，不过需要留意，您的软件供应商不支持这些字符时可能出现的问题。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-元素是可扩展的&quot;&gt;&lt;a href&#x3D;&quot;#XML-元素是可扩展的&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 元素是可扩展的&quot;&gt;&lt;&#x2F;a&gt;XML 元素是可扩展的&lt;&#x2F;h2&gt;&lt;p&gt;XML 元素是可扩展，以携带更多的信息。&lt;&#x2F;p&gt;
+&lt;p&gt;请看下面的 XML 实例：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;让我们设想一下，我们创建了一个应用程序，可将 &lt;to&gt;、&lt;from&gt; 以及 &lt;body&gt; 元素从 XML 文档中提取出来，并产生以下的输出：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs tex&quot;&gt;MESSAGE
+To: Tove
+From: Jani
+
+Don&#39;t forget me this weekend!&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;想象一下，XML 文档的作者添加的一些额外信息：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;2008-01-10&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;那么这个应用程序会中断或崩溃吗？&lt;&#x2F;p&gt;
+&lt;p&gt;不会。这个应用程序仍然可以找到 XML 文档中的 &lt;to&gt;、&lt;from&gt; 以及 &lt;body&gt; 元素，并产生同样的输出。&lt;&#x2F;p&gt;
+&lt;p&gt;XML 的优势之一，就是可以在不中断应用程序的情况下进行扩展。&lt;&#x2F;p&gt;
+&lt;h1 id&#x3D;&quot;XML-属性&quot;&gt;&lt;a href&#x3D;&quot;#XML-属性&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 属性&quot;&gt;&lt;&#x2F;a&gt;XML 属性&lt;&#x2F;h1&gt;&lt;p&gt;属性（Attribute）提供有关元素的额外信息。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;XML-属性-1&quot;&gt;&lt;a href&#x3D;&quot;#XML-属性-1&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 属性&quot;&gt;&lt;&#x2F;a&gt;XML 属性&lt;&#x2F;h2&gt;&lt;p&gt;在&lt;code&gt; HTML&lt;&#x2F;code&gt; 中，属性提供有关元素的额外信息：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs html&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;img&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;src&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;computer.gif&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;a&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;href&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;demo.html&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;属性通常提供不属于数据组成部分的信息。在下面的实例中，文件类型与数据无关，但是对需要处理这个元素的软件来说却很重要：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs html&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;file&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;gif&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;computer.gif&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;file&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-属性必须加引号&quot;&gt;&lt;a href&#x3D;&quot;#XML-属性必须加引号&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 属性必须加引号&quot;&gt;&lt;&#x2F;a&gt;XML 属性必须加引号&lt;&#x2F;h2&gt;&lt;p&gt;&lt;strong&gt;属性值必须被引号包围&lt;&#x2F;strong&gt;，不过单引号和双引号均可使用。比如一个人的性别，person 元素可以这样写：&lt;&#x2F;p&gt;
+&lt;person sex&#x3D;&quot;female&quot;&gt;
+
+&lt;p&gt;或者这样也可以：&lt;&#x2F;p&gt;
+&lt;person sex&#x3D;&#39;female&#39;&gt;
+
+&lt;p&gt;如果属性值本身包含双引号，您可以使用单引号，就像这个实例：&lt;&#x2F;p&gt;
+&lt;gangster name&#x3D;&#39;George &quot;Shotgun&quot; Ziegler&#39;&gt;
+
+&lt;p&gt;或者您可以使用字符实体：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;gangster&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;George &lt;span class&#x3D;&quot;hljs-symbol&quot;&gt;&quot;&lt;&#x2F;span&gt;Shotgun&lt;span class&#x3D;&quot;hljs-symbol&quot;&gt;&quot;&lt;&#x2F;span&gt; Ziegler&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-comment&quot;&gt;&lt;!-- $quot为双引号的字符实体--&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-元素-vs-属性&quot;&gt;&lt;a href&#x3D;&quot;#XML-元素-vs-属性&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 元素 vs. 属性&quot;&gt;&lt;&#x2F;a&gt;XML 元素 vs. 属性&lt;&#x2F;h2&gt;&lt;p&gt;请看这些实例：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;sex&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;female&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;firstname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Anna&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;firstname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;lastname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Smith&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;lastname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;sex&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;female&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;sex&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;firstname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Anna&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;firstname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;lastname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Smith&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;lastname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在第一个实例中，sex 是一个属性。在第二个实例中，sex 是一个元素。这两个实例都提供相同的信息。&lt;&#x2F;p&gt;
+&lt;p&gt;没有什么规矩可以告诉我们什么时候该使用属性，而什么时候该使用元素。我的经验是在 HTML 中，属性用起来很便利，但是在 XML 中，您应该尽量避免使用属性。如果信息感觉起来很像数据，那么请使用元素吧。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;我最喜欢的方式&quot;&gt;&lt;a href&#x3D;&quot;#我最喜欢的方式&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;我最喜欢的方式&quot;&gt;&lt;&#x2F;a&gt;我最喜欢的方式&lt;&#x2F;h2&gt;&lt;p&gt;下面的三个 XML 文档包含完全相同的信息：&lt;&#x2F;p&gt;
+&lt;p&gt;第一个实例中使用了 date 属性：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;date&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;10&#x2F;01&#x2F;2008&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+
+
+&lt;p&gt;第二个实例中使用了 date 元素：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;10&#x2F;01&#x2F;2008&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+
+
+&lt;p&gt;第三个实例中使用了扩展的 date 元素（这是我的最爱）：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;day&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;10&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;day&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;month&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;01&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;month&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;2008&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;为什么避免-XML-属性？&quot;&gt;&lt;a href&#x3D;&quot;#为什么避免-XML-属性？&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;为什么避免 XML 属性？&quot;&gt;&lt;&#x2F;a&gt;为什么避免 XML 属性？&lt;&#x2F;h2&gt;&lt;p&gt;因使用属性而引起的一些问题：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;属性不能包含多个值（元素可以）&lt;&#x2F;li&gt;
+&lt;li&gt;属性不能包含树结构（元素可以）&lt;&#x2F;li&gt;
+&lt;li&gt;属性不容易扩展（为未来的变化）&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;属性难以阅读和维护。请尽量使用元素来描述数据。而仅仅使用属性来提供与数据无关的信息。&lt;&#x2F;p&gt;
+&lt;p&gt;不要做这样的蠢事（这不是 XML 应该被使用的方式）：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;day&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;10&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;month&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;01&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;year&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;2008&quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;span class&#x3D;&quot;hljs-attr&quot;&gt;to&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Tove&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;from&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Jani&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;heading&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Reminder&quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;span class&#x3D;&quot;hljs-attr&quot;&gt;body&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Don&#39;t forget me this weekend!&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;针对元数据的-XML-属性&quot;&gt;&lt;a href&#x3D;&quot;#针对元数据的-XML-属性&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;针对元数据的 XML 属性&quot;&gt;&lt;&#x2F;a&gt;针对元数据的 XML 属性&lt;&#x2F;h2&gt;&lt;p&gt;有时候会向元素分配 ID 引用。这些 ID 索引可用于标识 XML 元素，它起作用的方式与 HTML 中 id 属性是一样的。这个实例向我们演示了这种情况：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;messages&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;id&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;501&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;id&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;502&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Re: Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;I will not&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;messages&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;上面的 id 属性仅仅是一个标识符，用于标识不同的便签。它并不是便签数据的组成部分。&lt;&#x2F;p&gt;
+&lt;p&gt;在此我们极力向您传递的理念是：&lt;strong&gt;元数据（有关数据的数据）应当存储为属性，而数据本身应当存储为元素。&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h1 id&#x3D;&quot;XML-验证&quot;&gt;&lt;a href&#x3D;&quot;#XML-验证&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 验证&quot;&gt;&lt;&#x2F;a&gt;XML 验证&lt;&#x2F;h1&gt;&lt;p&gt;拥有正确语法的 XML 被称为”形式良好”的 XML。&lt;&#x2F;p&gt;
+&lt;p&gt;通过 DTD 验证的XML是”合法”的 XML。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;形式良好的-XML-文档&quot;&gt;&lt;a href&#x3D;&quot;#形式良好的-XML-文档&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;形式良好的 XML 文档&quot;&gt;&lt;&#x2F;a&gt;形式良好的 XML 文档&lt;&#x2F;h2&gt;&lt;p&gt;“形式良好”的 XML 文档拥有正确的语法。&lt;&#x2F;p&gt;
+&lt;p&gt;在前面的章节描述的语法规则：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;XML 文档必须有一个根元素&lt;&#x2F;li&gt;
+&lt;li&gt;XML元素都必须有一个关闭标签&lt;&#x2F;li&gt;
+&lt;li&gt;XML 标签对大小写敏感&lt;&#x2F;li&gt;
+&lt;li&gt;XML 元素必须被正确的嵌套&lt;&#x2F;li&gt;
+&lt;li&gt;XML 属性值必须加引号&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;ISO-8859-1&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;验证-XML-文档&quot;&gt;&lt;a href&#x3D;&quot;#验证-XML-文档&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;验证 XML 文档&quot;&gt;&lt;&#x2F;a&gt;验证 XML 文档&lt;&#x2F;h2&gt;&lt;p&gt;合法的 XML 文档是”形式良好”的 XML 文档，这也符合文档类型定义（DTD）的规则：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;ISO-8859-1&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;
+**&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;!DOCTYPE &lt;span class&#x3D;&quot;hljs-keyword&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-keyword&quot;&gt;SYSTEM&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Note.dtd&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;**
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+
+
+&lt;p&gt;在上面的实例中，DOCTYPE 声明是对外部 DTD 文件的引用。下面的段落展示了这个文件的内容。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-DTD&quot;&gt;&lt;a href&#x3D;&quot;#XML-DTD&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML DTD&quot;&gt;&lt;&#x2F;a&gt;XML DTD&lt;&#x2F;h2&gt;&lt;p&gt;DTD 的目的是定义 XML 文档的结构。它使用一系列合法的元素来定义文档结构：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs dtd&quot;&gt;&lt;!DOCTYPE note
+[
+&lt;!ELEMENT note (to,from,heading,body)&gt;
+&lt;!ELEMENT to (#PCDATA)&gt;
+&lt;!ELEMENT from (#PCDATA)&gt;
+&lt;!ELEMENT heading (#PCDATA)&gt;
+&lt;!ELEMENT body (#PCDATA)&gt;
+]&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;如果您想要学习 DTD，请在&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;&quot;&gt;这里&lt;&#x2F;a&gt;查找 DTD 教程。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-Schema&quot;&gt;&lt;a href&#x3D;&quot;#XML-Schema&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML Schema&quot;&gt;&lt;&#x2F;a&gt;XML Schema&lt;&#x2F;h2&gt;&lt;p&gt;W3C 支持一种基于 XML 的 DTD 代替者，它名为 XML Schema：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;note&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:complexType&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:sequence&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;to&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;xs:string&quot;&lt;&#x2F;span&gt;&#x2F;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;from&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;xs:string&quot;&lt;&#x2F;span&gt;&#x2F;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;heading&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;xs:string&quot;&lt;&#x2F;span&gt;&#x2F;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;body&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;xs:string&quot;&lt;&#x2F;span&gt;&#x2F;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:sequence&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:complexType&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;如果您想要学习 XML Schema，请在&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;&quot;&gt;这里&lt;&#x2F;a&gt;查找 Schema 教程。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h1 id&#x3D;&quot;查看-XML-文件&quot;&gt;&lt;a href&#x3D;&quot;#查看-XML-文件&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;查看 XML 文件&quot;&gt;&lt;&#x2F;a&gt;查看 XML 文件&lt;&#x2F;h1&gt;&lt;p&gt;在所有主流的浏览器中，均能够查看原始的 XML 文件。&lt;&#x2F;p&gt;
+&lt;p&gt;不要指望 XML 文件会直接显示为 HTML 页面。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;查看-XML-文件-1&quot;&gt;&lt;a href&#x3D;&quot;#查看-XML-文件-1&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;查看 XML 文件&quot;&gt;&lt;&#x2F;a&gt;查看 XML 文件&lt;&#x2F;h2&gt;&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;ISO-8859-1&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;
+- &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;查看这个 XML 文件：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;note.xml&quot;&gt;note.xml&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;XML 文档将显示为代码颜色化的根以及子元素。通过点击元素左侧的加号（+）或减号（ - ），可以展开或收起元素的结构。要查看原始的 XML 源（不包括 + 和 - 符号），选择”查看页面源代码”或从浏览器菜单”查看源文件”。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 Safari、Chrome 中，只有元素的文本将被显示。要查看原始的 XML，您必须右键单击页面，选择”查看源文件”。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;查看无效的-XML-文件&quot;&gt;&lt;a href&#x3D;&quot;#查看无效的-XML-文件&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;查看无效的 XML 文件&quot;&gt;&lt;&#x2F;a&gt;查看无效的 XML 文件&lt;&#x2F;h2&gt;&lt;p&gt;如果一个错误的XML文件被打开，浏览器会报告错误。&lt;&#x2F;p&gt;
+&lt;p&gt;请查看这个 XML 文件：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;note_error.xml&quot;&gt;note_error.xml&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;其他-XML-实例&quot;&gt;&lt;a href&#x3D;&quot;#其他-XML-实例&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;其他 XML 实例&quot;&gt;&lt;&#x2F;a&gt;其他 XML 实例&lt;&#x2F;h2&gt;&lt;p&gt;请查看这些 XML 文档，这会有助于您建立对 XML 的感性认识。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;cd_catalog.xml&quot;&gt;一个 XML 的 CD 目录&lt;&#x2F;a&gt;&lt;br&gt;这是一个 CD 集，存储为 XML 数据。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;plant_catalog.xml&quot;&gt;一个 XML 的植物目录&lt;&#x2F;a&gt;&lt;br&gt;这是一个来自植物店的植物目录，存储为 XML 数据。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;simple.xml&quot;&gt;一个简单的食物菜单&lt;&#x2F;a&gt;&lt;br&gt;这是一个来自餐馆的早餐菜单，存储为 XML 数据。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;为什么-XML-显示这个样子？&quot;&gt;&lt;a href&#x3D;&quot;#为什么-XML-显示这个样子？&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;为什么 XML 显示这个样子？&quot;&gt;&lt;&#x2F;a&gt;为什么 XML 显示这个样子？&lt;&#x2F;h2&gt;&lt;p&gt;XML 文档不会携带有关如何显示数据的信息。&lt;&#x2F;p&gt;
+&lt;p&gt;由于 XML 标签由 XML 文档的作者”发明”，浏览器无法确定像 &lt;table&gt; 这样一个标签究竟描述一个 HTML 表格还是一个餐桌。&lt;&#x2F;p&gt;
+&lt;p&gt;在没有任何有关如何显示数据的信息的情况下，大多数的浏览器都会仅仅把 XML 文档显示为源代码。&lt;&#x2F;p&gt;
+&lt;p&gt;在下面的章节，我们会了解几个有关这个显示问题的解决方案，其中会使用 CSS、XSLT 和 JavaScript。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h1 id&#x3D;&quot;使用-CSS-显示-XML-不常用&quot;&gt;&lt;a href&#x3D;&quot;#使用-CSS-显示-XML-不常用&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;使用 CSS 显示 XML(不常用)&quot;&gt;&lt;&#x2F;a&gt;使用 CSS 显示 XML(不常用)&lt;&#x2F;h1&gt;&lt;p&gt;通过使用 CSS（Cascading Style Sheets 层叠样式表），您可以添加显示信息到 XML 文档中。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;使用-CSS-显示您的-XML？&quot;&gt;&lt;a href&#x3D;&quot;#使用-CSS-显示您的-XML？&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;使用 CSS 显示您的 XML？&quot;&gt;&lt;&#x2F;a&gt;使用 CSS 显示您的 XML？&lt;&#x2F;h2&gt;&lt;p&gt;使用 CSS 来格式化 XML 文档是有可能的。&lt;&#x2F;p&gt;
+&lt;p&gt;下面的实例就是关于如何使用 CSS 样式表来格式化 XML 文档：&lt;&#x2F;p&gt;
+&lt;p&gt;请看这个 XML 文件：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;cd_catalog.xml&quot;&gt;CD 目录&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;然后看这个样式表：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;cd_catalog.css&quot;&gt;CSS 文件&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;最后，请查看：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;cd_catalog_with_css.xml&quot;&gt;使用 CSS 文件格式化的 CD 目录&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;使用 CSS 格式化 XML 不是常用的方法。&lt;&#x2F;p&gt;
+&lt;p&gt;W3C 推荐使用 XSLT，请看下一章。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h1 id&#x3D;&quot;使用-XSLT-显示-XML&quot;&gt;&lt;a href&#x3D;&quot;#使用-XSLT-显示-XML&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;使用 XSLT 显示 XML&quot;&gt;&lt;&#x2F;a&gt;使用 XSLT 显示 XML&lt;&#x2F;h1&gt;&lt;p&gt;通过使用 XSLT，您可以把 XML 文档转换成 HTML 格式。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;使用-XSLT-显示-XML-1&quot;&gt;&lt;a href&#x3D;&quot;#使用-XSLT-显示-XML-1&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;使用 XSLT 显示 XML&quot;&gt;&lt;&#x2F;a&gt;使用 XSLT 显示 XML&lt;&#x2F;h2&gt;&lt;p&gt;XSLT 是首选的 XML 样式表语言。&lt;&#x2F;p&gt;
+&lt;p&gt;XSLT（eXtensible Stylesheet Language Transformations）远比 CSS 更加完善。&lt;&#x2F;p&gt;
+&lt;p&gt;XSLT 是在浏览器显示 XML 文件之前，先把它转换为 HTML：&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;simple.xml&quot;&gt;XML 文件&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;simple.xsl&quot;&gt;XSLT 文件&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;如果您想要学习有关 XSLT 的知识，请在我们的&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;&quot;&gt;首页&lt;&#x2F;a&gt;查找 XSLT 教程。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;在服务器上通过-XSLT-转换-XML&quot;&gt;&lt;a href&#x3D;&quot;#在服务器上通过-XSLT-转换-XML&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;在服务器上通过 XSLT 转换 XML&quot;&gt;&lt;&#x2F;a&gt;在服务器上通过 XSLT 转换 XML&lt;&#x2F;h2&gt;&lt;p&gt;在上面的实例中，当浏览器读取 XML 文件时，XSLT 转换是由浏览器完成的。&lt;&#x2F;p&gt;
+&lt;p&gt;在使用 XSLT 来转换 XML 时，不同的浏览器可能会产生不同结果。为了减少这种问题，可以在服务器上进行 XSLT 转换。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;simple.php&quot;&gt;查看结果&lt;&#x2F;a&gt;。&lt;&#x2F;p&gt;
+"><a class="trm-toc-link"><span class="trm-toc-number"></span> <span class="trm-toc-text"> 等等）。
+XML 允许创作者定义自己的标签和自己的文档结构。
+
+XML 不是对 HTML 的替代XML 是对 HTML 的补充。
+XML 不会替代 HTML，理解这一点很重要。在大多数 Web 应用程序中，XML 用于传输数据，而 HTML 用于格式化并显示数据。
+对 XML 最好的描述是：
+XML 是独立于软件和硬件的信息传输工具。
+XML 树结构
+XML 文档形成了一种树结构，它从”根部”开始，然后扩展到”枝叶”。
+
+一个 XML 文档实例XML 文档使用简单的具有自我描述性的语法：
+&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;&#x2F;to&gt;
+&lt;from&gt;Jani&lt;&#x2F;from&gt;
+&lt;heading&gt;Reminder&lt;&#x2F;heading&gt;
+&lt;body&gt;Don&#39;t forget me this weekend!&lt;&#x2F;body&gt;
+&lt;&#x2F;note&gt;
+
+第一行是 XML 声明。它定义 XML 的版本（1.0）和所使用的编码（UTF-8 : 万国码, 可显示各种语言）。
+下一行描述文档的根元素（像在说：”本文档是一个便签”）：
+&lt;note&gt;
+
+接下来 4 行描述根的 4 个子元素（to, from, heading 以及 body）：
+&lt;to&gt;Tove&lt;&#x2F;to&gt;
+&lt;from&gt;Jani&lt;&#x2F;from&gt;
+&lt;heading&gt;Reminder&lt;&#x2F;heading&gt;
+&lt;body&gt;Don&#39;t forget me this weekend!&lt;&#x2F;body&gt;
+
+最后一行定义根元素的结尾：
+&lt;&#x2F;note&gt;
+
+您可以假设，从这个实例中，XML 文档包含了一张 Jani 写给 Tove 的便签。
+XML 具有出色的自我描述性，您同意吗？
+
+XML 文档形成一种树结构XML 文档必须包含根元素。该元素是所有其他元素的父元素。
+XML 文档中的元素形成了一棵文档树。这棵树从根部开始，并扩展到树的最底端。
+所有的元素都可以有子元素：
+&lt;root&gt;
+&lt;child&gt;
+&lt;subchild&gt;.....&lt;&#x2F;subchild&gt;
+&lt;&#x2F;child&gt;
+&lt;&#x2F;root&gt;
+
+父、子以及同胞等术语用于描述元素之间的关系。父元素拥有子元素。相同层级上的子元素成为同胞（兄弟或姐妹）。
+所有的元素都可以有文本内容和属性（类似 HTML 中）。
+实例：
+上图表示下面的 XML 中的一本书：
+&lt;bookstore&gt;
+    &lt;book category&#x3D;&quot;COOKING&quot;&gt;
+        &lt;title lang&#x3D;&quot;en&quot;&gt;Everyday Italian&lt;&#x2F;title&gt;
+        &lt;author&gt;Giada De Laurentiis&lt;&#x2F;author&gt;
+        &lt;year&gt;2005&lt;&#x2F;year&gt;
+        &lt;price&gt;30.00&lt;&#x2F;price&gt;
+    &lt;&#x2F;book&gt;
+    &lt;book category&#x3D;&quot;CHILDREN&quot;&gt;
+        &lt;title lang&#x3D;&quot;en&quot;&gt;Harry Potter&lt;&#x2F;title&gt;
+        &lt;author&gt;J K. Rowling&lt;&#x2F;author&gt;
+        &lt;year&gt;2005&lt;&#x2F;year&gt;
+        &lt;price&gt;29.99&lt;&#x2F;price&gt;
+    &lt;&#x2F;book&gt;
+    &lt;book category&#x3D;&quot;WEB&quot;&gt;
+        &lt;title lang&#x3D;&quot;en&quot;&gt;Learning XML&lt;&#x2F;title&gt;
+        &lt;author&gt;Erik T. Ray&lt;&#x2F;author&gt;
+        &lt;year&gt;2003&lt;&#x2F;year&gt;
+        &lt;price&gt;39.95&lt;&#x2F;price&gt;
+    &lt;&#x2F;book&gt;
+&lt;&#x2F;bookstore&gt;
+
+实例中的根元素是 ，这是整个 XML 文档的根元素，包含所有书籍的集合。所有其他元素都是该根元素的子元素。文档中的所有  元素都被包含在  中。
+每本书由一个 &lt;book&gt; 元素表示，包含书的详细信息。每个 &lt;book&gt; 元素具有一个 category 属性，表示书籍的类别。例如，第一个 &lt;book&gt; 元素的 category 属性值为 &quot;COOKING&quot;。
+ 元素有 4 个子元素：、&lt;author&gt;、&lt;year&gt;、&lt;price&gt;。每个 &lt;code&gt;&lt;book&gt;&lt;&#x2F;code&gt; 元素包含以下子元素来描述书籍的具体信息：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&lt;title&gt;&lt;&#x2F;code&gt;：表示书名，具有一个 &lt;code&gt;lang&lt;&#x2F;code&gt; 属性，表示书名的语言。例如，第一个书的书名是 “Everyday Italian”，语言为英语（&lt;code&gt;lang&#x3D;&quot;en&quot;&lt;&#x2F;code&gt;）。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&lt;author&gt;&lt;&#x2F;code&gt;：表示书的作者。例如，第一个书的作者是 Giada De Laurentiis。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&lt;year&gt;&lt;&#x2F;code&gt;：表示书的出版年份。例如，第一个书的出版年份是 2005 年。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&lt;price&gt;&lt;&#x2F;code&gt;：表示书的价格。例如，第一个书的价格是 30.00 美元。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id&#x3D;&quot;XML-语法规则&quot;&gt;&lt;a href&#x3D;&quot;#XML-语法规则&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 语法规则&quot;&gt;&lt;&#x2F;a&gt;XML 语法规则&lt;&#x2F;h1&gt;&lt;p&gt;XML 的语法规则很简单，且很有逻辑。&lt;&#x2F;p&gt;
+&lt;p&gt;这些规则很容易学习，也很容易使用。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-声明&quot;&gt;&lt;a href&#x3D;&quot;#XML-声明&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 声明&quot;&gt;&lt;&#x2F;a&gt;XML 声明&lt;&#x2F;h2&gt;&lt;p&gt;XML 声明文件的可选部分，如果存在需要放在文档的第一行，如下所示：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;utf-8&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;以上实例包含 XML 版本（version&#x3D;”1.0”），甚至包含字符编码（encoding&#x3D;”utf-8”）。&lt;&#x2F;p&gt;
+&lt;p&gt;UTF-8 也是 HTML5, CSS, JavaScript, PHP, 和 SQL 的默认编码。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-文档必须有根元素&quot;&gt;&lt;a href&#x3D;&quot;#XML-文档必须有根元素&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 文档必须有根元素&quot;&gt;&lt;&#x2F;a&gt;XML 文档必须有根元素&lt;&#x2F;h2&gt;&lt;p&gt;XML 必须包含根元素，它是所有其他元素的父元素，比如以下实例中 root 就是根元素：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;root&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;child&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;subchild&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;.....&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;subchild&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;child&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;root&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;以下实例中 note 是根元素：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;UTF-8&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+  &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;XML文档由元素构成，每个元素包括开始标签、结束标签和元素内容。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;属性&quot;&gt;&lt;a href&#x3D;&quot;#属性&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;属性&quot;&gt;&lt;&#x2F;a&gt;属性&lt;&#x2F;h2&gt;&lt;p&gt;元素可以包含属性，属性提供有关元素的附加信息。&lt;&#x2F;p&gt;
+&lt;p&gt;属性位于开始标签中，例如：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;age&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;30&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;gender&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;male&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;John Doe&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一个元素可以有多个属性，它的基本格式为：&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;元素名&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;属性名1&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;属性值1&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;属性名2&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;属性值2&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;特定的属性名称在同一个元素标记中只能出现一次&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;p&gt;属性值不能包括 &lt;,&gt;,&amp;，如果一定要包含，也要使用实体&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-单标签&quot;&gt;&lt;a href&#x3D;&quot;#XML-单标签&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 单标签&quot;&gt;&lt;&#x2F;a&gt;XML 单标签&lt;&#x2F;h2&gt;&lt;p&gt;所有的 XML 元素一般都有一个关闭标签，但也允许单标签的使用的。&lt;&#x2F;p&gt;
+&lt;p&gt;单标签是指在一个标签中同时包含了开始和结束标签，形式类似于HTML中的空元素标签。&lt;&#x2F;p&gt;
+&lt;p&gt;在XML中，你可以使用以下两种方式表示单标签：&lt;&#x2F;p&gt;
+&lt;p&gt;使用空元素标签：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;exampleTag&lt;&#x2F;span&gt; &#x2F;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;使用开始和结束标签，但是不包含任何内容：&lt;&#x2F;p&gt;
+&lt;p&gt;这两种表示方式是等效的，你可以根据个人或项目的约定选择使用其中之一。&lt;&#x2F;p&gt;
+&lt;p&gt;在许多XML解析器中，它们都会将这两种形式解释为相同的结构。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-标签对大小写敏感&quot;&gt;&lt;a href&#x3D;&quot;#XML-标签对大小写敏感&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 标签对大小写敏感&quot;&gt;&lt;&#x2F;a&gt;XML 标签对大小写敏感&lt;&#x2F;h2&gt;&lt;p&gt;XML 标签对大小写敏感。标签 &lt;Letter&gt; 与标签 &lt;letter&gt; 是不同的。&lt;&#x2F;p&gt;
+&lt;p&gt;必须使用相同的大小写来编写打开标签和关闭标签：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;Message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;这是错误的&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;这是正确的&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;&lt;strong&gt;注释：&lt;&#x2F;strong&gt;打开标签和关闭标签通常被称为开始标签和结束标签。不论您喜欢哪种术语，它们的概念都是相同的。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-必须正确嵌套&quot;&gt;&lt;a href&#x3D;&quot;#XML-必须正确嵌套&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 必须正确嵌套&quot;&gt;&lt;&#x2F;a&gt;XML 必须正确嵌套&lt;&#x2F;h2&gt;&lt;p&gt;在 HTML 中，常会看到没有正确嵌套的元素：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;b&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;i&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;This text is bold and italic&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;b&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;i&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在 XML 中，所有元素都&lt;strong&gt;必须彼此正确&lt;&#x2F;strong&gt;地嵌套：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;b&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;i&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;This text is bold and italic&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;i&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;b&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;在上面的实例中，正确嵌套的意思是：由于 &lt;i&gt; 元素是在 &lt;b&gt; 元素内打开的，那么它必须在 &lt;b&gt; 元素内关闭。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-属性值必须加引号-关键&quot;&gt;&lt;a href&#x3D;&quot;#XML-属性值必须加引号-关键&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 属性值必须加引号(关键)&quot;&gt;&lt;&#x2F;a&gt;&lt;strong&gt;XML 属性值必须加引号&lt;&#x2F;strong&gt;(关键)&lt;&#x2F;h2&gt;&lt;p&gt;与 HTML 类似，XML 元素也可拥有属性（名称&#x2F;值的对）。&lt;&#x2F;p&gt;
+&lt;p&gt;在 XML 中，XML 的属性值必须加引号。&lt;&#x2F;p&gt;
+&lt;p&gt;请研究下面的两个 XML 文档。 第一个是错误的，第二个是正确的：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;date&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;12&#x2F;11&#x2F;2007&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;date&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;12&#x2F;11&#x2F;2007&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在第一个文档中的错误是，note 元素中的 date 属性没有加引号。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;实体引用&quot;&gt;&lt;a href&#x3D;&quot;#实体引用&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;实体引用&quot;&gt;&lt;&#x2F;a&gt;实体引用&lt;&#x2F;h2&gt;&lt;p&gt;在 XML 中，一些字符拥有特殊的意义。&lt;&#x2F;p&gt;
+&lt;p&gt;如果您把字符 “&lt;” 放在 XML 元素中，会发生错误，这是因为解析器会把它当作新元素的开始。&lt;&#x2F;p&gt;
+&lt;p&gt;这样会产生 XML 错误：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;if salary &lt; 1000 then&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;为了避免这个错误，请用&lt;strong&gt;实体引用&lt;&#x2F;strong&gt;来代替 “&lt;” 字符：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;if salary &lt;span class&#x3D;&quot;hljs-symbol&quot;&gt;&lt;&lt;&#x2F;span&gt; 1000 then&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;message&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在 XML 中，有 5 个预定义的实体引用：&lt;&#x2F;p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&lt;&lt;&#x2F;code&gt;&lt;&#x2F;th&gt;
+&lt;th align&#x3D;&quot;center&quot;&gt;&lt;&lt;&#x2F;th&gt;
+&lt;th align&#x3D;&quot;center&quot;&gt;less than&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;greater than&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&amp;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&amp;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;ampersand&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&apos;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;‘&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;apostrophe&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;&lt;code&gt;&quot;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;“&lt;&#x2F;td&gt;
+&lt;td align&#x3D;&quot;center&quot;&gt;quotation mark&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 XML 中，只有字符 “&lt;” 和 “&amp;” 确实是非法的。大于号是合法的，但是用实体引用来代替它是一个好习惯。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-中的注释&quot;&gt;&lt;a href&#x3D;&quot;#XML-中的注释&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 中的注释&quot;&gt;&lt;&#x2F;a&gt;XML 中的注释&lt;&#x2F;h2&gt;&lt;p&gt;在 XML 中编写注释的语法与 HTML 的语法很相似。&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-comment&quot;&gt;&lt;!-- This is a comment &#x2F;这是一个注释--&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;在-XML-中，空格会被保留&quot;&gt;&lt;a href&#x3D;&quot;#在-XML-中，空格会被保留&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;在 XML 中，空格会被保留&quot;&gt;&lt;&#x2F;a&gt;在 XML 中，空格会被保留&lt;&#x2F;h2&gt;&lt;p&gt;HTML 会把多个连续的空格字符裁减（合并）为一个：&lt;&#x2F;p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;HTML:&lt;&#x2F;th&gt;
+&lt;th&gt;&lt;code&gt;Hello           Tove&lt;&#x2F;code&gt;&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;输出结果:&lt;&#x2F;td&gt;
+&lt;td&gt;Hello Tove&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;在 XML 中，文档中的空格不会被删减：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;bookstore&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;xx       xxx&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;John Doe&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;29.99&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;bookstore&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;title 内容读取显示如下：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs ebnf&quot;&gt;&lt;span class&#x3D;&quot;hljs-attribute&quot;&gt;xx       xxx&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-以-LF-存储换行&quot;&gt;&lt;a href&#x3D;&quot;#XML-以-LF-存储换行&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 以 LF 存储换行&quot;&gt;&lt;&#x2F;a&gt;XML 以 LF 存储换行&lt;&#x2F;h2&gt;&lt;p&gt;在 Windows 应用程序中，换行通常以一对字符来存储：回车符（CR）和换行符（LF）。&lt;&#x2F;p&gt;
+&lt;p&gt;在 Unix 和 Mac OSX 中，使用 LF 来存储新行。&lt;&#x2F;p&gt;
+&lt;p&gt;在旧的 Mac 系统中，使用 CR 来存储新行。&lt;&#x2F;p&gt;
+&lt;p&gt;XML 以 LF 存储换行。&lt;&#x2F;p&gt;
+&lt;h1 id&#x3D;&quot;XML-元素&quot;&gt;&lt;a href&#x3D;&quot;#XML-元素&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 元素&quot;&gt;&lt;&#x2F;a&gt;XML 元素&lt;&#x2F;h1&gt;&lt;h2 id&#x3D;&quot;什么是-XML-元素？&quot;&gt;&lt;a href&#x3D;&quot;#什么是-XML-元素？&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;什么是 XML 元素？&quot;&gt;&lt;&#x2F;a&gt;什么是 XML 元素？&lt;&#x2F;h2&gt;&lt;p&gt;XML 元素指的是从（且包括）开始标签直到（且包括）结束标签的部分。&lt;&#x2F;p&gt;
+&lt;p&gt;一个元素可以包含：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;其他元素&lt;&#x2F;li&gt;
+&lt;li&gt;文本&lt;&#x2F;li&gt;
+&lt;li&gt;属性&lt;&#x2F;li&gt;
+&lt;li&gt;或混合以上所有…&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;bookstore&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;category&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;CHILDREN&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Harry Potter&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;J K. Rowling&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;2005&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;29.99&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;category&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;WEB&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Learning XML&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;title&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Erik T. Ray&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;author&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;2003&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+        &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;39.95&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;price&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;book&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;bookstore&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在上面的实例中，&lt;bookstore&gt; 和 &lt;book&gt; 都有 &lt;strong&gt;元素内容&lt;&#x2F;strong&gt;，因为他们包含其他元素。&lt;book&gt; 元素也有&lt;strong&gt;属性&lt;&#x2F;strong&gt;（category&#x3D;”CHILDREN”）。&lt;title&gt;、&lt;author&gt;、&lt;year&gt; 和 &lt;price&gt; 有&lt;strong&gt;文本内容&lt;&#x2F;strong&gt;，因为他们包含文本。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-命名规则&quot;&gt;&lt;a href&#x3D;&quot;#XML-命名规则&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 命名规则&quot;&gt;&lt;&#x2F;a&gt;XML 命名规则&lt;&#x2F;h2&gt;&lt;p&gt;XML 元素必须遵循以下命名规则：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;名称可以包含字母、数字以及其他的字符&lt;&#x2F;li&gt;
+&lt;li&gt;名称不能以数字或者标点符号开始&lt;&#x2F;li&gt;
+&lt;li&gt;名称不能以字母 xml（或者 XML、Xml 等等）开始&lt;&#x2F;li&gt;
+&lt;li&gt;名称&lt;strong&gt;不能包含空格&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;可使用任何名称，没有保留的字词。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;最佳命名习惯&quot;&gt;&lt;a href&#x3D;&quot;#最佳命名习惯&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;最佳命名习惯&quot;&gt;&lt;&#x2F;a&gt;最佳命名习惯&lt;&#x2F;h2&gt;&lt;p&gt;使名称具有描述性。使用下划线的名称也很不错：&lt;first_name&gt;、&lt;last_name&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;名称应简短和简单，比如：&lt;book_title&gt;，而不是：&lt;the_title_of_the_book&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;避免 “-“ 字符。&lt;&#x2F;strong&gt;如果您按照这样的方式进行命名：”first-name”，一些软件会认为您想要从 first 里边减去 name。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;避免 “.” 字符。&lt;&#x2F;strong&gt;如果您按照这样的方式进行命名：”first.name”，一些软件会认为 “name” 是对象 “first” 的属性。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;避免 “:” 字符。&lt;&#x2F;strong&gt;冒号会被转换为命名空间来使用（稍后介绍）。&lt;&#x2F;p&gt;
+&lt;p&gt;XML 文档经常有一个对应的数据库，其中的字段会对应 XML 文档中的元素。有一个实用的经验，即使用数据库的命名规则来命名 XML 文档中的元素。&lt;&#x2F;p&gt;
+&lt;p&gt;在 XML 中，éòá 等非英语字母是完全合法的，不过需要留意，您的软件供应商不支持这些字符时可能出现的问题。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-元素是可扩展的&quot;&gt;&lt;a href&#x3D;&quot;#XML-元素是可扩展的&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 元素是可扩展的&quot;&gt;&lt;&#x2F;a&gt;XML 元素是可扩展的&lt;&#x2F;h2&gt;&lt;p&gt;XML 元素是可扩展，以携带更多的信息。&lt;&#x2F;p&gt;
+&lt;p&gt;请看下面的 XML 实例：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;让我们设想一下，我们创建了一个应用程序，可将 &lt;to&gt;、&lt;from&gt; 以及 &lt;body&gt; 元素从 XML 文档中提取出来，并产生以下的输出：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs tex&quot;&gt;MESSAGE
+To: Tove
+From: Jani
+
+Don&#39;t forget me this weekend!&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;想象一下，XML 文档的作者添加的一些额外信息：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;2008-01-10&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;那么这个应用程序会中断或崩溃吗？&lt;&#x2F;p&gt;
+&lt;p&gt;不会。这个应用程序仍然可以找到 XML 文档中的 &lt;to&gt;、&lt;from&gt; 以及 &lt;body&gt; 元素，并产生同样的输出。&lt;&#x2F;p&gt;
+&lt;p&gt;XML 的优势之一，就是可以在不中断应用程序的情况下进行扩展。&lt;&#x2F;p&gt;
+&lt;h1 id&#x3D;&quot;XML-属性&quot;&gt;&lt;a href&#x3D;&quot;#XML-属性&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 属性&quot;&gt;&lt;&#x2F;a&gt;XML 属性&lt;&#x2F;h1&gt;&lt;p&gt;属性（Attribute）提供有关元素的额外信息。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;XML-属性-1&quot;&gt;&lt;a href&#x3D;&quot;#XML-属性-1&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 属性&quot;&gt;&lt;&#x2F;a&gt;XML 属性&lt;&#x2F;h2&gt;&lt;p&gt;在&lt;code&gt; HTML&lt;&#x2F;code&gt; 中，属性提供有关元素的额外信息：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs html&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;img&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;src&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;computer.gif&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;a&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;href&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;demo.html&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;属性通常提供不属于数据组成部分的信息。在下面的实例中，文件类型与数据无关，但是对需要处理这个元素的软件来说却很重要：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs html&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;file&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;gif&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;computer.gif&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;file&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-属性必须加引号&quot;&gt;&lt;a href&#x3D;&quot;#XML-属性必须加引号&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 属性必须加引号&quot;&gt;&lt;&#x2F;a&gt;XML 属性必须加引号&lt;&#x2F;h2&gt;&lt;p&gt;&lt;strong&gt;属性值必须被引号包围&lt;&#x2F;strong&gt;，不过单引号和双引号均可使用。比如一个人的性别，person 元素可以这样写：&lt;&#x2F;p&gt;
+&lt;person sex&#x3D;&quot;female&quot;&gt;
+
+&lt;p&gt;或者这样也可以：&lt;&#x2F;p&gt;
+&lt;person sex&#x3D;&#39;female&#39;&gt;
+
+&lt;p&gt;如果属性值本身包含双引号，您可以使用单引号，就像这个实例：&lt;&#x2F;p&gt;
+&lt;gangster name&#x3D;&#39;George &quot;Shotgun&quot; Ziegler&#39;&gt;
+
+&lt;p&gt;或者您可以使用字符实体：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;gangster&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;George &lt;span class&#x3D;&quot;hljs-symbol&quot;&gt;&quot;&lt;&#x2F;span&gt;Shotgun&lt;span class&#x3D;&quot;hljs-symbol&quot;&gt;&quot;&lt;&#x2F;span&gt; Ziegler&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-comment&quot;&gt;&lt;!-- $quot为双引号的字符实体--&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-元素-vs-属性&quot;&gt;&lt;a href&#x3D;&quot;#XML-元素-vs-属性&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 元素 vs. 属性&quot;&gt;&lt;&#x2F;a&gt;XML 元素 vs. 属性&lt;&#x2F;h2&gt;&lt;p&gt;请看这些实例：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;sex&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;female&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;firstname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Anna&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;firstname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;lastname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Smith&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;lastname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;sex&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;female&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;sex&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;firstname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Anna&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;firstname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;lastname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Smith&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;lastname&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;person&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;在第一个实例中，sex 是一个属性。在第二个实例中，sex 是一个元素。这两个实例都提供相同的信息。&lt;&#x2F;p&gt;
+&lt;p&gt;没有什么规矩可以告诉我们什么时候该使用属性，而什么时候该使用元素。我的经验是在 HTML 中，属性用起来很便利，但是在 XML 中，您应该尽量避免使用属性。如果信息感觉起来很像数据，那么请使用元素吧。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;我最喜欢的方式&quot;&gt;&lt;a href&#x3D;&quot;#我最喜欢的方式&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;我最喜欢的方式&quot;&gt;&lt;&#x2F;a&gt;我最喜欢的方式&lt;&#x2F;h2&gt;&lt;p&gt;下面的三个 XML 文档包含完全相同的信息：&lt;&#x2F;p&gt;
+&lt;p&gt;第一个实例中使用了 date 属性：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;date&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;10&#x2F;01&#x2F;2008&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+
+
+&lt;p&gt;第二个实例中使用了 date 元素：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;10&#x2F;01&#x2F;2008&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+
+
+&lt;p&gt;第三个实例中使用了扩展的 date 元素（这是我的最爱）：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;day&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;10&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;day&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;month&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;01&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;month&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;2008&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;year&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;date&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;为什么避免-XML-属性？&quot;&gt;&lt;a href&#x3D;&quot;#为什么避免-XML-属性？&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;为什么避免 XML 属性？&quot;&gt;&lt;&#x2F;a&gt;为什么避免 XML 属性？&lt;&#x2F;h2&gt;&lt;p&gt;因使用属性而引起的一些问题：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;属性不能包含多个值（元素可以）&lt;&#x2F;li&gt;
+&lt;li&gt;属性不能包含树结构（元素可以）&lt;&#x2F;li&gt;
+&lt;li&gt;属性不容易扩展（为未来的变化）&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;属性难以阅读和维护。请尽量使用元素来描述数据。而仅仅使用属性来提供与数据无关的信息。&lt;&#x2F;p&gt;
+&lt;p&gt;不要做这样的蠢事（这不是 XML 应该被使用的方式）：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;day&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;10&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;month&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;01&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;year&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;2008&quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;span class&#x3D;&quot;hljs-attr&quot;&gt;to&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Tove&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;from&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Jani&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;heading&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Reminder&quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;span class&#x3D;&quot;hljs-attr&quot;&gt;body&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Don&#39;t forget me this weekend!&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;针对元数据的-XML-属性&quot;&gt;&lt;a href&#x3D;&quot;#针对元数据的-XML-属性&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;针对元数据的 XML 属性&quot;&gt;&lt;&#x2F;a&gt;针对元数据的 XML 属性&lt;&#x2F;h2&gt;&lt;p&gt;有时候会向元素分配 ID 引用。这些 ID 索引可用于标识 XML 元素，它起作用的方式与 HTML 中 id 属性是一样的。这个实例向我们演示了这种情况：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;messages&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;id&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;501&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;id&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;502&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Re: Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;I will not&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;messages&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;上面的 id 属性仅仅是一个标识符，用于标识不同的便签。它并不是便签数据的组成部分。&lt;&#x2F;p&gt;
+&lt;p&gt;在此我们极力向您传递的理念是：&lt;strong&gt;元数据（有关数据的数据）应当存储为属性，而数据本身应当存储为元素。&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h1 id&#x3D;&quot;XML-验证&quot;&gt;&lt;a href&#x3D;&quot;#XML-验证&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML 验证&quot;&gt;&lt;&#x2F;a&gt;XML 验证&lt;&#x2F;h1&gt;&lt;p&gt;拥有正确语法的 XML 被称为”形式良好”的 XML。&lt;&#x2F;p&gt;
+&lt;p&gt;通过 DTD 验证的XML是”合法”的 XML。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;形式良好的-XML-文档&quot;&gt;&lt;a href&#x3D;&quot;#形式良好的-XML-文档&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;形式良好的 XML 文档&quot;&gt;&lt;&#x2F;a&gt;形式良好的 XML 文档&lt;&#x2F;h2&gt;&lt;p&gt;“形式良好”的 XML 文档拥有正确的语法。&lt;&#x2F;p&gt;
+&lt;p&gt;在前面的章节描述的语法规则：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;XML 文档必须有一个根元素&lt;&#x2F;li&gt;
+&lt;li&gt;XML元素都必须有一个关闭标签&lt;&#x2F;li&gt;
+&lt;li&gt;XML 标签对大小写敏感&lt;&#x2F;li&gt;
+&lt;li&gt;XML 元素必须被正确的嵌套&lt;&#x2F;li&gt;
+&lt;li&gt;XML 属性值必须加引号&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;ISO-8859-1&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+
+
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;验证-XML-文档&quot;&gt;&lt;a href&#x3D;&quot;#验证-XML-文档&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;验证 XML 文档&quot;&gt;&lt;&#x2F;a&gt;验证 XML 文档&lt;&#x2F;h2&gt;&lt;p&gt;合法的 XML 文档是”形式良好”的 XML 文档，这也符合文档类型定义（DTD）的规则：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;ISO-8859-1&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;
+**&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;!DOCTYPE &lt;span class&#x3D;&quot;hljs-keyword&quot;&gt;note&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-keyword&quot;&gt;SYSTEM&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;Note.dtd&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;**
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+
+
+&lt;p&gt;在上面的实例中，DOCTYPE 声明是对外部 DTD 文件的引用。下面的段落展示了这个文件的内容。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-DTD&quot;&gt;&lt;a href&#x3D;&quot;#XML-DTD&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML DTD&quot;&gt;&lt;&#x2F;a&gt;XML DTD&lt;&#x2F;h2&gt;&lt;p&gt;DTD 的目的是定义 XML 文档的结构。它使用一系列合法的元素来定义文档结构：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs dtd&quot;&gt;&lt;!DOCTYPE note
+[
+&lt;!ELEMENT note (to,from,heading,body)&gt;
+&lt;!ELEMENT to (#PCDATA)&gt;
+&lt;!ELEMENT from (#PCDATA)&gt;
+&lt;!ELEMENT heading (#PCDATA)&gt;
+&lt;!ELEMENT body (#PCDATA)&gt;
+]&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;如果您想要学习 DTD，请在&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;&quot;&gt;这里&lt;&#x2F;a&gt;查找 DTD 教程。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;XML-Schema&quot;&gt;&lt;a href&#x3D;&quot;#XML-Schema&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;XML Schema&quot;&gt;&lt;&#x2F;a&gt;XML Schema&lt;&#x2F;h2&gt;&lt;p&gt;W3C 支持一种基于 XML 的 DTD 代替者，它名为 XML Schema：&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;note&quot;&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:complexType&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:sequence&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;to&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;xs:string&quot;&lt;&#x2F;span&gt;&#x2F;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;from&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;xs:string&quot;&lt;&#x2F;span&gt;&#x2F;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;heading&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;xs:string&quot;&lt;&#x2F;span&gt;&#x2F;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;name&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;body&quot;&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;hljs-attr&quot;&gt;type&lt;&#x2F;span&gt;&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;xs:string&quot;&lt;&#x2F;span&gt;&#x2F;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:sequence&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:complexType&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;xs:element&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;如果您想要学习 XML Schema，请在&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;&quot;&gt;这里&lt;&#x2F;a&gt;查找 Schema 教程。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h1 id&#x3D;&quot;查看-XML-文件&quot;&gt;&lt;a href&#x3D;&quot;#查看-XML-文件&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;查看 XML 文件&quot;&gt;&lt;&#x2F;a&gt;查看 XML 文件&lt;&#x2F;h1&gt;&lt;p&gt;在所有主流的浏览器中，均能够查看原始的 XML 文件。&lt;&#x2F;p&gt;
+&lt;p&gt;不要指望 XML 文件会直接显示为 HTML 页面。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;查看-XML-文件-1&quot;&gt;&lt;a href&#x3D;&quot;#查看-XML-文件-1&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;查看 XML 文件&quot;&gt;&lt;&#x2F;a&gt;查看 XML 文件&lt;&#x2F;h2&gt;&lt;pre&gt;&lt;code class&#x3D;&quot;hljs xml&quot;&gt;&lt;span class&#x3D;&quot;hljs-meta&quot;&gt;&lt;?xml version&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;1.0&quot;&lt;&#x2F;span&gt; encoding&#x3D;&lt;span class&#x3D;&quot;hljs-string&quot;&gt;&quot;ISO-8859-1&quot;&lt;&#x2F;span&gt;?&gt;&lt;&#x2F;span&gt;
+- &lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Tove&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;to&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Jani&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;from&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Reminder&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;heading&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;Don&#39;t forget me this weekend!&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;body&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;
+&lt;span class&#x3D;&quot;hljs-tag&quot;&gt;&lt;&#x2F;&lt;span class&#x3D;&quot;hljs-name&quot;&gt;note&lt;&#x2F;span&gt;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+
+&lt;p&gt;查看这个 XML 文件：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;note.xml&quot;&gt;note.xml&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;XML 文档将显示为代码颜色化的根以及子元素。通过点击元素左侧的加号（+）或减号（ - ），可以展开或收起元素的结构。要查看原始的 XML 源（不包括 + 和 - 符号），选择”查看页面源代码”或从浏览器菜单”查看源文件”。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 Safari、Chrome 中，只有元素的文本将被显示。要查看原始的 XML，您必须右键单击页面，选择”查看源文件”。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;查看无效的-XML-文件&quot;&gt;&lt;a href&#x3D;&quot;#查看无效的-XML-文件&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;查看无效的 XML 文件&quot;&gt;&lt;&#x2F;a&gt;查看无效的 XML 文件&lt;&#x2F;h2&gt;&lt;p&gt;如果一个错误的XML文件被打开，浏览器会报告错误。&lt;&#x2F;p&gt;
+&lt;p&gt;请查看这个 XML 文件：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;note_error.xml&quot;&gt;note_error.xml&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;其他-XML-实例&quot;&gt;&lt;a href&#x3D;&quot;#其他-XML-实例&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;其他 XML 实例&quot;&gt;&lt;&#x2F;a&gt;其他 XML 实例&lt;&#x2F;h2&gt;&lt;p&gt;请查看这些 XML 文档，这会有助于您建立对 XML 的感性认识。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;cd_catalog.xml&quot;&gt;一个 XML 的 CD 目录&lt;&#x2F;a&gt;&lt;br&gt;这是一个 CD 集，存储为 XML 数据。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;plant_catalog.xml&quot;&gt;一个 XML 的植物目录&lt;&#x2F;a&gt;&lt;br&gt;这是一个来自植物店的植物目录，存储为 XML 数据。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;simple.xml&quot;&gt;一个简单的食物菜单&lt;&#x2F;a&gt;&lt;br&gt;这是一个来自餐馆的早餐菜单，存储为 XML 数据。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;为什么-XML-显示这个样子？&quot;&gt;&lt;a href&#x3D;&quot;#为什么-XML-显示这个样子？&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;为什么 XML 显示这个样子？&quot;&gt;&lt;&#x2F;a&gt;为什么 XML 显示这个样子？&lt;&#x2F;h2&gt;&lt;p&gt;XML 文档不会携带有关如何显示数据的信息。&lt;&#x2F;p&gt;
+&lt;p&gt;由于 XML 标签由 XML 文档的作者”发明”，浏览器无法确定像 &lt;table&gt; 这样一个标签究竟描述一个 HTML 表格还是一个餐桌。&lt;&#x2F;p&gt;
+&lt;p&gt;在没有任何有关如何显示数据的信息的情况下，大多数的浏览器都会仅仅把 XML 文档显示为源代码。&lt;&#x2F;p&gt;
+&lt;p&gt;在下面的章节，我们会了解几个有关这个显示问题的解决方案，其中会使用 CSS、XSLT 和 JavaScript。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h1 id&#x3D;&quot;使用-CSS-显示-XML-不常用&quot;&gt;&lt;a href&#x3D;&quot;#使用-CSS-显示-XML-不常用&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;使用 CSS 显示 XML(不常用)&quot;&gt;&lt;&#x2F;a&gt;使用 CSS 显示 XML(不常用)&lt;&#x2F;h1&gt;&lt;p&gt;通过使用 CSS（Cascading Style Sheets 层叠样式表），您可以添加显示信息到 XML 文档中。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;使用-CSS-显示您的-XML？&quot;&gt;&lt;a href&#x3D;&quot;#使用-CSS-显示您的-XML？&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;使用 CSS 显示您的 XML？&quot;&gt;&lt;&#x2F;a&gt;使用 CSS 显示您的 XML？&lt;&#x2F;h2&gt;&lt;p&gt;使用 CSS 来格式化 XML 文档是有可能的。&lt;&#x2F;p&gt;
+&lt;p&gt;下面的实例就是关于如何使用 CSS 样式表来格式化 XML 文档：&lt;&#x2F;p&gt;
+&lt;p&gt;请看这个 XML 文件：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;cd_catalog.xml&quot;&gt;CD 目录&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;然后看这个样式表：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;cd_catalog.css&quot;&gt;CSS 文件&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;最后，请查看：&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;cd_catalog_with_css.xml&quot;&gt;使用 CSS 文件格式化的 CD 目录&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;使用 CSS 格式化 XML 不是常用的方法。&lt;&#x2F;p&gt;
+&lt;p&gt;W3C 推荐使用 XSLT，请看下一章。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h1 id&#x3D;&quot;使用-XSLT-显示-XML&quot;&gt;&lt;a href&#x3D;&quot;#使用-XSLT-显示-XML&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;使用 XSLT 显示 XML&quot;&gt;&lt;&#x2F;a&gt;使用 XSLT 显示 XML&lt;&#x2F;h1&gt;&lt;p&gt;通过使用 XSLT，您可以把 XML 文档转换成 HTML 格式。&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;使用-XSLT-显示-XML-1&quot;&gt;&lt;a href&#x3D;&quot;#使用-XSLT-显示-XML-1&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;使用 XSLT 显示 XML&quot;&gt;&lt;&#x2F;a&gt;使用 XSLT 显示 XML&lt;&#x2F;h2&gt;&lt;p&gt;XSLT 是首选的 XML 样式表语言。&lt;&#x2F;p&gt;
+&lt;p&gt;XSLT（eXtensible Stylesheet Language Transformations）远比 CSS 更加完善。&lt;&#x2F;p&gt;
+&lt;p&gt;XSLT 是在浏览器显示 XML 文件之前，先把它转换为 HTML：&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;simple.xml&quot;&gt;XML 文件&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;simple.xsl&quot;&gt;XSLT 文件&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;如果您想要学习有关 XSLT 的知识，请在我们的&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;&quot;&gt;首页&lt;&#x2F;a&gt;查找 XSLT 教程。&lt;&#x2F;p&gt;
+&lt;hr&gt;
+&lt;h2 id&#x3D;&quot;在服务器上通过-XSLT-转换-XML&quot;&gt;&lt;a href&#x3D;&quot;#在服务器上通过-XSLT-转换-XML&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;在服务器上通过 XSLT 转换 XML&quot;&gt;&lt;&#x2F;a&gt;在服务器上通过 XSLT 转换 XML&lt;&#x2F;h2&gt;&lt;p&gt;在上面的实例中，当浏览器读取 XML 文件时，XSLT 转换是由浏览器完成的。&lt;&#x2F;p&gt;
+&lt;p&gt;在使用 XSLT 来转换 XML 时，不同的浏览器可能会产生不同结果。为了减少这种问题，可以在服务器上进行 XSLT 转换。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.runoob.com&#x2F;try&#x2F;xml&#x2F;simple.php&quot;&gt;查看结果&lt;&#x2F;a&gt;。&lt;&#x2F;p&gt;
+</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="XML 不是对 HTML 的替代"><a rel="nofollow" class="trm-toc-link" href="#XML-不是对-HTML-的替代"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">XML 不是对 HTML 的替代</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="XML 树结构"><a rel="nofollow" class="trm-toc-link" href="#XML-树结构"><span class="trm-toc-number"></span> <span class="trm-toc-text">XML 树结构</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="一个 XML 文档实例"><a rel="nofollow" class="trm-toc-link" href="#一个-XML-文档实例"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">一个 XML 文档实例</span></a></li><li class="trm-toc-item trm-toc-level-2" title="XML 文档形成一种树结构"><a rel="nofollow" class="trm-toc-link" href="#XML-文档形成一种树结构"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">XML 文档形成一种树结构</span></a></li><li class="trm-toc-item trm-toc-level-2" title="实例："><a rel="nofollow" class="trm-toc-link" href="#实例："><span class="trm-toc-number">3.</span> <span class="trm-toc-text">实例：</span></a></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
 
     
-<script src="/js/extend.js"></script>
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="https://unpkg.com/hexo-theme-async@2.2.2/source/js/main.js?v=2.2.2"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
 
 </body>
+
 </html>
