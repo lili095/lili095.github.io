@@ -1,353 +1,160 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="x5-fullscreen" content="true">
-<meta name="full-screen" content="yes">
-<meta name="theme-color" content="#317EFB" />
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="排序函数_sorted函数sorted 函数是 Python 内置的用于排序的函数。它可以对任何可迭代对象进行排序，并返回一个新的已排序的列表，而不会改变原始对象。 sorted 函数的语法sorted(iterable, *, key&#x3D;None, reverse&#x3D;False)  参数说明 iterable：要排序的可迭代对象（如列表、元组、字符串等）。 key：一个函数，它将用于从 iterab">
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>模块综合 | 李梓卓的技术专栏</title><meta name="author" content="李梓卓"><meta name="copyright" content="李梓卓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="排序函数_sorted函数sorted 函数是 Python 内置的用于排序的函数。它可以对任何可迭代对象进行排序，并返回一个新的已排序的列表，而不会改变原始对象。 sorted 函数的语法1sorted(iterable, *, key&#x3D;None, reverse&#x3D;False)  参数说明 iterable：要排序的可迭代对象（如列表、元组、字符串等）。 key：一个函数，它将用于从 itera">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模块综合">
 <meta property="og:url" content="https://lili095.github.io/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/index.html">
 <meta property="og:site_name" content="李梓卓的技术专栏">
-<meta property="og:description" content="排序函数_sorted函数sorted 函数是 Python 内置的用于排序的函数。它可以对任何可迭代对象进行排序，并返回一个新的已排序的列表，而不会改变原始对象。 sorted 函数的语法sorted(iterable, *, key&#x3D;None, reverse&#x3D;False)  参数说明 iterable：要排序的可迭代对象（如列表、元组、字符串等）。 key：一个函数，它将用于从 iterab">
+<meta property="og:description" content="排序函数_sorted函数sorted 函数是 Python 内置的用于排序的函数。它可以对任何可迭代对象进行排序，并返回一个新的已排序的列表，而不会改变原始对象。 sorted 函数的语法1sorted(iterable, *, key&#x3D;None, reverse&#x3D;False)  参数说明 iterable：要排序的可迭代对象（如列表、元组、字符串等）。 key：一个函数，它将用于从 itera">
 <meta property="og:locale">
+<meta property="og:image" content="https://lili095.github.io/img/avatar.png">
 <meta property="article:published_time" content="2024-07-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-07-09T13:12:14.575Z">
 <meta property="article:author" content="李梓卓">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-
-
-<title >模块综合</title>
-
-<!-- Favicon -->
-
-    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='16x16' ></link>
-
-
-    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='32x32' ></link>
-
-
-
-
-<!-- Plugin -->
-
-
-
-
+<meta name="twitter:image" content="https://lili095.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lili095.github.io/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: 李梓卓","link":"Link: ","source":"Source: 李梓卓的技术专栏","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '模块综合',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-07-09 21:12:14'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-<link rel="stylesheet" href="https://unpkg.com/hexo-theme-async@2.2.2/source/css/plugins/bootstrap.row.css">
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
     
-<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
-
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
     
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-
-
-
-
-<!-- Icon -->
-
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
-
-
-
-
-<!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"lili095.github.io","author":"李梓卓","root":"/","typed_text":null,"theme_version":"2.2.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-07-09 21:12:14"};</script>
-
-<!-- Theme mode css -->
-<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.2" id="trm-switch-style">
-<script>
-    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
-    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
-    let type = catchMode === 'style-dark' ? 'add' : 'remove';
-    document.documentElement.classList[type]('dark')
-</script>
-
-<!-- CDN -->
-
-
-    
-    
-
-
-
-<!-- Site Analytics -->
-
- 
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-
-  <!-- app wrapper -->
-  <div class="trm-app-frame">
-
-    <!-- page preloader -->
-    <div class="trm-preloader">
-    <div class="trm-holder">
-        <div class="preloader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-</div>
-    <!-- page preloader end -->
-
-    <!-- change mode preloader -->
-    <div class="trm-mode-swich-animation-frame">
-    <div class="trm-mode-swich-animation">
-        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
-        <div class="trm-horizon"></div>
-        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
-    </div>
-</div>
-    <!-- change mode preloader end -->
-
-      <!-- scroll container -->
-      <div id="trm-dynamic-content" class="trm-swup-animation">
-        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
-            <!-- top bar -->
-            <header class="trm-top-bar">
-	<div class="container">
-		<div class="trm-left-side">
-			<!-- logo -->
-<a href="/" class="trm-logo-frame trm-anima-link">
-    
-        <img alt="logo" src="/img/favicon.svg">
-    
-    
-        <div class="trm-logo-text">
-            Async<span>Theme</span>
-        </div>
-    
-</a>
-<!-- logo end -->
-		</div>
-		<div class="trm-right-side">
-			<!-- menu -->
-<div class="trm-menu">
-    <nav>
-        <ul>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/" target="">
-                    home
-                </a>
-                
-                <ul>
-                    
-                    <li>
-                        <a  href="/archives2/" target="">
-                            archives2
-                        </a>
-                    </li>
-                    
-                </ul>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a data-no-swup href="/archives/" target="">
-                    archives
-                </a>
-                
-            </li>
-            
-        </ul>
-    </nav>
-</div>
-<!-- menu end -->
-			
-    <!-- mode switcher place -->
-    <div class="trm-mode-switcher-place">
-        <div class="trm-mode-switcher">
-            <i class="iconfont far fa-sun"></i>
-            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
-            <label class="trm-swich" for="trm-swich"></label>
-            <i class="iconfont far fa-moon"></i>
-        </div>
-    </div>
-    <!-- mode switcher place end -->
-
-			
-		</div>
-		<div class="trm-menu-btn">
-			<span></span>
-		</div>
-	</div>
-</header>
-            <!-- top bar end -->
-
-            <!-- body -->
-            
-<div class="trm-content-start">
-    <!-- banner -->
-    <div class="trm-banner">
-    
-    <!-- banner cover -->
-    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
-    <!-- banner cover end -->
-    
-
-    <!-- banner content -->
-    <div class="trm-banner-content trm-overlay">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-4"></div>
-                
-                <div class="col-lg-8">
-
-                    <!-- banner title -->
-                    <div class="trm-banner-text ">
-                        <div class="trm-label trm-mb-20">
-                            NEWS LETTER
-                        </div>
-                        <h1 class="trm-mb-30 trm-hsmb-font">
-                            模块综合
-                        </h1>
-
-                        
-                            <ul class="trm-breadcrumbs trm-label">
-                                <li>
-                                    <a href="/" class="trm-anima-link">Home</a>
-                                </li>
-                                <li>
-                                    <span>
-                                        2024
-                                    </span>
-                                </li>
-                            </ul>
-                        
-                    </div>
-                    <!-- banner title end -->
-
-                    <!-- scroll hint -->
-                    <span id="scroll-triger" class="trm-scroll-hint-frame">
-                        <div class="trm-scroll-hint"></div>
-                        <span class="trm-label">Scroll down</span>
-                    </span>
-                    <!-- scroll hint end -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- banner content end -->
-</div>
-    <!-- banner end -->
-    <div class="container">
-        <div class="row">
-            
-                <div class="trm-page-sidebar col-lg-4 hidden-sm">
-                    <!-- main card -->
-                    <div class="trm-main-card-frame trm-sidebar">
-    <div class="trm-main-card"> 
-        <!-- card header -->
-<div class="trm-mc-header">
-    <div class="trm-avatar-frame trm-mb-20">
-        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
-    </div>
-    <h5 class="trm-name trm-mb-15">
-        李梓卓
-    </h5>
-    
-</div>
-<!-- card header end -->
-        <!-- sidebar social -->
-
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<div class="trm-social">
-    
-        <a href="https://github.com/lili095" title="github" rel="nofollow" target="_blank">
-            <i class="iconfont fab fa-github"></i>
-        </a>
-    
-</div>
-
-<!-- sidebar social end -->
-        <!-- info -->
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<ul class="trm-table trm-mb-20">
-    
-        <li>
-            <div class="trm-label">
-                地址:
-            </div>
-            <div class="trm-label trm-label-light">
-                南京
-            </div>
-        </li>
-    
-        <li>
-            <div class="trm-label">
-                年龄:
-            </div>
-            <div class="trm-label trm-label-light">
-                24
-            </div>
-        </li>
-    
-</ul>
-<!-- info end -->
-
-        
-    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-    <!-- action button -->
-    <div class="text-center">
-        <a href="mailto:1046876792@qq.com" class="trm-btn">
-            联系我
-            <i class="iconfont far fa-envelope"></i>
-        </a>
-    </div>
-    <!-- action button end -->
-
-    </div>
-</div>
-                    <!-- main card end -->
-                </div>
-            
-            <div class="trm-page-content col-lg-8">
-                <div id="trm-content" class="trm-content">
-                    <div class="trm-post-info row hidden-sm">
-    <div class="col-sm-4">
-        <div class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            07/09
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-clock trm-icon"></i><br>
-            00:00
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-user trm-icon"></i><br>
-            李梓卓
-        </div>
-    </div>
-</div>
-<div class="trm-card ">
-    <article id="article-container" class="trm-publication">
-    <h2 id="排序函数-sorted函数"><a href="#排序函数-sorted函数" class="headerlink" title="排序函数_sorted函数"></a>排序函数_sorted函数</h2><p><code>sorted</code> 函数是 Python 内置的用于排序的函数。它可以对任何可迭代对象进行排序，并返回一个新的已排序的列表，而不会改变原始对象。</p>
-<h3 id="sorted-函数的语法"><a href="#sorted-函数的语法" class="headerlink" title="sorted 函数的语法"></a><code>sorted</code> 函数的语法</h3><pre><code class="hljs python"><span class="hljs-built_in">sorted</span>(iterable, *, key=<span class="hljs-literal">None</span>, reverse=<span class="hljs-literal">False</span>)</code></pre>
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="李梓卓的技术专栏"><span class="site-name">李梓卓的技术专栏</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">模块综合</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-07-08T16:00:00.000Z" title="Created 2024-07-09 00:00:00">2024-07-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-07-09T13:12:14.575Z" title="Updated 2024-07-09 21:12:14">2024-07-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python%E7%BB%BC%E5%90%88/">Python综合</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="模块综合"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="排序函数-sorted函数"><a href="#排序函数-sorted函数" class="headerlink" title="排序函数_sorted函数"></a>排序函数_sorted函数</h2><p><code>sorted</code> 函数是 Python 内置的用于排序的函数。它可以对任何可迭代对象进行排序，并返回一个新的已排序的列表，而不会改变原始对象。</p>
+<h3 id="sorted-函数的语法"><a href="#sorted-函数的语法" class="headerlink" title="sorted 函数的语法"></a><code>sorted</code> 函数的语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sorted</span>(iterable, *, key=<span class="literal">None</span>, reverse=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
 
 <h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ol>
 <li><strong>iterable</strong>：要排序的可迭代对象（如列表、元组、字符串等）。</li>
@@ -356,58 +163,33 @@
 </ol>
 <h3 id="示例和详细解释"><a href="#示例和详细解释" class="headerlink" title="示例和详细解释"></a>示例和详细解释</h3><ol>
 <li><p><strong>基本使用</strong>：</p>
-<pre><code class="hljs python">numbers = [<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
-sorted_numbers = <span class="hljs-built_in">sorted</span>(numbers)
-<span class="hljs-built_in">print</span>(sorted_numbers)  <span class="hljs-comment"># 输出: [1, 2, 5, 5, 6, 9]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">sorted_numbers = <span class="built_in">sorted</span>(numbers)</span><br><span class="line"><span class="built_in">print</span>(sorted_numbers)  <span class="comment"># 输出: [1, 2, 5, 5, 6, 9]</span></span><br></pre></td></tr></table></figure>
 <p>这个示例将一个数字列表按升序排序。</p>
 </li>
 <li><p><strong>使用 key 参数</strong>：</p>
-<pre><code class="hljs python">words = [<span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]
-sorted_words = <span class="hljs-built_in">sorted</span>(words, key=<span class="hljs-built_in">len</span>)
-<span class="hljs-built_in">print</span>(sorted_words)  <span class="hljs-comment"># 输出: [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">words = [<span class="string">&quot;banana&quot;</span>, <span class="string">&quot;apple&quot;</span>, <span class="string">&quot;cherry&quot;</span>]</span><br><span class="line">sorted_words = <span class="built_in">sorted</span>(words, key=<span class="built_in">len</span>)</span><br><span class="line"><span class="built_in">print</span>(sorted_words)  <span class="comment"># 输出: [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;]</span></span><br></pre></td></tr></table></figure>
 <p>在这个例子中，列表按单词的长度进行排序。</p>
 </li>
 <li><p><strong>按降序排序</strong>：</p>
-<pre><code class="hljs python">numbers = [<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
-sorted_numbers = <span class="hljs-built_in">sorted</span>(numbers, reverse=<span class="hljs-literal">True</span>)
-<span class="hljs-built_in">print</span>(sorted_numbers)  <span class="hljs-comment"># 输出: [9, 6, 5, 5, 2, 1]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">sorted_numbers = <span class="built_in">sorted</span>(numbers, reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(sorted_numbers)  <span class="comment"># 输出: [9, 6, 5, 5, 2, 1]</span></span><br></pre></td></tr></table></figure>
 <p>这个示例按降序对数字列表进行排序。</p>
 </li>
 <li><p><strong>结合使用 key 和 reverse</strong>：</p>
-<pre><code class="hljs python">words = [<span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]
-sorted_words = <span class="hljs-built_in">sorted</span>(words, key=<span class="hljs-built_in">len</span>, reverse=<span class="hljs-literal">True</span>)
-<span class="hljs-built_in">print</span>(sorted_words)  <span class="hljs-comment"># 输出: [&#x27;banana&#x27;, &#x27;cherry&#x27;, &#x27;apple&#x27;]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">words = [<span class="string">&quot;banana&quot;</span>, <span class="string">&quot;apple&quot;</span>, <span class="string">&quot;cherry&quot;</span>]</span><br><span class="line">sorted_words = <span class="built_in">sorted</span>(words, key=<span class="built_in">len</span>, reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(sorted_words)  <span class="comment"># 输出: [&#x27;banana&#x27;, &#x27;cherry&#x27;, &#x27;apple&#x27;]</span></span><br></pre></td></tr></table></figure>
 <p>这个示例先按单词长度排序，再按降序排列。</p>
 </li>
 <li><p><strong>复杂数据结构排序</strong>：</p>
-<pre><code class="hljs python">students = [
-    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;John&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">25</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;B&#x27;</span>&#125;,
-    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Jane&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">22</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;A&#x27;</span>&#125;,
-    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Dave&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">23</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;C&#x27;</span>&#125;,
-]
-sorted_students = <span class="hljs-built_in">sorted</span>(students, key=<span class="hljs-keyword">lambda</span> student: student[<span class="hljs-string">&#x27;age&#x27;</span>])
-<span class="hljs-built_in">print</span>(sorted_students)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">students = [</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">25</span>, <span class="string">&#x27;grade&#x27;</span>: <span class="string">&#x27;B&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Jane&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">22</span>, <span class="string">&#x27;grade&#x27;</span>: <span class="string">&#x27;A&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Dave&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">23</span>, <span class="string">&#x27;grade&#x27;</span>: <span class="string">&#x27;C&#x27;</span>&#125;,</span><br><span class="line">]</span><br><span class="line">sorted_students = <span class="built_in">sorted</span>(students, key=<span class="keyword">lambda</span> student: student[<span class="string">&#x27;age&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(sorted_students)</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
-<pre><code class="hljs python">[&#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Jane&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">22</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;A&#x27;</span>&#125;,
- &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Dave&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">23</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;C&#x27;</span>&#125;,
- &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;John&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">25</span>, <span class="hljs-string">&#x27;grade&#x27;</span>: <span class="hljs-string">&#x27;B&#x27;</span>&#125;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Jane&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">22</span>, <span class="string">&#x27;grade&#x27;</span>: <span class="string">&#x27;A&#x27;</span>&#125;,</span><br><span class="line"> &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Dave&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">23</span>, <span class="string">&#x27;grade&#x27;</span>: <span class="string">&#x27;C&#x27;</span>&#125;,</span><br><span class="line"> &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">25</span>, <span class="string">&#x27;grade&#x27;</span>: <span class="string">&#x27;B&#x27;</span>&#125;]</span><br></pre></td></tr></table></figure>
 <p>在这个示例中，学生列表按年龄排序。</p>
 </li>
 </ol>
-<h3 id="内置和自定义排序键"><a href="#内置和自定义排序键" class="headerlink" title="内置和自定义排序键"></a>内置和自定义排序键</h3><h4 id="按字符串排序："><a href="#按字符串排序：" class="headerlink" title="按字符串排序："></a>按字符串排序：</h4><pre><code class="hljs python">names = [<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Charlie&quot;</span>]
-sorted_names = <span class="hljs-built_in">sorted</span>(names)
-<span class="hljs-built_in">print</span>(sorted_names)  <span class="hljs-comment"># 输出: [&#x27;Alice&#x27;, &#x27;Bob&#x27;, &#x27;Charlie&#x27;]</span></code></pre>
+<h3 id="内置和自定义排序键"><a href="#内置和自定义排序键" class="headerlink" title="内置和自定义排序键"></a>内置和自定义排序键</h3><h4 id="按字符串排序："><a href="#按字符串排序：" class="headerlink" title="按字符串排序："></a>按字符串排序：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>]</span><br><span class="line">sorted_names = <span class="built_in">sorted</span>(names)</span><br><span class="line"><span class="built_in">print</span>(sorted_names)  <span class="comment"># 输出: [&#x27;Alice&#x27;, &#x27;Bob&#x27;, &#x27;Charlie&#x27;]</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="按字符串长度排序："><a href="#按字符串长度排序：" class="headerlink" title="按字符串长度排序："></a>按字符串长度排序：</h4><pre><code class="hljs python">names = [<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Charlie&quot;</span>]
-sorted_names = <span class="hljs-built_in">sorted</span>(names, key=<span class="hljs-built_in">len</span>)
-<span class="hljs-built_in">print</span>(sorted_names)  <span class="hljs-comment"># 输出: [&#x27;Bob&#x27;, &#x27;Alice&#x27;, &#x27;Charlie&#x27;]</span></code></pre>
+<h4 id="按字符串长度排序："><a href="#按字符串长度排序：" class="headerlink" title="按字符串长度排序："></a>按字符串长度排序：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>]</span><br><span class="line">sorted_names = <span class="built_in">sorted</span>(names, key=<span class="built_in">len</span>)</span><br><span class="line"><span class="built_in">print</span>(sorted_names)  <span class="comment"># 输出: [&#x27;Bob&#x27;, &#x27;Alice&#x27;, &#x27;Charlie&#x27;]</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="自定义排序函数："><a href="#自定义排序函数：" class="headerlink" title="自定义排序函数："></a>自定义排序函数：</h4><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">custom_sort</span>(<span class="hljs-params">item</span>):
-    <span class="hljs-keyword">return</span> item.lower()
-
-names = [<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;charlie&quot;</span>]
-sorted_names = <span class="hljs-built_in">sorted</span>(names, key=custom_sort)
-<span class="hljs-built_in">print</span>(sorted_names)  <span class="hljs-comment"># 输出: [&#x27;alice&#x27;, &#x27;Bob&#x27;, &#x27;charlie&#x27;]</span></code></pre>
+<h4 id="自定义排序函数："><a href="#自定义排序函数：" class="headerlink" title="自定义排序函数："></a>自定义排序函数：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">custom_sort</span>(<span class="params">item</span>):</span><br><span class="line">    <span class="keyword">return</span> item.lower()</span><br><span class="line"></span><br><span class="line">names = [<span class="string">&quot;alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;charlie&quot;</span>]</span><br><span class="line">sorted_names = <span class="built_in">sorted</span>(names, key=custom_sort)</span><br><span class="line"><span class="built_in">print</span>(sorted_names)  <span class="comment"># 输出: [&#x27;alice&#x27;, &#x27;Bob&#x27;, &#x27;charlie&#x27;]</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="进一步说明"><a href="#进一步说明" class="headerlink" title="进一步说明"></a>进一步说明</h3><ul>
 <li><strong>稳定排序</strong>：<code>sorted</code> 函数保证是稳定排序，这意味着当有多个记录具有相同键值时，它们的相对顺序在排序后会保持不变。</li>
@@ -429,50 +211,33 @@ sorted_names = <span class="hljs-built_in">sorted</span>(names, key=custom_sort)
 <li><code>string.capwords(s, sep=None)</code>: 将字符串 <code>s</code> 中的单词首字母大写，其他字母小写。单词以 <code>sep</code> 作为分隔符（默认为空格）。</li>
 </ul>
 <h2 id="join方法"><a href="#join方法" class="headerlink" title="join方法"></a>join方法</h2><p><code>join</code> 方法是 Python 中字符串对象的一个方法，用于将一个可迭代对象（如列表、元组等）中的元素连接成一个字符串。连接时，元素之间会插入调用 <code>join</code> 方法的字符串。常见的用法为将列表中的字符串元素连接成一个长字符串。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code class="hljs python"><span class="hljs-built_in">str</span>.join(iterable)</code></pre>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>.join(iterable)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>str</code>：调用 <code>join</code> 方法的字符串，用作连接符。</li>
 <li><code>iterable</code>：一个可迭代对象，其元素是要连接成一个字符串的子字符串。</li>
 </ul>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>将一个字符串列表用逗号连接成一个字符串：</p>
-<pre><code class="hljs python">words = [<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;world&quot;</span>, <span class="hljs-string">&quot;python&quot;</span>]
-result = <span class="hljs-string">&quot;,&quot;</span>.join(words)
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: hello,world,python</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">words = [<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;world&quot;</span>, <span class="string">&quot;python&quot;</span>]</span><br><span class="line">result = <span class="string">&quot;,&quot;</span>.join(words)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出: hello,world,python</span></span><br></pre></td></tr></table></figure>
 
 <p>在这个例子中，<code>&quot;,&quot;.join(words)</code> 会将 <code>words</code> 列表中的每个字符串元素连接起来，每两个元素之间插入一个逗号。</p>
 <h4 id="用空格连接"><a href="#用空格连接" class="headerlink" title="用空格连接"></a>用空格连接</h4><p>将一个字符串列表用空格连接成一个字符串：</p>
-<pre><code class="hljs python">words = [<span class="hljs-string">&quot;join&quot;</span>, <span class="hljs-string">&quot;method&quot;</span>, <span class="hljs-string">&quot;in&quot;</span>, <span class="hljs-string">&quot;python&quot;</span>]
-result = <span class="hljs-string">&quot; &quot;</span>.join(words)
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: join method in python</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">words = [<span class="string">&quot;join&quot;</span>, <span class="string">&quot;method&quot;</span>, <span class="string">&quot;in&quot;</span>, <span class="string">&quot;python&quot;</span>]</span><br><span class="line">result = <span class="string">&quot; &quot;</span>.join(words)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出: join method in python</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="用换行符连接"><a href="#用换行符连接" class="headerlink" title="用换行符连接"></a>用换行符连接</h4><p>将一个字符串列表用换行符连接成一个字符串：</p>
-<pre><code class="hljs python">lines = [<span class="hljs-string">&quot;line1&quot;</span>, <span class="hljs-string">&quot;line2&quot;</span>, <span class="hljs-string">&quot;line3&quot;</span>]
-result = <span class="hljs-string">&quot;\n&quot;</span>.join(lines)
-<span class="hljs-built_in">print</span>(result)
-<span class="hljs-comment"># 输出:</span>
-<span class="hljs-comment"># line1</span>
-<span class="hljs-comment"># line2</span>
-<span class="hljs-comment"># line3</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">&quot;line1&quot;</span>, <span class="string">&quot;line2&quot;</span>, <span class="string">&quot;line3&quot;</span>]</span><br><span class="line">result = <span class="string">&quot;\n&quot;</span>.join(lines)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"><span class="comment"># 输出:</span></span><br><span class="line"><span class="comment"># line1</span></span><br><span class="line"><span class="comment"># line2</span></span><br><span class="line"><span class="comment"># line3</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="连接字符"><a href="#连接字符" class="headerlink" title="连接字符"></a>连接字符</h4><p>将一个字符列表连接成一个字符串：</p>
-<pre><code class="hljs python">chars = [<span class="hljs-string">&#x27;P&#x27;</span>, <span class="hljs-string">&#x27;y&#x27;</span>, <span class="hljs-string">&#x27;t&#x27;</span>, <span class="hljs-string">&#x27;h&#x27;</span>, <span class="hljs-string">&#x27;o&#x27;</span>, <span class="hljs-string">&#x27;n&#x27;</span>]
-result = <span class="hljs-string">&quot;&quot;</span>.join(chars)
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: Python</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chars = [<span class="string">&#x27;P&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;n&#x27;</span>]</span><br><span class="line">result = <span class="string">&quot;&quot;</span>.join(chars)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出: Python</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
 <li><p><strong>元素必须是字符串</strong>：<code>join</code> 方法只能连接字符串类型的元素。如果可迭代对象中的元素不是字符串类型，会引发 <code>TypeError</code>。</p>
- <pre><code class="hljs python">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
-result = <span class="hljs-string">&quot;,&quot;</span>.join(numbers)  <span class="hljs-comment"># 会引发 TypeError</span></code></pre>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">result = <span class="string">&quot;,&quot;</span>.join(numbers)  <span class="comment"># 会引发 TypeError</span></span><br></pre></td></tr></table></figure>
 <p> 如果需要连接非字符串类型的元素，可以先将它们转换为字符串：</p>
- <pre><code class="hljs python">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
-result = <span class="hljs-string">&quot;,&quot;</span>.join(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">str</span>, numbers))
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: 1,2,3,4</span></code></pre>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">result = <span class="string">&quot;,&quot;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, numbers))</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出: 1,2,3,4</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>可迭代对象</strong>：<code>join</code> 方法可以处理任何可迭代对象（如列表、元组、集合等），只要其中的元素是字符串。</p>
- <pre><code class="hljs python">words = (<span class="hljs-string">&quot;tuple&quot;</span>, <span class="hljs-string">&quot;example&quot;</span>, <span class="hljs-string">&quot;join&quot;</span>)
-result = <span class="hljs-string">&quot; &quot;</span>.join(words)
-<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment"># 输出: tuple example join</span></code></pre>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">words = (<span class="string">&quot;tuple&quot;</span>, <span class="string">&quot;example&quot;</span>, <span class="string">&quot;join&quot;</span>)</span><br><span class="line">result = <span class="string">&quot; &quot;</span>.join(words)</span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出: tuple example join</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>性能</strong>：<code>join</code> 方法比使用循环和字符串拼接（如使用 <code>+</code> 运算符）效率更高，尤其是在连接大量字符串时，<code>join</code> 方法的性能优势更加明显，因为它避免了创建多个中间字符串。</p>
 </li>
@@ -505,27 +270,7 @@ result = <span class="hljs-string">&quot; &quot;</span>.join(words)
 <li><code>quantiles(data, n=4, method=&#39;exclusive&#39;)</code>: 返回数据的分位数。</li>
 </ul>
 <h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><p>以下是使用 <code>statistics</code> 模块的几个示例：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> statistics <span class="hljs-keyword">as</span> stats
-
-data = [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>]
-
-<span class="hljs-comment"># 均值</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Mean:&quot;</span>, stats.mean(data))  <span class="hljs-comment"># 输出: Mean: 5</span>
-
-<span class="hljs-comment"># 中位数</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Median:&quot;</span>, stats.median(data))  <span class="hljs-comment"># 输出: Median: 4.5</span>
-
-<span class="hljs-comment"># 众数</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Mode:&quot;</span>, stats.mode(data))  <span class="hljs-comment"># 输出: Mode: 4</span>
-
-<span class="hljs-comment"># 方差</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Variance:&quot;</span>, stats.variance(data))  <span class="hljs-comment"># 输出: Variance: 4.571428571428571</span>
-
-<span class="hljs-comment"># 标准差</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Standard Deviation:&quot;</span>, stats.stdev(data))  <span class="hljs-comment"># 输出: Standard Deviation: 2.138089935299395</span>
-
-<span class="hljs-comment"># 分位数</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Quantiles:&quot;</span>, stats.quantiles(data))  <span class="hljs-comment"># 输出: Quantiles: [4.0, 4.5, 5.0]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> statistics <span class="keyword">as</span> stats</span><br><span class="line"></span><br><span class="line">data = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 均值</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Mean:&quot;</span>, stats.mean(data))  <span class="comment"># 输出: Mean: 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 中位数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Median:&quot;</span>, stats.median(data))  <span class="comment"># 输出: Median: 4.5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 众数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Mode:&quot;</span>, stats.mode(data))  <span class="comment"># 输出: Mode: 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方差</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Variance:&quot;</span>, stats.variance(data))  <span class="comment"># 输出: Variance: 4.571428571428571</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 标准差</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Standard Deviation:&quot;</span>, stats.stdev(data))  <span class="comment"># 输出: Standard Deviation: 2.138089935299395</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分位数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Quantiles:&quot;</span>, stats.quantiles(data))  <span class="comment"># 输出: Quantiles: [4.0, 4.5, 5.0]</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="使用注意事项"><a href="#使用注意事项" class="headerlink" title="使用注意事项"></a>使用注意事项</h3><ol>
 <li><strong>输入数据</strong>：大部分函数的参数是一个可迭代对象（如列表、元组等），其中的元素应该是数值类型。</li>
@@ -579,135 +324,72 @@ data = [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, 
 <li><code>methodcaller(name, *args, **kwargs)</code>: 返回一个可调用对象，对对象调用名为 <code>name</code> 的方法，并传递给定的参数和关键字参数</li>
 </ul>
 <h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><p>以下是使用 <code>operator</code> 模块的一些示例：</p>
-<h4 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> operator
+<h4 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line">a, b = <span class="number">5</span>, <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(operator.add(a, b))  <span class="comment"># 输出: 8</span></span><br><span class="line"><span class="built_in">print</span>(operator.mul(a, b))  <span class="comment"># 输出: 15</span></span><br><span class="line"><span class="built_in">print</span>(operator.<span class="built_in">pow</span>(a, b))  <span class="comment"># 输出: 125</span></span><br></pre></td></tr></table></figure>
 
-a, b = <span class="hljs-number">5</span>, <span class="hljs-number">3</span>
+<h4 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line">a, b = <span class="number">5</span>, <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(operator.lt(a, b))  <span class="comment"># 输出: False</span></span><br><span class="line"><span class="built_in">print</span>(operator.ge(a, b))  <span class="comment"># 输出: True</span></span><br><span class="line"><span class="built_in">print</span>(operator.eq(a, b))  <span class="comment"># 输出: False</span></span><br></pre></td></tr></table></figure>
 
-<span class="hljs-built_in">print</span>(operator.add(a, b))  <span class="hljs-comment"># 输出: 8</span>
-<span class="hljs-built_in">print</span>(operator.mul(a, b))  <span class="hljs-comment"># 输出: 15</span>
-<span class="hljs-built_in">print</span>(operator.<span class="hljs-built_in">pow</span>(a, b))  <span class="hljs-comment"># 输出: 125</span></code></pre>
+<h4 id="序列和映射操作"><a href="#序列和映射操作" class="headerlink" title="序列和映射操作"></a>序列和映射操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(operator.getitem(lst, <span class="number">2</span>))  <span class="comment"># 输出: 3</span></span><br><span class="line">operator.setitem(lst, <span class="number">2</span>, <span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(lst)  <span class="comment"># 输出: [1, 2, 10, 4, 5]</span></span><br><span class="line">operator.delitem(lst, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(lst)  <span class="comment"># 输出: [1, 2, 4, 5]</span></span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;c&#x27;</span>: <span class="number">3</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(operator.getitem(d, <span class="string">&#x27;b&#x27;</span>))  <span class="comment"># 输出: 2</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> operator
-
-a, b = <span class="hljs-number">5</span>, <span class="hljs-number">3</span>
-
-<span class="hljs-built_in">print</span>(operator.lt(a, b))  <span class="hljs-comment"># 输出: False</span>
-<span class="hljs-built_in">print</span>(operator.ge(a, b))  <span class="hljs-comment"># 输出: True</span>
-<span class="hljs-built_in">print</span>(operator.eq(a, b))  <span class="hljs-comment"># 输出: False</span></code></pre>
-
-<h4 id="序列和映射操作"><a href="#序列和映射操作" class="headerlink" title="序列和映射操作"></a>序列和映射操作</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> operator
-
-lst = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-
-<span class="hljs-built_in">print</span>(operator.getitem(lst, <span class="hljs-number">2</span>))  <span class="hljs-comment"># 输出: 3</span>
-operator.setitem(lst, <span class="hljs-number">2</span>, <span class="hljs-number">10</span>)
-<span class="hljs-built_in">print</span>(lst)  <span class="hljs-comment"># 输出: [1, 2, 10, 4, 5]</span>
-operator.delitem(lst, <span class="hljs-number">2</span>)
-<span class="hljs-built_in">print</span>(lst)  <span class="hljs-comment"># 输出: [1, 2, 4, 5]</span>
-
-d = &#123;<span class="hljs-string">&#x27;a&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;b&#x27;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;c&#x27;</span>: <span class="hljs-number">3</span>&#125;
-<span class="hljs-built_in">print</span>(operator.getitem(d, <span class="hljs-string">&#x27;b&#x27;</span>))  <span class="hljs-comment"># 输出: 2</span></code></pre>
-
-<h4 id="属性和方法操作"><a href="#属性和方法操作" class="headerlink" title="属性和方法操作"></a>属性和方法操作</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> operator
-
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>:
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, age</span>):
-        <span class="hljs-variable language_">self</span>.name = name
-        <span class="hljs-variable language_">self</span>.age = age
-
-p = Person(<span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-number">30</span>)
-
-name = operator.attrgetter(<span class="hljs-string">&#x27;name&#x27;</span>)
-<span class="hljs-built_in">print</span>(name(p))  <span class="hljs-comment"># 输出: Alice</span>
-
-data = [(<span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-number">30</span>), (<span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-number">25</span>), (<span class="hljs-string">&#x27;Charlie&#x27;</span>, <span class="hljs-number">35</span>)]
-data.sort(key=operator.itemgetter(<span class="hljs-number">1</span>))
-<span class="hljs-built_in">print</span>(data)  <span class="hljs-comment"># 输出: [(&#x27;Bob&#x27;, 25), (&#x27;Alice&#x27;, 30), (&#x27;Charlie&#x27;, 35)]</span></code></pre>
+<h4 id="属性和方法操作"><a href="#属性和方法操作" class="headerlink" title="属性和方法操作"></a>属性和方法操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">        <span class="variable language_">self</span>.name = name</span><br><span class="line">        <span class="variable language_">self</span>.age = age</span><br><span class="line"></span><br><span class="line">p = Person(<span class="string">&#x27;Alice&#x27;</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">name = operator.attrgetter(<span class="string">&#x27;name&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(name(p))  <span class="comment"># 输出: Alice</span></span><br><span class="line"></span><br><span class="line">data = [(<span class="string">&#x27;Alice&#x27;</span>, <span class="number">30</span>), (<span class="string">&#x27;Bob&#x27;</span>, <span class="number">25</span>), (<span class="string">&#x27;Charlie&#x27;</span>, <span class="number">35</span>)]</span><br><span class="line">data.sort(key=operator.itemgetter(<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(data)  <span class="comment"># 输出: [(&#x27;Bob&#x27;, 25), (&#x27;Alice&#x27;, 30), (&#x27;Charlie&#x27;, 35)]</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p><code>operator</code> 模块提供了对 Python 内置运算符的函数接口，使得代码在处理操作时更加清晰和灵活。特别是在需要将函数作为参数传递的情况下，这些函数显得尤为有用。通过使用 <code>operator</code> 模块，可以提高代码的可读性和可维护性。</p>
 <h2 id="random模块"><a href="#random模块" class="headerlink" title="random模块"></a>random模块</h2><p>Python 的 <code>random</code> 模块提供了各种生成随机数和执行随机操作的函数。以下是 <code>random</code> 模块中的主要功能和使用方法：</p>
 <h3 id="1-生成随机数"><a href="#1-生成随机数" class="headerlink" title="1. 生成随机数"></a>1. 生成随机数</h3><ul>
 <li><p><strong>随机浮点数</strong></p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> random
-
-<span class="hljs-comment"># 生成 0 到 1 之间的随机浮点数</span>
-random_float = random.random()
-<span class="hljs-built_in">print</span>(random_float)  <span class="hljs-comment"># 例如 0.37444887175646646</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 0 到 1 之间的随机浮点数</span></span><br><span class="line">random_float = random.random()</span><br><span class="line"><span class="built_in">print</span>(random_float)  <span class="comment"># 例如 0.37444887175646646</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>指定范围内的随机浮点数</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 生成 [a, b] 之间的随机浮点数</span>
-random_float = random.uniform(a, b)
-<span class="hljs-built_in">print</span>(random_float)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 [a, b] 之间的随机浮点数</span></span><br><span class="line">random_float = random.uniform(a, b)</span><br><span class="line"><span class="built_in">print</span>(random_float)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>随机整数</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 生成 [a, b] 之间的随机整数</span>
-random_int = random.randint(a, b)
-<span class="hljs-built_in">print</span>(random_int)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 [a, b] 之间的随机整数</span></span><br><span class="line">random_int = random.randint(a, b)</span><br><span class="line"><span class="built_in">print</span>(random_int)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>指定步长的随机整数</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 生成 range(start, stop, step) 范围内的随机整数</span>
-random_int = random.randrange(start, stop, step)
-<span class="hljs-built_in">print</span>(random_int)</code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 range(start, stop, step) 范围内的随机整数</span></span><br><span class="line">random_int = random.randrange(start, stop, step)</span><br><span class="line"><span class="built_in">print</span>(random_int)</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="2-随机选择"><a href="#2-随机选择" class="headerlink" title="2. 随机选择"></a>2. 随机选择</h3><ul>
 <li><p><strong>从序列中随机选择一个元素</strong></p>
-<pre><code class="hljs python">choices = [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;cherry&#x27;</span>]
-random_choice = random.choice(choices)
-<span class="hljs-built_in">print</span>(random_choice)  <span class="hljs-comment"># 例如 &#x27;banana&#x27;</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">choices = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;cherry&#x27;</span>]</span><br><span class="line">random_choice = random.choice(choices)</span><br><span class="line"><span class="built_in">print</span>(random_choice)  <span class="comment"># 例如 &#x27;banana&#x27;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>从序列中随机选择多个元素</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 从序列中随机选择 k 个元素，可以有重复</span>
-random_choices = random.choices(choices, k=<span class="hljs-number">3</span>)
-<span class="hljs-built_in">print</span>(random_choices)  <span class="hljs-comment"># 例如 [&#x27;cherry&#x27;, &#x27;banana&#x27;, &#x27;banana&#x27;]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从序列中随机选择 k 个元素，可以有重复</span></span><br><span class="line">random_choices = random.choices(choices, k=<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(random_choices)  <span class="comment"># 例如 [&#x27;cherry&#x27;, &#x27;banana&#x27;, &#x27;banana&#x27;]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>从序列中随机选择多个不重复元素</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 从序列中随机选择 k 个不重复元素</span>
-random_sample = random.sample(choices, k=<span class="hljs-number">2</span>)
-<span class="hljs-built_in">print</span>(random_sample)  <span class="hljs-comment"># 例如 [&#x27;banana&#x27;, &#x27;apple&#x27;]</span></code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从序列中随机选择 k 个不重复元素</span></span><br><span class="line">random_sample = random.sample(choices, k=<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(random_sample)  <span class="comment"># 例如 [&#x27;banana&#x27;, &#x27;apple&#x27;]</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="3-打乱顺序"><a href="#3-打乱顺序" class="headerlink" title="3. 打乱顺序"></a>3. 打乱顺序</h3><ul>
 <li><p><strong>就地打乱列表中的元素顺序</strong></p>
-<pre><code class="hljs python">numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-random.shuffle(numbers)
-<span class="hljs-built_in">print</span>(numbers)  <span class="hljs-comment"># 例如 [3, 5, 1, 2, 4]</span></code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">random.shuffle(numbers)</span><br><span class="line"><span class="built_in">print</span>(numbers)  <span class="comment"># 例如 [3, 5, 1, 2, 4]</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="4-生成随机分布"><a href="#4-生成随机分布" class="headerlink" title="4. 生成随机分布"></a>4. 生成随机分布</h3><ul>
 <li><p><strong>正态分布（高斯分布）</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 生成均值为 mu，标准差为 sigma 的随机浮点数</span>
-random_gauss = random.gauss(mu, sigma)
-<span class="hljs-built_in">print</span>(random_gauss)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成均值为 mu，标准差为 sigma 的随机浮点数</span></span><br><span class="line">random_gauss = random.gauss(mu, sigma)</span><br><span class="line"><span class="built_in">print</span>(random_gauss)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>其他分布</strong></p>
 <ul>
 <li><p><strong>Beta 分布</strong></p>
-<pre><code class="hljs python">random_beta = random.betavariate(alpha, beta)
-<span class="hljs-built_in">print</span>(random_beta)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">random_beta = random.betavariate(alpha, beta)</span><br><span class="line"><span class="built_in">print</span>(random_beta)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>Gamma 分布</strong></p>
-<pre><code class="hljs python">random_gamma = random.gammavariate(alpha, beta)
-<span class="hljs-built_in">print</span>(random_gamma)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">random_gamma = random.gammavariate(alpha, beta)</span><br><span class="line"><span class="built_in">print</span>(random_gamma)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>指数分布</strong></p>
-<pre><code class="hljs python">random_exp = random.expovariate(lambd)
-<span class="hljs-built_in">print</span>(random_exp)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">random_exp = random.expovariate(lambd)</span><br><span class="line"><span class="built_in">print</span>(random_exp)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>对数正态分布</strong></p>
-<pre><code class="hljs python">random_lognorm = random.lognormvariate(mu, sigma)
-<span class="hljs-built_in">print</span>(random_lognorm)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">random_lognorm = random.lognormvariate(mu, sigma)</span><br><span class="line"><span class="built_in">print</span>(random_lognorm)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>Pareto 分布</strong></p>
-<pre><code class="hljs python">random_pareto = random.paretovariate(alpha)
-<span class="hljs-built_in">print</span>(random_pareto)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">random_pareto = random.paretovariate(alpha)</span><br><span class="line"><span class="built_in">print</span>(random_pareto)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>维布尔分布</strong></p>
-<pre><code class="hljs python">random_weibull = random.weibullvariate(alpha, beta)
-<span class="hljs-built_in">print</span>(random_weibull)</code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">random_weibull = random.weibullvariate(alpha, beta)</span><br><span class="line"><span class="built_in">print</span>(random_weibull)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
 <h3 id="5-种子控制"><a href="#5-种子控制" class="headerlink" title="5. 种子控制"></a>5. 种子控制</h3><ul>
 <li><p><strong>设置随机数生成器的种子</strong></p>
-<pre><code class="hljs python">random.seed(a)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.seed(a)</span><br></pre></td></tr></table></figure>
 
 <p>使用相同的种子可以确保生成的随机数序列相同，对于调试和测试非常有用。</p>
 </li>
@@ -716,78 +398,51 @@ random_gauss = random.gauss(mu, sigma)
 <h2 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h2><p>Python 的 <code>time</code> 模块提供了多种与时间相关的函数，用于处理时间和日期。以下是 <code>time</code> 模块中的主要功能和使用方法：</p>
 <h3 id="1-获取当前时间"><a href="#1-获取当前时间" class="headerlink" title="1. 获取当前时间"></a>1. 获取当前时间</h3><ul>
 <li><p><strong>获取当前时间的时间戳</strong></p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> time <span class="hljs-comment">#返回当前时间的时间戳（自 Unix 纪元（1970年1月1日）以来的秒数）</span>
-  <span class="hljs-built_in">print</span>(current_time)  <span class="hljs-comment"># 例如 1623673923.786348</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time <span class="comment">#返回当前时间的时间戳（自 Unix 纪元（1970年1月1日）以来的秒数）</span></span><br><span class="line">  <span class="built_in">print</span>(current_time)  <span class="comment"># 例如 1623673923.786348</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>获取当前时间的结构化时间（本地时间）</strong></p>
-<pre><code class="hljs python">local_time = time.localtime() <span class="hljs-comment"># 返回当前时间的本地时间结构</span>
-<span class="hljs-built_in">print</span>(local_time)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_time = time.localtime() <span class="comment"># 返回当前时间的本地时间结构</span></span><br><span class="line"><span class="built_in">print</span>(local_time)  <span class="comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>获取当前时间的结构化时间（UTC 时间）</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 返回当前时间的 UTC 时间结构</span>
-utc_time = time.gmtime()
-<span class="hljs-built_in">print</span>(utc_time)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回当前时间的 UTC 时间结构</span></span><br><span class="line">utc_time = time.gmtime()</span><br><span class="line"><span class="built_in">print</span>(utc_time)  <span class="comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="2-格式化时间"><a href="#2-格式化时间" class="headerlink" title="2. 格式化时间"></a>2. 格式化时间</h3><ul>
 <li><p><strong>将时间结构转换为字符串</strong></p>
-<pre><code class="hljs python"><span class="hljs-comment"># 将当前本地时间转换为字符串</span>
-formatted_time = time.strftime(<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, local_time)
-<span class="hljs-built_in">print</span>(formatted_time)  <span class="hljs-comment"># 例如 &#x27;2021-06-14 10:32:03&#x27;</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将当前本地时间转换为字符串</span></span><br><span class="line">formatted_time = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, local_time)</span><br><span class="line"><span class="built_in">print</span>(formatted_time)  <span class="comment"># 例如 &#x27;2021-06-14 10:32:03&#x27;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>将字符串解析为时间结构</strong></p>
-<pre><code class="hljs python">time_string = <span class="hljs-string">&quot;2021-06-14 10:32:03&quot;</span>
-<span class="hljs-comment"># 将字符串解析为时间结构</span>
-parsed_time = time.strptime(time_string, <span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)
-<span class="hljs-built_in">print</span>(parsed_time)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">time_string = <span class="string">&quot;2021-06-14 10:32:03&quot;</span></span><br><span class="line"><span class="comment"># 将字符串解析为时间结构</span></span><br><span class="line">parsed_time = time.strptime(time_string, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(parsed_time)  <span class="comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="3-时间戳和时间结构之间的转换"><a href="#3-时间戳和时间结构之间的转换" class="headerlink" title="3. 时间戳和时间结构之间的转换"></a>3. 时间戳和时间结构之间的转换</h3><ul>
 <li><p><strong>时间戳转换为本地时间结构</strong></p>
-<pre><code class="hljs python">timestamp = <span class="hljs-number">1623673923.786348</span>
-local_time_from_timestamp = time.localtime(timestamp)
-<span class="hljs-built_in">print</span>(local_time_from_timestamp)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">timestamp = <span class="number">1623673923.786348</span></span><br><span class="line">local_time_from_timestamp = time.localtime(timestamp)</span><br><span class="line"><span class="built_in">print</span>(local_time_from_timestamp)  <span class="comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>时间戳转换为 UTC 时间结构</strong></p>
-<pre><code class="hljs python">utc_time_from_timestamp = time.gmtime(timestamp)
-<span class="hljs-built_in">print</span>(utc_time_from_timestamp)  <span class="hljs-comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">utc_time_from_timestamp = time.gmtime(timestamp)</span><br><span class="line"><span class="built_in">print</span>(utc_time_from_timestamp)  <span class="comment"># 例如 time.struct_time(tm_year=2021, tm_mon=6, tm_mday=14, ...)</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>时间结构转换为时间戳</strong></p>
-<pre><code class="hljs python">timestamp_from_local_time = time.mktime(local_time)
-<span class="hljs-built_in">print</span>(timestamp_from_local_time)  <span class="hljs-comment"># 例如 1623673923.0</span></code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">timestamp_from_local_time = time.mktime(local_time)</span><br><span class="line"><span class="built_in">print</span>(timestamp_from_local_time)  <span class="comment"># 例如 1623673923.0</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="4-暂停程序执行"><a href="#4-暂停程序执行" class="headerlink" title="4. 暂停程序执行"></a>4. 暂停程序执行</h3><ul>
 <li><p><strong>暂停程序执行指定秒数</strong></p>
-<pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Start&quot;</span>)
-time.sleep(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 暂停程序执行 2 秒</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;End&quot;</span>)</code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Start&quot;</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)  <span class="comment"># 暂停程序执行 2 秒</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;End&quot;</span>)</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="5-其他实用功能"><a href="#5-其他实用功能" class="headerlink" title="5. 其他实用功能"></a>5. 其他实用功能</h3><ul>
 <li><p><strong>获取 CPU 时间</strong></p>
-<pre><code class="hljs python">cpu_time = time.process_time()
-<span class="hljs-built_in">print</span>(cpu_time)  <span class="hljs-comment"># 例如 0.015625</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cpu_time = time.process_time()</span><br><span class="line"><span class="built_in">print</span>(cpu_time)  <span class="comment"># 例如 0.015625</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>测量时间间隔</strong></p>
-<pre><code class="hljs python">start_time = time.perf_counter()
-<span class="hljs-comment"># 进行一些操作</span>
-end_time = time.perf_counter()
-<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;操作耗时: <span class="hljs-subst">&#123;end_time - start_time&#125;</span> 秒&quot;</span>)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">start_time = time.perf_counter()</span><br><span class="line"><span class="comment"># 进行一些操作</span></span><br><span class="line">end_time = time.perf_counter()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;操作耗时: <span class="subst">&#123;end_time - start_time&#125;</span> 秒&quot;</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>获取系统时区偏移量</strong></p>
-<pre><code class="hljs python">timezone_offset = time.timezone  <span class="hljs-comment"># 返回本地时区相对于 UTC 的偏移量（秒）</span>
-<span class="hljs-built_in">print</span>(timezone_offset)  <span class="hljs-comment"># 例如 -28800（对于 UTC-8 时区）</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">timezone_offset = time.timezone  <span class="comment"># 返回本地时区相对于 UTC 的偏移量（秒）</span></span><br><span class="line"><span class="built_in">print</span>(timezone_offset)  <span class="comment"># 例如 -28800（对于 UTC-8 时区）</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>获取夏令时标志</strong></p>
-<pre><code class="hljs python">daylight_saving_flag = time.daylight  <span class="hljs-comment"># 返回夏令时是否被定义</span>
-<span class="hljs-built_in">print</span>(daylight_saving_flag)  <span class="hljs-comment"># 例如 1（表示夏令时定义）</span></code></pre></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">daylight_saving_flag = time.daylight  <span class="comment"># 返回夏令时是否被定义</span></span><br><span class="line"><span class="built_in">print</span>(daylight_saving_flag)  <span class="comment"># 例如 1（表示夏令时定义）</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><p>Python 的 <code>time</code> 模块提供了丰富的时间和日期操作功能，包括获取当前时间、格式化时间、时间戳和结构化时间的转换、暂停程序执行、测量时间间隔等。通过这些函数，可以在各种应用场景中方便地处理时间相关的数据。</p>
 <h2 id="装饰器详细解释"><a href="#装饰器详细解释" class="headerlink" title="装饰器详细解释"></a>装饰器详细解释</h2><h3 id="装饰器的基本结构"><a href="#装饰器的基本结构" class="headerlink" title="装饰器的基本结构"></a>装饰器的基本结构</h3><p>装饰器是一个用于包裹另一个函数以增强或修改其行为的函数。装饰器本身是一个高阶函数，因为它接受一个函数作为参数，并返回一个新的函数。下面是一个最简单的装饰器结构：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">decorator</span>(<span class="hljs-params">func</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):
-        <span class="hljs-comment"># 在这里添加增强功能的代码</span>
-        result = func(*args, **kwargs)
-        <span class="hljs-comment"># 在这里添加增强功能的代码</span>
-        <span class="hljs-keyword">return</span> result
-    <span class="hljs-keyword">return</span> wrapper</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 在这里添加增强功能的代码</span></span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        <span class="comment"># 在这里添加增强功能的代码</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
 
 <h3 id="详细解释"><a href="#详细解释" class="headerlink" title="详细解释"></a>详细解释</h3><ol>
 <li><p><strong>decorator 函数</strong>：</p>
@@ -823,32 +478,7 @@ end_time = time.perf_counter()
 </li>
 </ol>
 <h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><p>我们来看一个实际应用的例子，使用装饰器来记录函数的执行时间：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> time
-
-<span class="hljs-comment"># 定义装饰器函数</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">record_time</span>(<span class="hljs-params">func</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):
-        start_time = time.time()  <span class="hljs-comment"># 计时开始</span>
-        result = func(*args, **kwargs)
-        end_time = time.time()    <span class="hljs-comment"># 计时结束</span>
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;func.__name__&#125;</span> executed in <span class="hljs-subst">&#123;end_time - start_time&#125;</span> seconds&quot;</span>)
-        <span class="hljs-keyword">return</span> result
-    <span class="hljs-keyword">return</span> wrapper
-
-<span class="hljs-comment"># 使用装饰器</span>
-<span class="hljs-meta">@record_time</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">upload</span>(<span class="hljs-params">file</span>):
-    time.sleep(<span class="hljs-number">1</span>)  <span class="hljs-comment"># 模拟上传文件的延时</span>
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Uploading <span class="hljs-subst">&#123;file&#125;</span>&quot;</span>)
-
-<span class="hljs-meta">@record_time</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">download</span>(<span class="hljs-params">file</span>):
-    time.sleep(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 模拟下载文件的延时</span>
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Downloading <span class="hljs-subst">&#123;file&#125;</span>&quot;</span>)
-
-<span class="hljs-comment"># 调用被装饰的函数</span>
-upload(<span class="hljs-string">&quot;file1.txt&quot;</span>)
-download(<span class="hljs-string">&quot;file2.txt&quot;</span>)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义装饰器函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">record_time</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        start_time = time.time()  <span class="comment"># 计时开始</span></span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        end_time = time.time()    <span class="comment"># 计时结束</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;func.__name__&#125;</span> executed in <span class="subst">&#123;end_time - start_time&#125;</span> seconds&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用装饰器</span></span><br><span class="line"><span class="meta">@record_time</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upload</span>(<span class="params">file</span>):</span><br><span class="line">    time.sleep(<span class="number">1</span>)  <span class="comment"># 模拟上传文件的延时</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Uploading <span class="subst">&#123;file&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@record_time</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">download</span>(<span class="params">file</span>):</span><br><span class="line">    time.sleep(<span class="number">2</span>)  <span class="comment"># 模拟下载文件的延时</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Downloading <span class="subst">&#123;file&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用被装饰的函数</span></span><br><span class="line">upload(<span class="string">&quot;file1.txt&quot;</span>)</span><br><span class="line">download(<span class="string">&quot;file2.txt&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <h3 id="详细解释实际应用"><a href="#详细解释实际应用" class="headerlink" title="详细解释实际应用"></a>详细解释实际应用</h3><ol>
 <li><p><strong>定义装饰器</strong>：</p>
@@ -891,94 +521,67 @@ download(<span class="hljs-string">&quot;file2.txt&quot;</span>)</code></pre>
 <li><p>**<code>count(start=0, step=1)</code>**：</p>
 <ul>
 <li>创建一个无限迭代器，从 <code>start</code> 开始，步长为 <code>step</code>。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> itertools.count(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>):
-    <span class="hljs-keyword">if</span> i &gt; <span class="hljs-number">20</span>:
-        <span class="hljs-keyword">break</span>
-    <span class="hljs-built_in">print</span>(i)</code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> itertools.count(<span class="number">10</span>, <span class="number">2</span>):</span><br><span class="line">    <span class="keyword">if</span> i &gt; <span class="number">20</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>cycle(iterable)</code>**：</p>
 <ul>
 <li>创建一个无限迭代器，从给定的 <code>iterable</code> 中重复迭代元素。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-count = <span class="hljs-number">0</span>
-<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> itertools.cycle(<span class="hljs-string">&#x27;AB&#x27;</span>):
-    <span class="hljs-keyword">if</span> count &gt; <span class="hljs-number">5</span>:
-        <span class="hljs-keyword">break</span>
-    <span class="hljs-built_in">print</span>(item)
-    count += <span class="hljs-number">1</span></code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> itertools.cycle(<span class="string">&#x27;AB&#x27;</span>):</span><br><span class="line">    <span class="keyword">if</span> count &gt; <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(item)</span><br><span class="line">    count += <span class="number">1</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>repeat(object, times=None)</code>**：</p>
 <ul>
 <li>创建一个迭代器，重复给定的对象 <code>times</code> 次。如果 <code>times</code> 为 <code>None</code>，则无限重复。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> itertools.repeat(<span class="hljs-string">&#x27;Hello&#x27;</span>, <span class="hljs-number">3</span>):
-    <span class="hljs-built_in">print</span>(item)</code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> itertools.repeat(<span class="string">&#x27;Hello&#x27;</span>, <span class="number">3</span>):</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>chain(*iterables)</code>**：</p>
 <ul>
 <li>将多个迭代器连接成一个迭代器。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> itertools.chain(<span class="hljs-string">&#x27;ABC&#x27;</span>, <span class="hljs-string">&#x27;DEF&#x27;</span>):
-    <span class="hljs-built_in">print</span>(item)</code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> itertools.chain(<span class="string">&#x27;ABC&#x27;</span>, <span class="string">&#x27;DEF&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>islice(iterable, start, stop, step=1)</code>**：</p>
 <ul>
 <li>创建一个迭代器，从 <code>iterable</code> 中切片，类似于列表切片。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> itertools.islice(<span class="hljs-string">&#x27;ABCDEFG&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>):
-    <span class="hljs-built_in">print</span>(item)		<span class="hljs-comment">#C	D	E	F</span></code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> itertools.islice(<span class="string">&#x27;ABCDEFG&#x27;</span>, <span class="number">2</span>, <span class="number">6</span>):</span><br><span class="line">    <span class="built_in">print</span>(item)		<span class="comment">#C	D	E	F</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>compress(data, selectors)</code>**：</p>
 <ul>
 <li>过滤 <code>data</code> 中的元素，只保留与 <code>selectors</code> 中的<strong>真值</strong>对应的元素。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-data = <span class="hljs-string">&#x27;ABCDEF&#x27;</span>
-selectors = [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.compress(data, selectors)))		<span class="hljs-comment">#[&#x27;A&#x27;, &#x27;C&#x27;, &#x27;E&#x27;]</span></code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">data = <span class="string">&#x27;ABCDEF&#x27;</span></span><br><span class="line">selectors = [<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(itertools.compress(data, selectors)))		<span class="comment">#[&#x27;A&#x27;, &#x27;C&#x27;, &#x27;E&#x27;]</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>permutations(iterable, r=None)</code>**：</p>
 <ul>
 <li>返回 <code>iterable</code> 中元素的所有可能排列，长度为 <code>r</code>。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.permutations(<span class="hljs-string">&#x27;ABC&#x27;</span>, <span class="hljs-number">2</span>)))</code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(itertools.permutations(<span class="string">&#x27;ABC&#x27;</span>, <span class="number">2</span>)))</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>combinations(iterable, r)</code>**：</p>
 <ul>
 <li>返回 <code>iterable</code> 中元素的所有可能组合，长度为 <code>r</code>。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.combinations(<span class="hljs-string">&#x27;ABC&#x27;</span>, <span class="hljs-number">2</span>)))	<span class="hljs-comment">#[(&#x27;A&#x27;, &#x27;B&#x27;), (&#x27;A&#x27;, &#x27;C&#x27;), (&#x27;B&#x27;, &#x27;C&#x27;)]</span></code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(itertools.combinations(<span class="string">&#x27;ABC&#x27;</span>, <span class="number">2</span>)))	<span class="comment">#[(&#x27;A&#x27;, &#x27;B&#x27;), (&#x27;A&#x27;, &#x27;C&#x27;), (&#x27;B&#x27;, &#x27;C&#x27;)]</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>combinations_with_replacement(iterable, r)</code>**：</p>
 <ul>
 <li>返回 <code>iterable</code> 中元素的所有可能组合，长度为 <code>r</code>，允许元素重复。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.combinations_with_replacement(<span class="hljs-string">&#x27;ABC&#x27;</span>, <span class="hljs-number">2</span>)))
-<span class="hljs-comment"># [(&#x27;A&#x27;, &#x27;A&#x27;), (&#x27;A&#x27;, &#x27;B&#x27;), (&#x27;A&#x27;, &#x27;C&#x27;), (&#x27;B&#x27;, &#x27;B&#x27;), (&#x27;B&#x27;, &#x27;C&#x27;), (&#x27;C&#x27;, &#x27;C&#x27;)]</span></code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(itertools.combinations_with_replacement(<span class="string">&#x27;ABC&#x27;</span>, <span class="number">2</span>)))</span><br><span class="line"><span class="comment"># [(&#x27;A&#x27;, &#x27;A&#x27;), (&#x27;A&#x27;, &#x27;B&#x27;), (&#x27;A&#x27;, &#x27;C&#x27;), (&#x27;B&#x27;, &#x27;B&#x27;), (&#x27;B&#x27;, &#x27;C&#x27;), (&#x27;C&#x27;, &#x27;C&#x27;)]</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>product(*iterables, repeat=1)</code>**：</p>
 <ul>
 <li>返回多个迭代器的笛卡尔积，可以通过 <code>repeat</code> 参数指定重复次数。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-<span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(itertools.product(<span class="hljs-string">&#x27;AB&#x27;</span>, <span class="hljs-string">&#x27;CD&#x27;</span>)))</code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(itertools.product(<span class="string">&#x27;AB&#x27;</span>, <span class="string">&#x27;CD&#x27;</span>)))</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>**<code>groupby(iterable, key=None)</code>**：</p>
 <ul>
 <li>对 <code>iterable</code> 中的相邻元素进行分组，<code>key</code> 为分组依据的函数。</li>
-<li>示例：<pre><code class="hljs python"><span class="hljs-keyword">import</span> itertools
-data = [(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-number">1</span>), (<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-number">2</span>), (<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-number">3</span>), (<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-number">4</span>)]
-<span class="hljs-keyword">for</span> key, group <span class="hljs-keyword">in</span> itertools.groupby(data, key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">0</span>]):
-    <span class="hljs-built_in">print</span>(key, <span class="hljs-built_in">list</span>(group))</code></pre></li>
+<li>示例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">data = [(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>), (<span class="string">&#x27;b&#x27;</span>, <span class="number">3</span>), (<span class="string">&#x27;b&#x27;</span>, <span class="number">4</span>)]</span><br><span class="line"><span class="keyword">for</span> key, group <span class="keyword">in</span> itertools.groupby(data, key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>]):</span><br><span class="line">    <span class="built_in">print</span>(key, <span class="built_in">list</span>(group))</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ol>
@@ -1050,40 +653,7 @@ data = [(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-numbe
 <li><strong><code>subn</code></strong>: 执行和<code>sub</code>方法相同的操作，但返回一个元组，其中包含新字符串和替换总数。</li>
 </ol>
 <p>以下是每个方法的简单示例：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> re
-
-<span class="hljs-comment"># 定义一个Pattern对象</span>
-pattern = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;\d+&#x27;</span>)	<span class="hljs-comment">#匹配数字</span>
-
-<span class="hljs-comment"># match方法</span>
-m = pattern.<span class="hljs-keyword">match</span>(<span class="hljs-string">&quot;123abc&quot;</span>)
-<span class="hljs-keyword">if</span> m:
-    <span class="hljs-built_in">print</span>(m.group())  <span class="hljs-comment"># 输出: 123</span>
-
-<span class="hljs-comment"># search方法</span>
-s = pattern.search(<span class="hljs-string">&quot;abc123&quot;</span>)
-<span class="hljs-keyword">if</span> s:
-    <span class="hljs-built_in">print</span>(s.group())  <span class="hljs-comment"># 输出: 123</span>
-
-<span class="hljs-comment"># findall方法</span>
-f = pattern.findall(<span class="hljs-string">&quot;abc123def456&quot;</span>)
-<span class="hljs-built_in">print</span>(f)  <span class="hljs-comment"># 输出: [&#x27;123&#x27;, &#x27;456&#x27;]</span>
-
-<span class="hljs-comment"># finditer方法</span>
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">match</span> <span class="hljs-keyword">in</span> pattern.finditer(<span class="hljs-string">&quot;abc123def456&quot;</span>):
-    <span class="hljs-built_in">print</span>(<span class="hljs-keyword">match</span>.group())  <span class="hljs-comment"># 输出: 123  456</span>
-
-<span class="hljs-comment"># split方法</span>
-split_result = pattern.split(<span class="hljs-string">&quot;abc123def456&quot;</span>)
-<span class="hljs-built_in">print</span>(split_result)  <span class="hljs-comment"># 输出: [&#x27;abc&#x27;, &#x27;def&#x27;, &#x27;&#x27;]</span>
-
-<span class="hljs-comment"># sub方法</span>
-sub_result = pattern.sub(<span class="hljs-string">&#x27;-&#x27;</span>, <span class="hljs-string">&quot;abc123def456&quot;</span>)
-<span class="hljs-built_in">print</span>(sub_result)  <span class="hljs-comment"># 输出: abc-def-</span>
-
-<span class="hljs-comment"># subn方法</span>
-subn_result = pattern.subn(<span class="hljs-string">&#x27;-&#x27;</span>, <span class="hljs-string">&quot;abc123def456&quot;</span>)
-<span class="hljs-built_in">print</span>(subn_result)  <span class="hljs-comment"># 输出: (&#x27;abc-def-&#x27;, 2)</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个Pattern对象</span></span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;\d+&#x27;</span>)	<span class="comment">#匹配数字</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># match方法</span></span><br><span class="line">m = pattern.<span class="keyword">match</span>(<span class="string">&quot;123abc&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> m:</span><br><span class="line">    <span class="built_in">print</span>(m.group())  <span class="comment"># 输出: 123</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># search方法</span></span><br><span class="line">s = pattern.search(<span class="string">&quot;abc123&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> s:</span><br><span class="line">    <span class="built_in">print</span>(s.group())  <span class="comment"># 输出: 123</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># findall方法</span></span><br><span class="line">f = pattern.findall(<span class="string">&quot;abc123def456&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(f)  <span class="comment"># 输出: [&#x27;123&#x27;, &#x27;456&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># finditer方法</span></span><br><span class="line"><span class="keyword">for</span> <span class="keyword">match</span> <span class="keyword">in</span> pattern.finditer(<span class="string">&quot;abc123def456&quot;</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="keyword">match</span>.group())  <span class="comment"># 输出: 123  456</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># split方法</span></span><br><span class="line">split_result = pattern.split(<span class="string">&quot;abc123def456&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(split_result)  <span class="comment"># 输出: [&#x27;abc&#x27;, &#x27;def&#x27;, &#x27;&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sub方法</span></span><br><span class="line">sub_result = pattern.sub(<span class="string">&#x27;-&#x27;</span>, <span class="string">&quot;abc123def456&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(sub_result)  <span class="comment"># 输出: abc-def-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># subn方法</span></span><br><span class="line">subn_result = pattern.subn(<span class="string">&#x27;-&#x27;</span>, <span class="string">&quot;abc123def456&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(subn_result)  <span class="comment"># 输出: (&#x27;abc-def-&#x27;, 2)</span></span><br></pre></td></tr></table></figure>
 
 <p>这些方法提供了强大的文本处理能力，使正则表达式在字符串操作中非常有用。</p>
 <h2 id="asyncio模块"><a href="#asyncio模块" class="headerlink" title="asyncio模块"></a>asyncio模块</h2><p>[python] <code>asyncio</code>模块是Python标准库中的一个库，用于编写并发代码。它主要用于构建异步I&#x2F;O操作，可以用来处理网络连接、文件读写等需要等待的任务。通过<code>asyncio</code>，你可以编写非阻塞代码，这样可以提高程序的效率和响应速度。以下是<code>asyncio</code>模块的一些主要功能和概念：</p>
@@ -1120,66 +690,20 @@ subn_result = pattern.subn(<span class="hljs-string">&#x27;-&#x27;</span>, <span
 </li>
 </ol>
 <h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><p>以下是一个简单的<code>asyncio</code>示例，展示如何定义和运行协程：</p>
-<pre><code class="hljs python"><span class="hljs-keyword">import</span> asyncio
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">say_hello</span>():
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello&quot;</span>)
-    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">1</span>)
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;World&quot;</span>)
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
-    <span class="hljs-comment"># 创建多个任务</span>
-    task1 = asyncio.create_task(say_hello())
-    task2 = asyncio.create_task(say_hello())
-    
-    <span class="hljs-comment"># 等待所有任务完成</span>
-    <span class="hljs-keyword">await</span> task1
-    <span class="hljs-keyword">await</span> task2
-
-<span class="hljs-comment"># 获取事件循环并运行主协程</span>
-asyncio.run(main())</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">say_hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;World&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment"># 创建多个任务</span></span><br><span class="line">    task1 = asyncio.create_task(say_hello())</span><br><span class="line">    task2 = asyncio.create_task(say_hello())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 等待所有任务完成</span></span><br><span class="line">    <span class="keyword">await</span> task1</span><br><span class="line">    <span class="keyword">await</span> task2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取事件循环并运行主协程</span></span><br><span class="line">asyncio.run(main())</span><br></pre></td></tr></table></figure>
 
 <h3 id="详细功能介绍"><a href="#详细功能介绍" class="headerlink" title="详细功能介绍"></a>详细功能介绍</h3><ol>
 <li><p><strong>事件循环</strong>:</p>
- <pre><code class="hljs python">loop = asyncio.get_event_loop()  <span class="hljs-comment"># 获取事件循环</span>
-loop.run_until_complete(main())  <span class="hljs-comment"># 运行直到主协程完成</span>
-loop.close()  <span class="hljs-comment"># 关闭事件循环</span></code></pre>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loop = asyncio.get_event_loop()  <span class="comment"># 获取事件循环</span></span><br><span class="line">loop.run_until_complete(main())  <span class="comment"># 运行直到主协程完成</span></span><br><span class="line">loop.close()  <span class="comment"># 关闭事件循环</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>协程</strong>:</p>
- <pre><code class="hljs python"><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">fetch_data</span>():
-    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 模拟I/O操作</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Data&quot;</span>
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
-    data = <span class="hljs-keyword">await</span> fetch_data()  <span class="hljs-comment"># 等待协程完成</span>
-    <span class="hljs-built_in">print</span>(data)
-
-asyncio.run(main())</code></pre>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">fetch_data</span>():</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)  <span class="comment"># 模拟I/O操作</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Data&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    data = <span class="keyword">await</span> fetch_data()  <span class="comment"># 等待协程完成</span></span><br><span class="line">    <span class="built_in">print</span>(data)</span><br><span class="line"></span><br><span class="line">asyncio.run(main())</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>任务</strong>:</p>
- <pre><code class="hljs python"><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">say_hello</span>():
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello&quot;</span>)
-    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">1</span>)
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;World&quot;</span>)
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
-    task = asyncio.create_task(say_hello())  <span class="hljs-comment"># 创建任务</span>
-    <span class="hljs-keyword">await</span> task  <span class="hljs-comment"># 等待任务完成</span>
-
-asyncio.run(main())</code></pre>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">say_hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;World&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    task = asyncio.create_task(say_hello())  <span class="comment"># 创建任务</span></span><br><span class="line">    <span class="keyword">await</span> task  <span class="comment"># 等待任务完成</span></span><br><span class="line"></span><br><span class="line">asyncio.run(main())</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>同步原语</strong>:</p>
- <pre><code class="hljs python"><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">worker</span>(<span class="hljs-params">lock</span>):
-    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> lock:
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Worker is working&quot;</span>)
-        <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">2</span>)
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Worker is done&quot;</span>)
-
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
-    lock = asyncio.Lock()  <span class="hljs-comment"># 创建锁</span>
-    <span class="hljs-keyword">await</span> asyncio.gather(worker(lock), worker(lock))  <span class="hljs-comment"># 并发运行两个工作协程</span>
-
-asyncio.run(main())</code></pre></li>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">worker</span>(<span class="params">lock</span>):</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> lock:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Worker is working&quot;</span>)</span><br><span class="line">        <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Worker is done&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    lock = asyncio.Lock()  <span class="comment"># 创建锁</span></span><br><span class="line">    <span class="keyword">await</span> asyncio.gather(worker(lock), worker(lock))  <span class="comment"># 并发运行两个工作协程</span></span><br><span class="line"></span><br><span class="line">asyncio.run(main())</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>通过<code>asyncio</code>模块，Python程序可以更高效地处理并发任务，特别是那些涉及大量I&#x2F;O操作的任务。它是Python异步编程的一个重要工具。</p>
 <h2 id="Aiohttp库"><a href="#Aiohttp库" class="headerlink" title="Aiohttp库"></a>Aiohttp库</h2><p>Aiohttp 是一个用于 Python 编程的异步 HTTP 客户端和服务器库。它使用 Python 的 <code>asyncio</code> 库实现异步编程，从而允许处理大量并发请求而不阻塞程序执行。Aiohttp 的主要功能包括：</p>
@@ -1205,195 +729,4 @@ asyncio.run(main())</code></pre></li>
 </ul>
 </li>
 </ol>
-
-</article>
-    
-    
-
-</div>
-<div class="trm-post-next-prev row">
-    <div class="col-lg-12">
-        <!-- title -->
-        <h5 class="trm-title-with-divider">
-            其他文章
-            <span data-number="02"></span>
-        </h5>
-    </div>
-    
-        <div class="col-lg-6">
-    <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
-        <div class="trm-older-publication">
-            
-            <a class="trm-op-top trm-anima-link" href="/2024/07/09/XML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
-                <span class="trm-op-cover">
-                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-                </span>
-                <h6 class="trm-op-title">XML入门</h6>
-            </a>
-            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/07/09</li>
-                <li>00:00</li>
-                <li>Xml</li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-        <div class="col-lg-6">
-    <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
-        <div class="trm-older-publication">
-            
-            <a class="trm-op-top trm-anima-link" href="/2024/07/09/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8/">
-                <span class="trm-op-cover">
-                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-                </span>
-                <h6 class="trm-op-title">面向编程应用</h6>
-            </a>
-            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/07/09</li>
-                <li>00:00</li>
-                <li>Python基础</li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-</div>
-
-    
-
-
-
-                    <div class="trm-divider footer-divider"></div>
-
-                    <!-- footer -->
-                    <footer class="trm-footer-card trm-scroll-animation">
-
-    
-
-    
-
-    
-        <div class="trm-footer-item">
-            <span>
-                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
-            </span>
-            <span class="footer-separator" data-separator=" | "></span>
-            <span> 
-                主题 - 
-                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
-                v2.2.2
-            </span>
-        </div>
-      
-
-     
-
-     
-</footer>
-                    <!-- footer end -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-            <!-- body end -->
-
-            
-
-    <div id="post-toc" class="trm-post-toc">
-      <div class="trm-post-toc-header">
-        目录导航
-				<span id="post-toc-top">
-					置顶
-				</span>
-      </div>
-      <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="排序函数_sorted函数"><a rel="nofollow" class="trm-toc-link" href="#排序函数-sorted函数"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">排序函数_sorted函数</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="sorted 函数的语法"><a rel="nofollow" class="trm-toc-link" href="#sorted-函数的语法"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">sorted 函数的语法</span></a></li><li class="trm-toc-item trm-toc-level-3" title="参数说明"><a rel="nofollow" class="trm-toc-link" href="#参数说明"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">参数说明</span></a></li><li class="trm-toc-item trm-toc-level-3" title="示例和详细解释"><a rel="nofollow" class="trm-toc-link" href="#示例和详细解释"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">示例和详细解释</span></a></li><li class="trm-toc-item trm-toc-level-3" title="内置和自定义排序键"><a rel="nofollow" class="trm-toc-link" href="#内置和自定义排序键"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">内置和自定义排序键</span></a></li><li class="trm-toc-item trm-toc-level-3" title="进一步说明"><a rel="nofollow" class="trm-toc-link" href="#进一步说明"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">进一步说明</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="string 模块"><a rel="nofollow" class="trm-toc-link" href="#string-模块"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">string 模块</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="常量"><a rel="nofollow" class="trm-toc-link" href="#常量"><span class="trm-toc-number">2.1.</span> <span class="trm-toc-text">常量</span></a></li><li class="trm-toc-item trm-toc-level-3" title="方法"><a rel="nofollow" class="trm-toc-link" href="#方法"><span class="trm-toc-number">2.2.</span> <span class="trm-toc-text">方法</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="join方法"><a rel="nofollow" class="trm-toc-link" href="#join方法"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">join方法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="语法"><a rel="nofollow" class="trm-toc-link" href="#语法"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text">语法</span></a></li><li class="trm-toc-item trm-toc-level-3" title="示例"><a rel="nofollow" class="trm-toc-link" href="#示例"><span class="trm-toc-number">3.2.</span> <span class="trm-toc-text">示例</span></a></li><li class="trm-toc-item trm-toc-level-3" title="注意事项"><a rel="nofollow" class="trm-toc-link" href="#注意事项"><span class="trm-toc-number">3.3.</span> <span class="trm-toc-text">注意事项</span></a></li><li class="trm-toc-item trm-toc-level-3" title="总结"><a rel="nofollow" class="trm-toc-link" href="#总结"><span class="trm-toc-number">3.4.</span> <span class="trm-toc-text">总结</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="statistics模块"><a rel="nofollow" class="trm-toc-link" href="#statistics模块"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">statistics模块</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="功能概述"><a rel="nofollow" class="trm-toc-link" href="#功能概述"><span class="trm-toc-number">4.1.</span> <span class="trm-toc-text">功能概述</span></a></li><li class="trm-toc-item trm-toc-level-3" title="常用函数"><a rel="nofollow" class="trm-toc-link" href="#常用函数"><span class="trm-toc-number">4.2.</span> <span class="trm-toc-text">常用函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="示例代码"><a rel="nofollow" class="trm-toc-link" href="#示例代码"><span class="trm-toc-number">4.3.</span> <span class="trm-toc-text">示例代码</span></a></li><li class="trm-toc-item trm-toc-level-3" title="使用注意事项"><a rel="nofollow" class="trm-toc-link" href="#使用注意事项"><span class="trm-toc-number">4.4.</span> <span class="trm-toc-text">使用注意事项</span></a></li><li class="trm-toc-item trm-toc-level-3" title="总结"><a rel="nofollow" class="trm-toc-link" href="#总结-1"><span class="trm-toc-number">4.5.</span> <span class="trm-toc-text">总结</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="operator模块"><a rel="nofollow" class="trm-toc-link" href="#operator模块"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">operator模块</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="主要功能"><a rel="nofollow" class="trm-toc-link" href="#主要功能"><span class="trm-toc-number">5.1.</span> <span class="trm-toc-text">主要功能</span></a></li><li class="trm-toc-item trm-toc-level-3" title="主要函数"><a rel="nofollow" class="trm-toc-link" href="#主要函数"><span class="trm-toc-number">5.2.</span> <span class="trm-toc-text">主要函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="示例"><a rel="nofollow" class="trm-toc-link" href="#示例-1"><span class="trm-toc-number">5.3.</span> <span class="trm-toc-text">示例</span></a></li><li class="trm-toc-item trm-toc-level-3" title="总结"><a rel="nofollow" class="trm-toc-link" href="#总结-2"><span class="trm-toc-number">5.4.</span> <span class="trm-toc-text">总结</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="random模块"><a rel="nofollow" class="trm-toc-link" href="#random模块"><span class="trm-toc-number">6.</span> <span class="trm-toc-text">random模块</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1. 生成随机数"><a rel="nofollow" class="trm-toc-link" href="#1-生成随机数"><span class="trm-toc-number">6.1.</span> <span class="trm-toc-text">1. 生成随机数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2. 随机选择"><a rel="nofollow" class="trm-toc-link" href="#2-随机选择"><span class="trm-toc-number">6.2.</span> <span class="trm-toc-text">2. 随机选择</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3. 打乱顺序"><a rel="nofollow" class="trm-toc-link" href="#3-打乱顺序"><span class="trm-toc-number">6.3.</span> <span class="trm-toc-text">3. 打乱顺序</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4. 生成随机分布"><a rel="nofollow" class="trm-toc-link" href="#4-生成随机分布"><span class="trm-toc-number">6.4.</span> <span class="trm-toc-text">4. 生成随机分布</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5. 种子控制"><a rel="nofollow" class="trm-toc-link" href="#5-种子控制"><span class="trm-toc-number">6.5.</span> <span class="trm-toc-text">5. 种子控制</span></a></li><li class="trm-toc-item trm-toc-level-3" title="总结"><a rel="nofollow" class="trm-toc-link" href="#总结-3"><span class="trm-toc-number">6.6.</span> <span class="trm-toc-text">总结</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="time模块"><a rel="nofollow" class="trm-toc-link" href="#time模块"><span class="trm-toc-number">7.</span> <span class="trm-toc-text">time模块</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1. 获取当前时间"><a rel="nofollow" class="trm-toc-link" href="#1-获取当前时间"><span class="trm-toc-number">7.1.</span> <span class="trm-toc-text">1. 获取当前时间</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2. 格式化时间"><a rel="nofollow" class="trm-toc-link" href="#2-格式化时间"><span class="trm-toc-number">7.2.</span> <span class="trm-toc-text">2. 格式化时间</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3. 时间戳和时间结构之间的转换"><a rel="nofollow" class="trm-toc-link" href="#3-时间戳和时间结构之间的转换"><span class="trm-toc-number">7.3.</span> <span class="trm-toc-text">3. 时间戳和时间结构之间的转换</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4. 暂停程序执行"><a rel="nofollow" class="trm-toc-link" href="#4-暂停程序执行"><span class="trm-toc-number">7.4.</span> <span class="trm-toc-text">4. 暂停程序执行</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5. 其他实用功能"><a rel="nofollow" class="trm-toc-link" href="#5-其他实用功能"><span class="trm-toc-number">7.5.</span> <span class="trm-toc-text">5. 其他实用功能</span></a></li><li class="trm-toc-item trm-toc-level-3" title="总结"><a rel="nofollow" class="trm-toc-link" href="#总结-4"><span class="trm-toc-number">7.6.</span> <span class="trm-toc-text">总结</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="装饰器详细解释"><a rel="nofollow" class="trm-toc-link" href="#装饰器详细解释"><span class="trm-toc-number">8.</span> <span class="trm-toc-text">装饰器详细解释</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="装饰器的基本结构"><a rel="nofollow" class="trm-toc-link" href="#装饰器的基本结构"><span class="trm-toc-number">8.1.</span> <span class="trm-toc-text">装饰器的基本结构</span></a></li><li class="trm-toc-item trm-toc-level-3" title="详细解释"><a rel="nofollow" class="trm-toc-link" href="#详细解释"><span class="trm-toc-number">8.2.</span> <span class="trm-toc-text">详细解释</span></a></li><li class="trm-toc-item trm-toc-level-3" title="实际应用"><a rel="nofollow" class="trm-toc-link" href="#实际应用"><span class="trm-toc-number">8.3.</span> <span class="trm-toc-text">实际应用</span></a></li><li class="trm-toc-item trm-toc-level-3" title="详细解释实际应用"><a rel="nofollow" class="trm-toc-link" href="#详细解释实际应用"><span class="trm-toc-number">8.4.</span> <span class="trm-toc-text">详细解释实际应用</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="itertools模块"><a rel="nofollow" class="trm-toc-link" href="#itertools模块"><span class="trm-toc-number">9.</span> <span class="trm-toc-text">itertools模块</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="常用函数"><a rel="nofollow" class="trm-toc-link" href="#常用函数-1"><span class="trm-toc-number">9.1.</span> <span class="trm-toc-text">常用函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="总结"><a rel="nofollow" class="trm-toc-link" href="#总结-5"><span class="trm-toc-number">9.2.</span> <span class="trm-toc-text">总结</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="re模块"><a rel="nofollow" class="trm-toc-link" href="#re模块"><span class="trm-toc-number">10.</span> <span class="trm-toc-text">re模块</span></a></li><li class="trm-toc-item trm-toc-level-2" title="asyncio模块"><a rel="nofollow" class="trm-toc-link" href="#asyncio模块"><span class="trm-toc-number">11.</span> <span class="trm-toc-text">asyncio模块</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="主要功能和概念"><a rel="nofollow" class="trm-toc-link" href="#主要功能和概念"><span class="trm-toc-number">11.1.</span> <span class="trm-toc-text">主要功能和概念</span></a></li><li class="trm-toc-item trm-toc-level-3" title="示例代码"><a rel="nofollow" class="trm-toc-link" href="#示例代码-1"><span class="trm-toc-number">11.2.</span> <span class="trm-toc-text">示例代码</span></a></li><li class="trm-toc-item trm-toc-level-3" title="详细功能介绍"><a rel="nofollow" class="trm-toc-link" href="#详细功能介绍"><span class="trm-toc-number">11.3.</span> <span class="trm-toc-text">详细功能介绍</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Aiohttp库"><a rel="nofollow" class="trm-toc-link" href="#Aiohttp库"><span class="trm-toc-number">12.</span> <span class="trm-toc-text">Aiohttp库</span></a></li></ol>
-      </div>
-    </div>
-
-            
-<div class="trm-fixed-container">
-    
-        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
-            <i class="iconfont fas fa-th-list"></i>
-        </div>
-    
-    
-        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
-            <i class="iconfont fas fa-book-reader"></i>
-        </div>
-    
-    
-        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
-            <i class="iconfont fas fa-arrows-alt-h"></i>
-        </div>
-    
-    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
-        <i class="iconfont fas fa-arrow-up"></i>
-    </div>
-</div>
-        </div>
-      </div>
-      <!-- scroll container end -->
-  </div>
-  <!-- app wrapper end -->
-
-  
-  <!-- Plugin -->
-
-
-
-
-    
-    
-<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-
-    
-
-    
-
-    
-
-    <!-- 数学公式 -->
-    
-
-    <!-- 评论插件 -->
-    
-        
-
-        
-    
-
-		
-
-
-
-
-    <!-- Service Worker -->
-    
-    <!-- baidu push -->
-    
-
-
-<script id="async-script" src="https://unpkg.com/hexo-theme-async@2.2.2/source/js/main.js?v=2.2.2"></script>
-
-<!-- CDN -->
-
-
-    
-
-    
-
-    
-
-
-
-</body>
-
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://lili095.github.io">李梓卓</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://lili095.github.io/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/">https://lili095.github.io/2024/07/09/%E6%A8%A1%E5%9D%97%E6%94%B6%E9%9B%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/09/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8/" title="面向编程应用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">面向编程应用</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/" title="正则表达式入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">正则表达式入门</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2024/07/09/Python%E6%A0%87%E5%87%86%E5%BA%93%E5%88%9D%E6%8E%A2/" title="Python标准库初探"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-09</div><div class="title">Python标准库初探</div></div></a></div><div><a href="/2024/07/09/%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/" title="函数的应用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-09</div><div class="title">函数的应用</div></div></a></div><div><a href="/2024/07/09/%E4%BD%BF%E7%94%A8Python%E6%93%8D%E4%BD%9C%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/" title="使用Python操作各类文件"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-09</div><div class="title">使用Python操作各类文件</div></div></a></div><div><a href="/2024/07/09/%E5%88%86%E6%94%AF%E5%92%8C%E5%BE%AA%E7%8E%AF%E6%A1%88%E4%BE%8B/" title="分支和循环案例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-09</div><div class="title">分支和循环案例</div></div></a></div><div><a href="/2024/07/09/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8/" title="面向编程应用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-09</div><div class="title">面向编程应用</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0-sorted%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">排序函数_sorted函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sorted-%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">sorted 函数的语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E5%92%8C%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A"><span class="toc-number">1.3.</span> <span class="toc-text">示例和详细解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%92%E5%BA%8F%E9%94%AE"><span class="toc-number">1.4.</span> <span class="toc-text">内置和自定义排序键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F%EF%BC%9A"><span class="toc-number">1.4.1.</span> <span class="toc-text">按字符串排序：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6%E6%8E%92%E5%BA%8F%EF%BC%9A"><span class="toc-number">1.4.2.</span> <span class="toc-text">按字符串长度排序：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">1.4.3.</span> <span class="toc-text">自定义排序函数：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AF%B4%E6%98%8E"><span class="toc-number">1.5.</span> <span class="toc-text">进一步说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string-%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">string 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#join%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">join方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.2.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E7%A9%BA%E6%A0%BC%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.2.</span> <span class="toc-text">用空格连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%8D%A2%E8%A1%8C%E7%AC%A6%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.3.</span> <span class="toc-text">用换行符连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6"><span class="toc-number">3.2.4.</span> <span class="toc-text">连接字符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.3.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#statistics%E6%A8%A1%E5%9D%97"><span class="toc-number">4.</span> <span class="toc-text">statistics模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A6%82%E8%BF%B0"><span class="toc-number">4.1.</span> <span class="toc-text">功能概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%80%BC%E5%92%8C%E4%B8%AD%E4%BD%8D%E6%95%B0"><span class="toc-number">4.2.1.</span> <span class="toc-text">均值和中位数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E5%92%8C%E6%A0%87%E5%87%86%E5%B7%AE"><span class="toc-number">4.2.2.</span> <span class="toc-text">方差和标准差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E4%BD%8D%E6%95%B0%E5%92%8C%E7%99%BE%E5%88%86%E4%BD%8D%E6%95%B0"><span class="toc-number">4.2.3.</span> <span class="toc-text">分位数和百分位数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">4.3.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.4.</span> <span class="toc-text">使用注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">4.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#operator%E6%A8%A1%E5%9D%97"><span class="toc-number">5.</span> <span class="toc-text">operator模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-number">5.1.</span> <span class="toc-text">主要功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%87%BD%E6%95%B0"><span class="toc-number">5.2.</span> <span class="toc-text">主要函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0"><span class="toc-number">5.2.1.</span> <span class="toc-text">算术运算函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0"><span class="toc-number">5.2.2.</span> <span class="toc-text">比较运算函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0"><span class="toc-number">5.2.3.</span> <span class="toc-text">逻辑运算函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%92%8C%E6%98%A0%E5%B0%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="toc-number">5.2.4.</span> <span class="toc-text">序列和映射操作函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="toc-number">5.2.5.</span> <span class="toc-text">属性和方法操作函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">5.3.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-number">5.3.1.</span> <span class="toc-text">算术运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97"><span class="toc-number">5.3.2.</span> <span class="toc-text">比较运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%92%8C%E6%98%A0%E5%B0%84%E6%93%8D%E4%BD%9C"><span class="toc-number">5.3.3.</span> <span class="toc-text">序列和映射操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E6%93%8D%E4%BD%9C"><span class="toc-number">5.3.4.</span> <span class="toc-text">属性和方法操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">5.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#random%E6%A8%A1%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">random模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text">1. 生成随机数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9A%8F%E6%9C%BA%E9%80%89%E6%8B%A9"><span class="toc-number">6.2.</span> <span class="toc-text">2. 随机选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%89%93%E4%B9%B1%E9%A1%BA%E5%BA%8F"><span class="toc-number">6.3.</span> <span class="toc-text">3. 打乱顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E5%88%86%E5%B8%83"><span class="toc-number">6.4.</span> <span class="toc-text">4. 生成随机分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%A7%8D%E5%AD%90%E6%8E%A7%E5%88%B6"><span class="toc-number">6.5.</span> <span class="toc-text">5. 种子控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-number">6.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#time%E6%A8%A1%E5%9D%97"><span class="toc-number">7.</span> <span class="toc-text">time模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4"><span class="toc-number">7.1.</span> <span class="toc-text">1. 获取当前时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4"><span class="toc-number">7.2.</span> <span class="toc-text">2. 格式化时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%97%B6%E9%97%B4%E6%88%B3%E5%92%8C%E6%97%B6%E9%97%B4%E7%BB%93%E6%9E%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">7.3.</span> <span class="toc-text">3. 时间戳和时间结构之间的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9A%82%E5%81%9C%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="toc-number">7.4.</span> <span class="toc-text">4. 暂停程序执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%85%B6%E4%BB%96%E5%AE%9E%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="toc-number">7.5.</span> <span class="toc-text">5. 其他实用功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-4"><span class="toc-number">7.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A"><span class="toc-number">8.</span> <span class="toc-text">装饰器详细解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">8.1.</span> <span class="toc-text">装饰器的基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A"><span class="toc-number">8.2.</span> <span class="toc-text">详细解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8"><span class="toc-number">8.3.</span> <span class="toc-text">实际应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8"><span class="toc-number">8.4.</span> <span class="toc-text">详细解释实际应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#itertools%E6%A8%A1%E5%9D%97"><span class="toc-number">9.</span> <span class="toc-text">itertools模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-1"><span class="toc-number">9.1.</span> <span class="toc-text">常用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-5"><span class="toc-number">9.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re%E6%A8%A1%E5%9D%97"><span class="toc-number">10.</span> <span class="toc-text">re模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#asyncio%E6%A8%A1%E5%9D%97"><span class="toc-number">11.</span> <span class="toc-text">asyncio模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD%E5%92%8C%E6%A6%82%E5%BF%B5"><span class="toc-number">11.1.</span> <span class="toc-text">主要功能和概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-1"><span class="toc-number">11.2.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="toc-number">11.3.</span> <span class="toc-text">详细功能介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Aiohttp%E5%BA%93"><span class="toc-number">12.</span> <span class="toc-text">Aiohttp库</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 李梓卓</div><div class="framework-info"><span>Framework </span><a href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

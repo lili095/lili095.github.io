@@ -1,362 +1,167 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="x5-fullscreen" content="true">
-<meta name="full-screen" content="yes">
-<meta name="theme-color" content="#317EFB" />
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="一、HTTP&#x2F;0.9HTTP 是基于 TCP&#x2F;IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。 最早版本是1991年发布的0.9版。该版本极其简单，只有一个命令GET。  GET &#x2F;index.html  上面命令表示，TCP 连接（connection）建立后，客户端向服务器请求（request）网页ind">
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>HTTP协议入门 | 李梓卓的技术专栏</title><meta name="author" content="李梓卓"><meta name="copyright" content="李梓卓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、HTTP&#x2F;0.9HTTP 是基于 TCP&#x2F;IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。 最早版本是1991年发布的0.9版。该版本极其简单，只有一个命令GET。  1GET &#x2F;index.html  上面命令表示，TCP 连接（connection）建立后，客户端向服务器请求（request）网页in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP协议入门">
 <meta property="og:url" content="https://lili095.github.io/2024/07/09/HTTP%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="李梓卓的技术专栏">
-<meta property="og:description" content="一、HTTP&#x2F;0.9HTTP 是基于 TCP&#x2F;IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。 最早版本是1991年发布的0.9版。该版本极其简单，只有一个命令GET。  GET &#x2F;index.html  上面命令表示，TCP 连接（connection）建立后，客户端向服务器请求（request）网页ind">
+<meta property="og:description" content="一、HTTP&#x2F;0.9HTTP 是基于 TCP&#x2F;IP 协议的应用层协议。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。 最早版本是1991年发布的0.9版。该版本极其简单，只有一个命令GET。  1GET &#x2F;index.html  上面命令表示，TCP 连接（connection）建立后，客户端向服务器请求（request）网页in">
 <meta property="og:locale">
+<meta property="og:image" content="https://lili095.github.io/img/avatar.png">
 <meta property="article:published_time" content="2024-07-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-07-09T13:15:24.535Z">
 <meta property="article:author" content="李梓卓">
 <meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
-
-
-<title >HTTP协议入门</title>
-
-<!-- Favicon -->
-
-    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='16x16' ></link>
-
-
-    <link href='/img/favicon.svg?v=2.2.2' rel='icon' type='image/png' sizes='32x32' ></link>
-
-
-
-
-<!-- Plugin -->
-
-
-
-
+<meta name="twitter:image" content="https://lili095.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lili095.github.io/2024/07/09/HTTP%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: 李梓卓","link":"Link: ","source":"Source: 李梓卓的技术专栏","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTTP协议入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-07-09 21:15:24'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-<link rel="stylesheet" href="https://unpkg.com/hexo-theme-async@2.2.2/source/css/plugins/bootstrap.row.css">
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
     
-<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
-
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
     
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-
-
-
-
-<!-- Icon -->
-
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
-
-
-
-
-<!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"lili095.github.io","author":"李梓卓","root":"/","typed_text":null,"theme_version":"2.2.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-07-09 21:15:24"};</script>
-
-<!-- Theme mode css -->
-<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.2" id="trm-switch-style">
-<script>
-    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
-    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
-    let type = catchMode === 'style-dark' ? 'add' : 'remove';
-    document.documentElement.classList[type]('dark')
-</script>
-
-<!-- CDN -->
-
-
-    
-    
-
-
-
-<!-- Site Analytics -->
-
- 
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-
-  <!-- app wrapper -->
-  <div class="trm-app-frame">
-
-    <!-- page preloader -->
-    <div class="trm-preloader">
-    <div class="trm-holder">
-        <div class="preloader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-</div>
-    <!-- page preloader end -->
-
-    <!-- change mode preloader -->
-    <div class="trm-mode-swich-animation-frame">
-    <div class="trm-mode-swich-animation">
-        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
-        <div class="trm-horizon"></div>
-        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
-    </div>
-</div>
-    <!-- change mode preloader end -->
-
-      <!-- scroll container -->
-      <div id="trm-dynamic-content" class="trm-swup-animation">
-        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
-            <!-- top bar -->
-            <header class="trm-top-bar">
-	<div class="container">
-		<div class="trm-left-side">
-			<!-- logo -->
-<a href="/" class="trm-logo-frame trm-anima-link">
-    
-        <img alt="logo" src="/img/favicon.svg">
-    
-    
-        <div class="trm-logo-text">
-            Async<span>Theme</span>
-        </div>
-    
-</a>
-<!-- logo end -->
-		</div>
-		<div class="trm-right-side">
-			<!-- menu -->
-<div class="trm-menu">
-    <nav>
-        <ul>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/" target="">
-                    home
-                </a>
-                
-                <ul>
-                    
-                    <li>
-                        <a  href="/archives2/" target="">
-                            archives2
-                        </a>
-                    </li>
-                    
-                </ul>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a data-no-swup href="/archives/" target="">
-                    archives
-                </a>
-                
-            </li>
-            
-        </ul>
-    </nav>
-</div>
-<!-- menu end -->
-			
-    <!-- mode switcher place -->
-    <div class="trm-mode-switcher-place">
-        <div class="trm-mode-switcher">
-            <i class="iconfont far fa-sun"></i>
-            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
-            <label class="trm-swich" for="trm-swich"></label>
-            <i class="iconfont far fa-moon"></i>
-        </div>
-    </div>
-    <!-- mode switcher place end -->
-
-			
-		</div>
-		<div class="trm-menu-btn">
-			<span></span>
-		</div>
-	</div>
-</header>
-            <!-- top bar end -->
-
-            <!-- body -->
-            
-<div class="trm-content-start">
-    <!-- banner -->
-    <div class="trm-banner">
-    
-    <!-- banner cover -->
-    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
-    <!-- banner cover end -->
-    
-
-    <!-- banner content -->
-    <div class="trm-banner-content trm-overlay">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-4"></div>
-                
-                <div class="col-lg-8">
-
-                    <!-- banner title -->
-                    <div class="trm-banner-text ">
-                        <div class="trm-label trm-mb-20">
-                            NEWS LETTER
-                        </div>
-                        <h1 class="trm-mb-30 trm-hsmb-font">
-                            HTTP协议入门
-                        </h1>
-
-                        
-                            <ul class="trm-breadcrumbs trm-label">
-                                <li>
-                                    <a href="/" class="trm-anima-link">Home</a>
-                                </li>
-                                <li>
-                                    <span>
-                                        2024
-                                    </span>
-                                </li>
-                            </ul>
-                        
-                    </div>
-                    <!-- banner title end -->
-
-                    <!-- scroll hint -->
-                    <span id="scroll-triger" class="trm-scroll-hint-frame">
-                        <div class="trm-scroll-hint"></div>
-                        <span class="trm-label">Scroll down</span>
-                    </span>
-                    <!-- scroll hint end -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- banner content end -->
-</div>
-    <!-- banner end -->
-    <div class="container">
-        <div class="row">
-            
-                <div class="trm-page-sidebar col-lg-4 hidden-sm">
-                    <!-- main card -->
-                    <div class="trm-main-card-frame trm-sidebar">
-    <div class="trm-main-card"> 
-        <!-- card header -->
-<div class="trm-mc-header">
-    <div class="trm-avatar-frame trm-mb-20">
-        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
-    </div>
-    <h5 class="trm-name trm-mb-15">
-        李梓卓
-    </h5>
-    
-</div>
-<!-- card header end -->
-        <!-- sidebar social -->
-
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<div class="trm-social">
-    
-        <a href="https://github.com/lili095" title="github" rel="nofollow" target="_blank">
-            <i class="iconfont fab fa-github"></i>
-        </a>
-    
-</div>
-
-<!-- sidebar social end -->
-        <!-- info -->
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<ul class="trm-table trm-mb-20">
-    
-        <li>
-            <div class="trm-label">
-                地址:
-            </div>
-            <div class="trm-label trm-label-light">
-                南京
-            </div>
-        </li>
-    
-        <li>
-            <div class="trm-label">
-                年龄:
-            </div>
-            <div class="trm-label trm-label-light">
-                24
-            </div>
-        </li>
-    
-</ul>
-<!-- info end -->
-
-        
-    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-    <!-- action button -->
-    <div class="text-center">
-        <a href="mailto:1046876792@qq.com" class="trm-btn">
-            联系我
-            <i class="iconfont far fa-envelope"></i>
-        </a>
-    </div>
-    <!-- action button end -->
-
-    </div>
-</div>
-                    <!-- main card end -->
-                </div>
-            
-            <div class="trm-page-content col-lg-8">
-                <div id="trm-content" class="trm-content">
-                    <div class="trm-post-info row hidden-sm">
-    <div class="col-sm-4">
-        <div class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            07/09
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-clock trm-icon"></i><br>
-            00:00
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-user trm-icon"></i><br>
-            李梓卓
-        </div>
-    </div>
-</div>
-<div class="trm-card ">
-    <article id="article-container" class="trm-publication">
-    <h2 id="一、HTTP-0-9"><a href="#一、HTTP-0-9" class="headerlink" title="一、HTTP&#x2F;0.9"></a>一、HTTP&#x2F;0.9</h2><p>HTTP 是基于 TCP&#x2F;IP 协议的<a href="https://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html"><strong>应用层协议</strong></a>。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。</p>
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="李梓卓的技术专栏"><span class="site-name">李梓卓的技术专栏</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HTTP协议入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-07-08T16:00:00.000Z" title="Created 2024-07-09 00:00:00">2024-07-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-07-09T13:15:24.535Z" title="Updated 2024-07-09 21:15:24">2024-07-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HTTP/">HTTP</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HTTP协议入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一、HTTP-0-9"><a href="#一、HTTP-0-9" class="headerlink" title="一、HTTP&#x2F;0.9"></a>一、HTTP&#x2F;0.9</h2><p>HTTP 是基于 TCP&#x2F;IP 协议的<a href="https://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html"><strong>应用层协议</strong></a>。它不涉及数据包（packet）传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。</p>
 <p>最早版本是1991年发布的0.9版。该版本极其简单，只有一个命令<code>GET</code>。</p>
 <blockquote>
-<pre><code class="hljs http">GET /index.html</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /index.html</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>上面命令表示，TCP 连接（connection）建立后，客户端向服务器请求（request）网页<code>index.html</code>。</p>
 <p>协议规定，服务器只能回应HTML格式的字符串，不能回应别的格式。</p>
 <blockquote>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>服务器发送完毕，就关闭TCP连接。</p>
 <h2 id="二、HTTP-1-0"><a href="#二、HTTP-1-0" class="headerlink" title="二、HTTP&#x2F;1.0"></a>二、HTTP&#x2F;1.0</h2><h3 id="2-1-简介"><a href="#2-1-简介" class="headerlink" title="2.1 简介"></a>2.1 简介</h3><p>1996年5月，HTTP&#x2F;1.0 版本发布，内容大大增加。</p>
@@ -366,24 +171,13 @@
 <p>其他的新增功能还包括状态码（status code）、多字符集支持、多部分发送（multi-part type）、权限（authorization）、缓存（cache）、内容编码（content encoding）等。</p>
 <h3 id="2-2-请求格式"><a href="#2-2-请求格式" class="headerlink" title="2.2 请求格式"></a>2.2 请求格式</h3><p>下面是一个1.0版的HTTP请求的例子。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/</span> <span class="hljs-meta">HTTP/1.0</span>
-<span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5)
-<span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>*/*</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/</span> <span class="meta">HTTP/1.0</span></span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5)</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>*/*</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>可以看到，这个格式与0.9版有很大变化。</p>
 <p>第一行是请求命令，必须在尾部添加协议版本（<code>HTTP/1.0</code>）。后面就是多行头信息，描述客户端的情况。</p>
 <h3 id="2-3-回应格式"><a href="#2-3-回应格式" class="headerlink" title="2.3 回应格式"></a>2.3 回应格式</h3><p>服务器的回应如下。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-meta">HTTP/1.0</span> <span class="hljs-number">200</span> OK 
-<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>text/plain
-<span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>137582
-<span class="hljs-attribute">Expires</span><span class="hljs-punctuation">: </span>Thu, 05 Dec 1997 16:00:00 GMT
-<span class="hljs-attribute">Last-Modified</span><span class="hljs-punctuation">: </span>Wed, 5 August 1996 15:55:28 GMT
-<span class="hljs-attribute">Server</span><span class="hljs-punctuation">: </span>Apache 0.84
-
-<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span>
-<span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span>
-<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">HTTP/1.0</span> <span class="number">200</span> OK </span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>text/plain</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>137582</span><br><span class="line"><span class="attribute">Expires</span><span class="punctuation">: </span>Thu, 05 Dec 1997 16:00:00 GMT</span><br><span class="line"><span class="attribute">Last-Modified</span><span class="punctuation">: </span>Wed, 5 August 1996 15:55:28 GMT</span><br><span class="line"><span class="attribute">Server</span><span class="punctuation">: </span>Apache 0.84</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">body</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>回应的格式是”头信息 + 一个空行（<code>\r\n</code>） + 数据”。其中，第一行是”协议版本 + 状态码（status code） + 状态描述”。</p>
 <h3 id="2-4-Content-Type-字段"><a href="#2-4-Content-Type-字段" class="headerlink" title="2.4 Content-Type 字段"></a>2.4 Content-Type 字段</h3><p>关于字符的编码，1.0版规定，头信息必须是 ASCII 码，后面的数据可以是任何格式。因此，服务器回应的时候，必须告诉客户端，数据是什么格式，这就是<code>Content-Type</code>字段的作用。</p>
@@ -407,58 +201,54 @@
 <p>这些数据类型总称为<code>MIME type</code>，每个值包括一级类型和二级类型，之间用斜杠分隔。</p>
 <p>除了预定义的类型，厂商也可以自定义类型。</p>
 <blockquote>
-<pre><code class="hljs http">application/vnd.debian.binary-package</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">application/vnd.debian.binary-package</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>上面的类型表明，发送的是Debian系统的二进制数据包。</p>
 <p><code>MIME type</code>还可以在尾部使用分号，添加参数。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>text/html; charset=utf-8</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>text/html; charset=utf-8</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>上面的类型表明，发送的是网页，而且编码是UTF-8。</p>
 <p>客户端请求的时候，可以使用<code>Accept</code>字段声明自己可以接受哪些数据格式。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>*/*</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>*/*</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>上面代码中，客户端声明自己可以接受任何格式的数据。</p>
 <p><code>MIME type</code>不仅用在HTTP协议，还可以用在其他地方，比如HTML网页。</p>
 <blockquote>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;Content-Type&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;text/html; charset=UTF-8&quot;</span> /&gt;</span>
-<span class="hljs-comment">&lt;!-- 等同于 --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=UTF-8&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 等同于 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span> </span><br></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="2-5-Content-Encoding-字段"><a href="#2-5-Content-Encoding-字段" class="headerlink" title="2.5 Content-Encoding 字段"></a>2.5 Content-Encoding 字段</h3><p>由于发送的数据可以是任何格式，因此可以把数据压缩后再发送。<code>Content-Encoding</code>字段说明数据的压缩方法。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Content-Encoding</span><span class="hljs-punctuation">: </span>gzip
-<span class="hljs-attribute">Content-Encoding</span><span class="hljs-punctuation">: </span>compress
-<span class="hljs-attribute">Content-Encoding</span><span class="hljs-punctuation">: </span>deflate</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Encoding</span><span class="punctuation">: </span>gzip</span><br><span class="line"><span class="attribute">Content-Encoding</span><span class="punctuation">: </span>compress</span><br><span class="line"><span class="attribute">Content-Encoding</span><span class="punctuation">: </span>deflate</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>客户端在请求时，用<code>Accept-Encoding</code>字段说明自己可以接受哪些压缩方法。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Accept-Encoding</span><span class="hljs-punctuation">: </span>gzip, deflate</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="2-6-缺点"><a href="#2-6-缺点" class="headerlink" title="2.6 缺点"></a>2.6 缺点</h3><p>HTTP&#x2F;1.0 版的主要缺点是，每个TCP连接只能发送一个请求。发送数据完毕，连接就关闭，如果还要请求其他资源，就必须再新建一个连接。</p>
 <p>TCP连接的新建成本很高，因为需要客户端和服务器三次握手，并且开始时发送速率较慢（slow start）。所以，HTTP 1.0版本的性能比较差。随着网页加载的外部资源越来越多，这个问题就愈发突出了。</p>
 <p>为了解决这个问题，有些浏览器在请求时，用了一个非标准的<code>Connection</code>字段。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>keep-alive</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>keep-alive</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>这个字段要求服务器不要关闭TCP连接，以便其他请求复用。服务器同样回应这个字段。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>keep-alive</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>keep-alive</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>一个可以复用的TCP连接就建立了，直到客户端或服务器主动关闭连接。但是，这不是标准字段，不同实现的行为可能不一致，因此不是根本的解决办法。</p>
 <h2 id="三、HTTP-1-1"><a href="#三、HTTP-1-1" class="headerlink" title="三、HTTP&#x2F;1.1"></a>三、HTTP&#x2F;1.1</h2><p>1997年1月，HTTP&#x2F;1.1 版本发布，只比 1.0 版本晚了半年。它进一步完善了 HTTP 协议，一直用到了20年后的今天，直到现在还是最流行的版本。</p>
 <h3 id="3-1-持久连接"><a href="#3-1-持久连接" class="headerlink" title="3.1 持久连接"></a>3.1 持久连接</h3><p>1.1 版的最大变化，就是引入了持久连接（persistent connection），即TCP连接默认不关闭，可以被多个请求复用，不用声明<code>Connection: keep-alive</code>。</p>
 <p>客户端和服务器发现对方一段时间没有活动，就可以主动关闭连接。不过，规范的做法是，客户端在最后一个请求时，发送<code>Connection: close</code>，明确要求服务器关闭TCP连接。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>close</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>目前，对于同一个域名，大多数浏览器允许同时建立6个持久连接。</p>
 <h3 id="3-2-管道机制"><a href="#3-2-管道机制" class="headerlink" title="3.2 管道机制"></a>3.2 管道机制</h3><p>1.1 版还引入了管道机制（pipelining），即在同一个TCP连接里面，客户端可以同时发送多个请求。这样就进一步改进了HTTP协议的效率。</p>
 <p>举例来说，客户端需要请求两个资源。以前的做法是，在同一个TCP连接里面，先发送A请求，然后等待服务器做出回应，收到后再发出B请求。管道机制则是允许浏览器同时发出A请求和B请求，但是服务器还是按照顺序，先回应A请求，完成后再回应B请求。</p>
 <h3 id="3-3-Content-Length-字段"><a href="#3-3-Content-Length-字段" class="headerlink" title="3.3 Content-Length 字段"></a>3.3 Content-Length 字段</h3><p>一个TCP连接现在可以传送多个回应，势必就要有一种机制，区分数据包是属于哪一个回应的。这就是<code>Content-length</code>字段的作用，声明本次回应的数据长度。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>3495</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>3495</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>上面代码告诉浏览器，本次回应的长度是3495个字节，后面的字节就属于下一个回应了。</p>
 <p>在1.0版中，<code>Content-Length</code>字段不是必需的，因为浏览器发现服务器关闭了TCP连接，就表明收到的数据包已经全了。</p>
@@ -466,32 +256,16 @@
 <p>对于一些很耗时的动态操作来说，这意味着，服务器要等到所有操作完成，才能发送数据，显然这样的效率不高。更好的处理方法是，产生一块数据，就发送一块，采用”流模式”（stream）取代”缓存模式”（buffer）。</p>
 <p>因此，1.1版规定可以不使用<code>Content-Length</code>字段，而使用<a href="https://zh.wikipedia.org/wiki/%E5%88%86%E5%9D%97%E4%BC%A0%E8%BE%93%E7%BC%96%E7%A0%81">“分块传输编码”</a>（chunked transfer encoding）。只要请求或回应的头信息有<code>Transfer-Encoding</code>字段，就表明回应将由数量未定的数据块组成。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Transfer-Encoding</span><span class="hljs-punctuation">: </span>chunked</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Transfer-Encoding</span><span class="punctuation">: </span>chunked</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>每个非空的数据块之前，会有一个16进制的数值，表示这个块的长度。最后是一个大小为0的块，就表示本次回应的数据发送完了。下面是一个例子。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">200</span> OK
-<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>text/plain
-<span class="hljs-attribute">Transfer-Encoding</span><span class="hljs-punctuation">: </span>chunked
-
-<span class="language-livecodeserver"><span class="hljs-number">25</span></span>
-<span class="language-livecodeserver">This is <span class="hljs-keyword">the</span> data <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">first</span> chunk</span>
-<span class="language-livecodeserver"></span>
-<span class="language-livecodeserver"><span class="hljs-number">1</span>C</span>
-<span class="language-livecodeserver"><span class="hljs-keyword">and</span> this is <span class="hljs-keyword">the</span> <span class="hljs-keyword">second</span> <span class="hljs-literal">one</span></span>
-<span class="language-livecodeserver"></span>
-<span class="language-livecodeserver"><span class="hljs-number">3</span></span>
-<span class="language-livecodeserver">con</span>
-<span class="language-livecodeserver"></span>
-<span class="language-livecodeserver"><span class="hljs-number">8</span></span>
-<span class="language-livecodeserver">sequence</span>
-<span class="language-livecodeserver"></span>
-<span class="language-livecodeserver"><span class="hljs-number">0</span></span></code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">HTTP/1.1</span> <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>text/plain</span><br><span class="line"><span class="attribute">Transfer-Encoding</span><span class="punctuation">: </span>chunked</span><br><span class="line"></span><br><span class="line"><span class="language-livecodeserver"><span class="number">25</span></span></span><br><span class="line"><span class="language-livecodeserver">This is <span class="keyword">the</span> data <span class="keyword">in</span> <span class="keyword">the</span> <span class="keyword">first</span> chunk</span></span><br><span class="line"><span class="language-livecodeserver"></span></span><br><span class="line"><span class="language-livecodeserver"><span class="number">1</span>C</span></span><br><span class="line"><span class="language-livecodeserver"><span class="keyword">and</span> this is <span class="keyword">the</span> <span class="keyword">second</span> <span class="literal">one</span></span></span><br><span class="line"><span class="language-livecodeserver"></span></span><br><span class="line"><span class="language-livecodeserver"><span class="number">3</span></span></span><br><span class="line"><span class="language-livecodeserver">con</span></span><br><span class="line"><span class="language-livecodeserver"></span></span><br><span class="line"><span class="language-livecodeserver"><span class="number">8</span></span></span><br><span class="line"><span class="language-livecodeserver">sequence</span></span><br><span class="line"><span class="language-livecodeserver"></span></span><br><span class="line"><span class="language-livecodeserver"><span class="number">0</span></span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="3-5-其他功能"><a href="#3-5-其他功能" class="headerlink" title="3.5 其他功能"></a>3.5 其他功能</h3><p>1.1版还新增了许多动词方法：<code>PUT</code>、<code>PATCH</code>、<code>HEAD</code>、 <code>OPTIONS</code>、<code>DELETE</code>。</p>
 <p>另外，客户端请求的头信息新增了<code>Host</code>字段，用来指定服务器的域名。</p>
 <blockquote>
-<pre><code class="hljs http"><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>www.example.com</code></pre>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>www.example.com</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>有了<code>Host</code>字段，就可以将请求发往同一台服务器上的不同网站，为虚拟主机的兴起打下了基础。</p>
 <h3 id="3-6-缺点"><a href="#3-6-缺点" class="headerlink" title="3.6 缺点"></a>3.6 缺点</h3><p>虽然1.1版允许复用TCP连接，但是同一个TCP连接里面，所有的数据通信是按次序进行的。服务器只有处理完一个回应，才会进行下一个回应。要是前面的回应特别慢，后面就会有许多请求排队等着。这称为<a href="https://zh.wikipedia.org/wiki/%E9%98%9F%E5%A4%B4%E9%98%BB%E5%A1%9E">“队头堵塞”</a>（Head-of-line blocking）。</p>
@@ -513,175 +287,4 @@
 <h3 id="5-5-服务器推送"><a href="#5-5-服务器推送" class="headerlink" title="5.5 服务器推送"></a>5.5 服务器推送</h3><p>HTTP&#x2F;2 允许服务器未经请求，主动向客户端发送资源，这叫做服务器推送（server push）。</p>
 <p>常见场景是客户端请求一个网页，这个网页里面包含很多静态资源。正常情况下，客户端必须收到网页后，解析HTML源码，发现有静态资源，再发出静态资源请求。其实，服务器可以预期到客户端请求网页后，很可能会再请求静态资源，所以就主动把这些静态资源随着网页一起发给客户端了。</p>
 <p>- </p>
-
-</article>
-    
-    
-
-</div>
-<div class="trm-post-next-prev row">
-    <div class="col-lg-12">
-        <!-- title -->
-        <h5 class="trm-title-with-divider">
-            其他文章
-            <span data-number="02"></span>
-        </h5>
-    </div>
-    
-    
-        <div class="col-lg-6">
-    <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
-        <div class="trm-older-publication">
-            
-            <a class="trm-op-top trm-anima-link" href="/2024/07/09/Markdown%E8%AF%AD%E6%B3%95/">
-                <span class="trm-op-cover">
-                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-                </span>
-                <h6 class="trm-op-title">Markdown语法</h6>
-            </a>
-            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/07/09</li>
-                <li>00:00</li>
-                <li>Markdown</li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-</div>
-
-    
-
-
-
-                    <div class="trm-divider footer-divider"></div>
-
-                    <!-- footer -->
-                    <footer class="trm-footer-card trm-scroll-animation">
-
-    
-
-    
-
-    
-        <div class="trm-footer-item">
-            <span>
-                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
-            </span>
-            <span class="footer-separator" data-separator=" | "></span>
-            <span> 
-                主题 - 
-                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
-                v2.2.2
-            </span>
-        </div>
-      
-
-     
-
-     
-</footer>
-                    <!-- footer end -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-            <!-- body end -->
-
-            
-
-    <div id="post-toc" class="trm-post-toc">
-      <div class="trm-post-toc-header">
-        目录导航
-				<span id="post-toc-top">
-					置顶
-				</span>
-      </div>
-      <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="一、HTTP&#x2F;0.9"><a rel="nofollow" class="trm-toc-link" href="#一、HTTP-0-9"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">一、HTTP&#x2F;0.9</span></a></li><li class="trm-toc-item trm-toc-level-2" title="二、HTTP&#x2F;1.0"><a rel="nofollow" class="trm-toc-link" href="#二、HTTP-1-0"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">二、HTTP&#x2F;1.0</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 简介"><a rel="nofollow" class="trm-toc-link" href="#2-1-简介"><span class="trm-toc-number">2.1.</span> <span class="trm-toc-text">2.1 简介</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2 请求格式"><a rel="nofollow" class="trm-toc-link" href="#2-2-请求格式"><span class="trm-toc-number">2.2.</span> <span class="trm-toc-text">2.2 请求格式</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.3 回应格式"><a rel="nofollow" class="trm-toc-link" href="#2-3-回应格式"><span class="trm-toc-number">2.3.</span> <span class="trm-toc-text">2.3 回应格式</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 Content-Type 字段"><a rel="nofollow" class="trm-toc-link" href="#2-4-Content-Type-字段"><span class="trm-toc-number">2.4.</span> <span class="trm-toc-text">2.4 Content-Type 字段</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.5 Content-Encoding 字段"><a rel="nofollow" class="trm-toc-link" href="#2-5-Content-Encoding-字段"><span class="trm-toc-number">2.5.</span> <span class="trm-toc-text">2.5 Content-Encoding 字段</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.6 缺点"><a rel="nofollow" class="trm-toc-link" href="#2-6-缺点"><span class="trm-toc-number">2.6.</span> <span class="trm-toc-text">2.6 缺点</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="三、HTTP&#x2F;1.1"><a rel="nofollow" class="trm-toc-link" href="#三、HTTP-1-1"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">三、HTTP&#x2F;1.1</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 持久连接"><a rel="nofollow" class="trm-toc-link" href="#3-1-持久连接"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text">3.1 持久连接</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.2 管道机制"><a rel="nofollow" class="trm-toc-link" href="#3-2-管道机制"><span class="trm-toc-number">3.2.</span> <span class="trm-toc-text">3.2 管道机制</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.3 Content-Length 字段"><a rel="nofollow" class="trm-toc-link" href="#3-3-Content-Length-字段"><span class="trm-toc-number">3.3.</span> <span class="trm-toc-text">3.3 Content-Length 字段</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.4 分块传输编码"><a rel="nofollow" class="trm-toc-link" href="#3-4-分块传输编码"><span class="trm-toc-number">3.4.</span> <span class="trm-toc-text">3.4 分块传输编码</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.5 其他功能"><a rel="nofollow" class="trm-toc-link" href="#3-5-其他功能"><span class="trm-toc-number">3.5.</span> <span class="trm-toc-text">3.5 其他功能</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.6 缺点"><a rel="nofollow" class="trm-toc-link" href="#3-6-缺点"><span class="trm-toc-number">3.6.</span> <span class="trm-toc-text">3.6 缺点</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="四、SPDY 协议"><a rel="nofollow" class="trm-toc-link" href="#四、SPDY-协议"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">四、SPDY 协议</span></a></li><li class="trm-toc-item trm-toc-level-2" title="五、HTTP&#x2F;2"><a rel="nofollow" class="trm-toc-link" href="#五、HTTP-2"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">五、HTTP&#x2F;2</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="5.1 二进制协议"><a rel="nofollow" class="trm-toc-link" href="#5-1-二进制协议"><span class="trm-toc-number">5.1.</span> <span class="trm-toc-text">5.1 二进制协议</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5.2 多工"><a rel="nofollow" class="trm-toc-link" href="#5-2-多工"><span class="trm-toc-number">5.2.</span> <span class="trm-toc-text">5.2 多工</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5.3 数据流"><a rel="nofollow" class="trm-toc-link" href="#5-3-数据流"><span class="trm-toc-number">5.3.</span> <span class="trm-toc-text">5.3 数据流</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5.4 头信息压缩"><a rel="nofollow" class="trm-toc-link" href="#5-4-头信息压缩"><span class="trm-toc-number">5.4.</span> <span class="trm-toc-text">5.4 头信息压缩</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5.5 服务器推送"><a rel="nofollow" class="trm-toc-link" href="#5-5-服务器推送"><span class="trm-toc-number">5.5.</span> <span class="trm-toc-text">5.5 服务器推送</span></a></li></ol></li></ol>
-      </div>
-    </div>
-
-            
-<div class="trm-fixed-container">
-    
-        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
-            <i class="iconfont fas fa-th-list"></i>
-        </div>
-    
-    
-        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
-            <i class="iconfont fas fa-book-reader"></i>
-        </div>
-    
-    
-        <div class="trm-fixed-btn hidden-md" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
-            <i class="iconfont fas fa-arrows-alt-h"></i>
-        </div>
-    
-    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
-        <i class="iconfont fas fa-arrow-up"></i>
-    </div>
-</div>
-        </div>
-      </div>
-      <!-- scroll container end -->
-  </div>
-  <!-- app wrapper end -->
-
-  
-  <!-- Plugin -->
-
-
-
-
-    
-    
-<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-
-    
-
-    
-
-    
-
-    <!-- 数学公式 -->
-    
-
-    <!-- 评论插件 -->
-    
-        
-
-        
-    
-
-		
-
-
-
-
-    <!-- Service Worker -->
-    
-    <!-- baidu push -->
-    
-
-
-<script id="async-script" src="https://unpkg.com/hexo-theme-async@2.2.2/source/js/main.js?v=2.2.2"></script>
-
-<!-- CDN -->
-
-
-    
-
-    
-
-    
-
-
-
-</body>
-
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://lili095.github.io">李梓卓</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://lili095.github.io/2024/07/09/HTTP%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/">https://lili095.github.io/2024/07/09/HTTP%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HTTP/">HTTP</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/09/%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/" title="函数的应用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">函数的应用</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/09/XML%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="XML入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">XML入门</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81HTTP-0-9"><span class="toc-number">1.</span> <span class="toc-text">一、HTTP&#x2F;0.9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81HTTP-1-0"><span class="toc-number">2.</span> <span class="toc-text">二、HTTP&#x2F;1.0</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%AF%B7%E6%B1%82%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 请求格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%9B%9E%E5%BA%94%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 回应格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Content-Type-%E5%AD%97%E6%AE%B5"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 Content-Type 字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Content-Encoding-%E5%AD%97%E6%AE%B5"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 Content-Encoding 字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E7%BC%BA%E7%82%B9"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81HTTP-1-1"><span class="toc-number">3.</span> <span class="toc-text">三、HTTP&#x2F;1.1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 持久连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%AE%A1%E9%81%93%E6%9C%BA%E5%88%B6"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 管道机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Content-Length-%E5%AD%97%E6%AE%B5"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 Content-Length 字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%88%86%E5%9D%97%E4%BC%A0%E8%BE%93%E7%BC%96%E7%A0%81"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 分块传输编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 其他功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E7%BC%BA%E7%82%B9"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81SPDY-%E5%8D%8F%E8%AE%AE"><span class="toc-number">4.</span> <span class="toc-text">四、SPDY 协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81HTTP-2"><span class="toc-number">5.</span> <span class="toc-text">五、HTTP&#x2F;2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8D%8F%E8%AE%AE"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 二进制协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E5%A4%9A%E5%B7%A5"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 多工</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">5.3.</span> <span class="toc-text">5.3 数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E5%A4%B4%E4%BF%A1%E6%81%AF%E5%8E%8B%E7%BC%A9"><span class="toc-number">5.4.</span> <span class="toc-text">5.4 头信息压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A8%E9%80%81"><span class="toc-number">5.5.</span> <span class="toc-text">5.5 服务器推送</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 李梓卓</div><div class="framework-info"><span>Framework </span><a href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
