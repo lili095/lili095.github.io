@@ -1,0 +1,468 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Python基础(5)-文件读写与异常处理 | 李梓卓的技术专栏</title><meta name="author" content="李梓卓"><meta name="copyright" content="李梓卓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="文件读写和异常处理实际开发中常常会遇到对数据进行持久化的场景，所谓持久化是指将数据从无法长久保存数据的存储介质（通常是内存）转移到可以长久保存数据的存储介质（通常是硬盘）中。实现数据持久化最直接简单的方式就是通过文件系统将数据保存到文件中。 计算机的文件系统是一种存储和组织计算机数据的方法，它使得对数据的访问和查找变得容易，文件系统使用文件和树形目录的抽象逻辑概念代替了硬盘、光盘、闪存等物理设备的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础(5)-文件读写与异常处理">
+<meta property="og:url" content="https://lili095.github.io/2024/07/19/Python%E5%9F%BA%E7%A1%80(5)/index.html">
+<meta property="og:site_name" content="李梓卓的技术专栏">
+<meta property="og:description" content="文件读写和异常处理实际开发中常常会遇到对数据进行持久化的场景，所谓持久化是指将数据从无法长久保存数据的存储介质（通常是内存）转移到可以长久保存数据的存储介质（通常是硬盘）中。实现数据持久化最直接简单的方式就是通过文件系统将数据保存到文件中。 计算机的文件系统是一种存储和组织计算机数据的方法，它使得对数据的访问和查找变得容易，文件系统使用文件和树形目录的抽象逻辑概念代替了硬盘、光盘、闪存等物理设备的">
+<meta property="og:locale">
+<meta property="og:image" content="https://lili095.github.io/img/avatar.png">
+<meta property="article:published_time" content="2024-07-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-07-19T09:04:35.547Z">
+<meta property="article:author" content="李梓卓">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lili095.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lili095.github.io/2024/07/19/Python%E5%9F%BA%E7%A1%80(5)/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: 李梓卓","link":"Link: ","source":"Source: 李梓卓的技术专栏","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python基础(5)-文件读写与异常处理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-07-19 17:04:35'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://dailybing.com/api/v1')"><nav id="nav"><span id="blog-info"><a href="/" title="李梓卓的技术专栏"><span class="site-name">李梓卓的技术专栏</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Python基础(5)-文件读写与异常处理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-07-18T16:00:00.000Z" title="Created 2024-07-19 00:00:00">2024-07-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-07-19T09:04:35.547Z" title="Updated 2024-07-19 17:04:35">2024-07-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Python基础(5)-文件读写与异常处理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="文件读写和异常处理"><a href="#文件读写和异常处理" class="headerlink" title="文件读写和异常处理"></a>文件读写和异常处理</h2><p>实际开发中常常会遇到对数据进行持久化的场景，所谓持久化是指将数据从无法长久保存数据的存储介质（通常是内存）转移到可以长久保存数据的存储介质（通常是硬盘）中。实现数据持久化最直接简单的方式就是通过<strong>文件系统</strong>将数据保存到<strong>文件</strong>中。</p>
+<p>计算机的<strong>文件系统</strong>是一种存储和组织计算机数据的方法，它使得对数据的访问和查找变得容易，文件系统使用<strong>文件</strong>和<strong>树形目录</strong>的抽象逻辑概念代替了硬盘、光盘、闪存等物理设备的数据块概念，用户使用文件系统来保存数据时，不必关心数据实际保存在硬盘的哪个数据块上，只需要记住这个文件的路径和文件名。在写入新数据之前，用户不必关心硬盘上的哪个数据块没有被使用，硬盘上的存储空间管理（分配和释放）功能由文件系统自动完成，用户只需要记住数据被写入到了哪个文件中。</p>
+<h3 id="打开和关闭文件"><a href="#打开和关闭文件" class="headerlink" title="打开和关闭文件"></a>打开和关闭文件</h3><p>有了文件系统，我们可以非常方便的通过文件来读写数据；在Python中要实现文件操作是非常简单的。我们可以使用Python内置的<code>open</code>函数来打开文件，在使用<code>open</code>函数时，我们可以通过函数的参数指定<strong>文件名</strong>、<strong>操作模式</strong>和<strong>字符编码</strong>等信息，接下来就可以对文件进行读写操作了。这里所说的操作模式是指要打开什么样的文件（字符文件或二进制文件）以及做什么样的操作（读、写或追加），具体如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作模式</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>&#39;r&#39;</code></td>
+<td>读取 （默认）</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;w&#39;</code></td>
+<td>写入（会先截断之前的内容）</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;x&#39;</code></td>
+<td>写入，如果文件已经存在会产生异常</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;a&#39;</code></td>
+<td>追加，将内容写入到已有文件的末尾</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;b&#39;</code></td>
+<td>二进制模式</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;t&#39;</code></td>
+<td>文本模式（默认）</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;+&#39;</code></td>
+<td>更新（既可以读又可以写）</td>
+</tr>
+</tbody></table>
+<p>在使用<code>open</code>函数时，如果打开的文件是字符文件（文本文件），可以通过<code>encoding</code>参数来指定读写文件使用的字符编码。如果对字符编码和字符集这些概念不了解，可以看看<a href="https://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html">《字符集和字符编码》</a>一文。</p>
+<p>使用<code>open</code>函数打开文件成功后会返回一个文件对象，通过这个对象，我们就可以实现对文件的读写操作；如果打开文件失败，<code>open</code>函数会引发异常，稍后会对此加以说明。如果要关闭打开的文件，可以使用文件对象的<code>close</code>方法，这样可以在结束文件操作时释放掉这个文件。</p>
+<h3 id="读写文本文件"><a href="#读写文本文件" class="headerlink" title="读写文本文件"></a>读写文本文件</h3><p>用<code>open</code>函数打开文本文件时，需要指定文件名并将文件的操作模式设置为<code>&#39;r&#39;</code>，如果不指定，默认值也是<code>&#39;r&#39;</code>；如果需要指定字符编码，可以传入<code>encoding</code>参数，如果不指定，默认值是None，那么在读取文件时使用的是操作系统默认的编码。需要提醒大家，如果不能保证保存文件时使用的编码方式与<code>encoding</code>参数指定的编码方式是一致的，那么就可能因无法解码字符而导致读取文件失败。</p>
+<p>下面的例子演示了如何读取一个纯文本文件（一般指只有字符原生编码构成的文件，与富文本相比，纯文本不包含字符样式的控制元素，能够被最简单的文本编辑器直接读取）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;致橡树.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(file.read())</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+
+<p>除了使用文件对象的<code>read</code>方法读取文件之外，还可以使用<code>for-in</code>循环逐行读取或者用<code>readlines</code>方法将文件按行读取到一个列表容器中，代码如下所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;致橡树.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> file:				<span class="comment">#每次迭代时，从文件中读取一行，处理该行然后进行下一行的读取。</span></span><br><span class="line">    <span class="built_in">print</span>(line, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">file.close()</span><br><span class="line"></span><br><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;致橡树.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">lines = file.readlines()		<span class="comment">#使用file.readlines()方法一次性读取文件的所有行</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">    <span class="built_in">print</span>(line, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+
+<p>如果要向文件中写入内容，可以在打开文件时使用<code>w</code>或者<code>a</code>作为操作模式，前者会截断之前的文本内容写入新的内容，后者是在原来内容的尾部追加新的内容。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;致橡树.txt&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">file.write(<span class="string">&#x27;\n标题：《致橡树》&#x27;</span>)</span><br><span class="line">file.write(<span class="string">&#x27;\n作者：舒婷&#x27;</span>)</span><br><span class="line">file.write(<span class="string">&#x27;\n时间：1977年3月&#x27;</span>)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h3><p>请注意上面的代码，如果<code>open</code>函数指定的文件并不存在或者无法打开，那么将引发异常状况导致程序崩溃。为了让代码具有健壮性和容错性，我们可以<strong>使用Python的异常机制对可能在运行时发生状况的代码进行适当的处理</strong>。Python中和异常相关的关键字有五个，分别是<code>try</code>、<code>except</code>、<code>else</code>、<code>finally</code>和<code>raise</code>，我们先看看下面的代码，再来为大家介绍这些关键字的用法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="literal">None</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    file = <span class="built_in">open</span>(<span class="string">&#x27;致橡树.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(file.read())</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;无法打开指定的文件!&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> LookupError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;指定了未知的编码!&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;读取文件时解码错误!&#x27;</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="keyword">if</span> file:</span><br><span class="line">        file.close()</span><br></pre></td></tr></table></figure>
+
+<p>在Python中，我们可以将运行时会出现状况的代码放在<code>try</code>代码块中，在<code>try</code>后面可以跟上一个或多个<code>except</code>块来捕获异常并进行相应的处理。例如，在上面的代码中，文件找不到会引发<code>FileNotFoundError</code>，指定了未知的编码会引发<code>LookupError</code>，而如果读取文件时无法按指定编码方式解码文件会引发<code>UnicodeDecodeError</code>，所以我们在<code>try</code>后面跟上了三个<code>except</code>分别处理这三种不同的异常状况。</p>
+<p>在<code>except</code>后面，我们还可以加上<code>else</code>代码块，这是<code>try</code> 中的代码没有出现异常时会执行的代码，而且<code>else</code>中的代码不会再进行异常捕获，也就是说如果遇到异常状况，程序会因异常而终止并报告异常信息。最后我们使用<code>finally</code>代码块来关闭打开的文件，释放掉程序中获取的外部资源。由于<code>finally</code>块的代码不论程序正常还是异常都会执行，甚至是调用了<code>sys</code>模块的<code>exit</code>函数终止Python程序，<code>finally</code>块中的代码仍然会被执行（因为<code>exit</code>函数的本质是引发了<code>SystemExit</code>异常），因此我们把<code>finally</code>代码块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。</p>
+<p>在Python中，可以使用<code>raise</code>关键字来<strong>引发异常（抛出异常对象）</strong>，而调用者可以通过<code>try...except...</code>结构来捕获并处理异常。例如在函数中，当函数的执行条件不满足时，可以使用抛出异常的方式来告知调用者问题的所在，而调用者可以通过捕获处理异常来使得代码从异常中恢复，定义异常和抛出异常的代码如下所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InputError</span>(<span class="title class_ inherited__">ValueError</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;自定义异常类型&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fac</span>(<span class="params">num</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;求阶乘&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> num &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> InputError(<span class="string">&#x27;只能计算非负整数的阶乘&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> num <span class="keyword">in</span> (<span class="number">0</span>, <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> num * fac(num - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>调用求阶乘的函数<code>fac</code>，通过<code>try...except...</code>结构捕获输入错误的异常并打印异常对象（显示异常信息），如果输入正确就计算阶乘并结束程序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="literal">True</span></span><br><span class="line"><span class="keyword">while</span> flag:</span><br><span class="line">    num = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;n = &#x27;</span>))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;num&#125;</span>! = <span class="subst">&#123;fac(num)&#125;</span>&#x27;</span>)</span><br><span class="line">        flag = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">except</span> InputError <span class="keyword">as</span> err:</span><br><span class="line">        <span class="built_in">print</span>(err)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="上下文语法"><a href="#上下文语法" class="headerlink" title="上下文语法"></a>上下文语法</h3><p>对于<code>open</code>函数返回的文件对象，还可以使用<code>with</code>上下文语法在文件操作完成后自动执行文件对象的<code>close</code>方法，这样可以让代码变得更加简单优雅，因为不需要再写<code>finally</code>代码块来执行关闭文件释放资源的操作。需要提醒大家的是，并不是所有的对象都可以放在<code>with</code>上下文语法中，只有符合<strong>上下文管理器协议</strong>（有<code>__enter__</code>和<code>__exit__</code>魔术方法）的对象才能使用这种语法，Python标准库中的<code>contextlib</code>模块也提供了对<code>with</code>上下文语法的支持，后面再为大家进行讲解。</p>
+<p>用<code>with</code>上下文语法改写后的代码如下所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;致橡树.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="built_in">print</span>(file.read())</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;无法打开指定的文件!&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> LookupError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;指定了未知的编码!&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;读取文件时解码错误!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="读写二进制文件"><a href="#读写二进制文件" class="headerlink" title="读写二进制文件"></a>读写二进制文件</h3><p>读写二进制文件跟读写文本文件的操作类似，但是需要注意，在使用<code>open</code>函数打开文件时，如果要进行读操作，操作模式是<code>&#39;rb&#39;</code>，如果要进行写操作，操作模式是<code>&#39;wb&#39;</code>。还有一点，读写文本文件时，<code>read</code>方法的返回值以及<code>write</code>方法的参数是<code>str</code>对象（字符串），而读写二进制文件时，<code>read</code>方法的返回值以及<code>write</code>方法的参数是<code>bytes-like</code>对象（字节串）。下面的代码实现了将当前路径下名为<code>guido.jpg</code>的图片文件复制到<code>吉多.jpg</code>文件中的操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;guido.jpg&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> file1:</span><br><span class="line">        data = file1.read()</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;吉多.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> file2:</span><br><span class="line">        file2.write(data)</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;指定的文件无法打开.&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> IOError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;读写文件时出现错误.&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;程序执行结束.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果要复制的图片文件很大，一次将文件内容直接读入内存中可能会造成非常大的内存开销，为了减少对内存的占用，可以为<code>read</code>方法传入<code>size</code>参数来指定每次读取的字节数，通过循环读取和写入的方式来完成上面的操作，代码如下所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;guido.jpg&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> file1, <span class="built_in">open</span>(<span class="string">&#x27;吉多.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> file2:</span><br><span class="line">        data = file1.read(<span class="number">512</span>)</span><br><span class="line">        <span class="keyword">while</span> data:</span><br><span class="line">            file2.write(data)</span><br><span class="line">            data = file1.read()</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;指定的文件无法打开.&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> IOError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;读写文件时出现错误.&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;程序执行结束.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="简单的总结"><a href="#简单的总结" class="headerlink" title="简单的总结"></a>简单的总结</h3><p>通过读写文件的操作，我们可以实现数据持久化。在Python中可以通过<code>open</code>函数来获得文件对象，可以通过文件对象的<code>read</code>和<code>write</code>方法实现文件读写操作。程序在运行时可能遭遇无法预料的异常状况，可以使用Python的异常机制来处理这些状况。Python的异常机制主要包括<code>try</code>、<code>except</code>、<code>else</code>、<code>finally</code>和<code>raise</code>这五个核心关键字。<code>try</code>后面的<code>except</code>语句不是必须的，<code>finally</code>语句也不是必须的，但是二者必须要有一个；<code>except</code>语句可以有一个或多个，多个<code>except</code>会按照书写的顺序依次匹配指定的异常，如果异常已经处理就不会再进入后续的<code>except</code>语句；<code>except</code>语句中还可以通过元组同时指定多个异常类型进行捕获；<code>except</code>语句后面如果不指定异常类型，则默认捕获所有异常；捕获异常后可以使用<code>raise</code>要再次抛出，但是不建议捕获并抛出同一个异常；不建议在不清楚逻辑的情况下捕获所有异常，这可能会掩盖程序中严重的问题。最后强调一点，<strong>不要使用异常机制来处理正常业务逻辑或控制程序流程</strong>，简单的说就是不要滥用异常机制，这是初学者常犯的错误。</p>
+<h2 id="对象的序列化和反序列化"><a href="#对象的序列化和反序列化" class="headerlink" title="对象的序列化和反序列化"></a>对象的序列化和反序列化</h2><h3 id="JSON概述"><a href="#JSON概述" class="headerlink" title="JSON概述"></a>JSON概述</h3><p>这里还有一个问题，如果希望把一个列表或者一个字典中的数据保存到文件中又该怎么做呢？在Python中，我们可以将程序中的数据以JSON格式进行保存。JSON是“JavaScript Object Notation”的缩写，它本来是JavaScript语言中创建对象的一种字面量语法，现在已经被广泛的应用于跨语言跨平台的数据交换。使用JSON的原因非常简单，因为它结构紧凑而且是纯文本，任何操作系统和编程语言都能处理纯文本，这就是<strong>实现跨语言跨平台数据交换</strong>的前提条件。目前JSON基本上已经取代了XML（可扩展标记语言）作为<strong>异构系统间交换数据的事实标准</strong>。可以在<a href="https://www.json.org/json-zh.html">JSON的官方网站</a>找到更多关于JSON的知识，这个网站还提供了每种语言处理JSON数据格式可以使用的工具或三方库。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;骆昊&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">40</span>,</span><br><span class="line">    <span class="attr">friends</span>: [<span class="string">&quot;王大锤&quot;</span>, <span class="string">&quot;白元芳&quot;</span>],</span><br><span class="line">    <span class="attr">cars</span>: [</span><br><span class="line">        &#123;<span class="string">&quot;brand&quot;</span>: <span class="string">&quot;BMW&quot;</span>, <span class="string">&quot;max_speed&quot;</span>: <span class="number">240</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;brand&quot;</span>: <span class="string">&quot;Benz&quot;</span>, <span class="string">&quot;max_speed&quot;</span>: <span class="number">280</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;brand&quot;</span>: <span class="string">&quot;Audi&quot;</span>, <span class="string">&quot;max_speed&quot;</span>: <span class="number">280</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面是JSON的一个简单例子，大家可能已经注意到了，它跟Python中的字典非常类似而且支持嵌套结构，就好比Python字典中的值可以是另一个字典。我们可以尝试把下面的代码输入浏览器的控制台（对于Chrome浏览器，可以通过“更多工具”菜单找到“开发者工具”子菜单，就可以打开浏览器的控制台），浏览器的控制台提供了一个运行JavaScript代码的交互式环境（类似于Python的交互式环境），下面的代码会帮我们创建出一个JavaScript的对象，我们将其赋值给名为<code>obj</code>的变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;骆昊&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">40</span>,</span><br><span class="line">    <span class="attr">friends</span>: [<span class="string">&quot;王大锤&quot;</span>, <span class="string">&quot;白元芳&quot;</span>],</span><br><span class="line">    <span class="attr">cars</span>: [</span><br><span class="line">        &#123;<span class="string">&quot;brand&quot;</span>: <span class="string">&quot;BMW&quot;</span>, <span class="string">&quot;max_speed&quot;</span>: <span class="number">240</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;brand&quot;</span>: <span class="string">&quot;Benz&quot;</span>, <span class="string">&quot;max_speed&quot;</span>: <span class="number">280</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&quot;brand&quot;</span>: <span class="string">&quot;Audi&quot;</span>, <span class="string">&quot;max_speed&quot;</span>: <span class="number">280</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820143803.png" alt="image-20210820143756353" width="80%">
+
+<p>上面的<code>obj</code>就是JavaScript中的一个对象，我们可以通过<code>obj.name</code>或<code>obj[&quot;name&quot;]</code>两种方式获取到<code>name</code>对应的值，如下图所示。可以注意到，<code>obj[&quot;name&quot;]</code>这种获取数据的方式跟Python字典通过键获取值的索引操作是完全一致的，而Python中也通过名为<code>json</code>的模块提供了字典与JSON双向转换的支持。</p>
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820144411.png" width="85%">
+
+<p>我们在JSON中使用的数据类型（JavaScript数据类型）和Python中的数据类型也是很容易找到对应关系的，大家可以看看下面的两张表。</p>
+<p>表1：JavaScript数据类型（值）对应的Python数据类型（值）</p>
+<table>
+<thead>
+<tr>
+<th>JSON</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>object</code></td>
+<td><code>dict</code></td>
+</tr>
+<tr>
+<td><code>array</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>str</code></td>
+</tr>
+<tr>
+<td><code>number </code></td>
+<td><code>int</code> &#x2F; <code>float</code></td>
+</tr>
+<tr>
+<td><code>number</code> (real)</td>
+<td><code>float</code></td>
+</tr>
+<tr>
+<td><code>boolean</code> (<code>true</code> &#x2F; <code>false</code>)</td>
+<td><code>bool</code> (<code>True</code> &#x2F; <code>False</code>)</td>
+</tr>
+<tr>
+<td><code>null</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody></table>
+<p>表2：Python数据类型（值）对应的JavaScript数据类型（值）</p>
+<table>
+<thead>
+<tr>
+<th>Python</th>
+<th>JSON</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>dict</code></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><code>list</code> &#x2F; <code>tuple</code></td>
+<td><code>array</code></td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>int</code> &#x2F; <code>float</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>bool</code> （<code>True</code> &#x2F; <code>False</code>）</td>
+<td><code>boolean</code> (<code>true</code> &#x2F; <code>false</code>)</td>
+</tr>
+<tr>
+<td><code>None</code></td>
+<td><code>null</code></td>
+</tr>
+</tbody></table>
+<h3 id="读写JSON格式的数据"><a href="#读写JSON格式的数据" class="headerlink" title="读写JSON格式的数据"></a>读写JSON格式的数据</h3><p>在Python中，如果要将字典处理成JSON格式（以字符串形式存在），可以使用<code>json</code>模块的<code>dumps</code>函数，代码如下所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">my_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;骆昊&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>: <span class="number">40</span>,</span><br><span class="line">    <span class="string">&#x27;friends&#x27;</span>: [<span class="string">&#x27;王大锤&#x27;</span>, <span class="string">&#x27;白元芳&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;cars&#x27;</span>: [</span><br><span class="line">        &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;BMW&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">240</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;Audi&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">280</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;Benz&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">280</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(json.dumps(my_dict))</span><br></pre></td></tr></table></figure>
+
+<p>运行上面的代码，输出如下所示，可以注意到中文字符都是用Unicode编码显示的。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;\u9a86\u660a&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;age&quot;</span><span class="punctuation">:</span> <span class="number">40</span><span class="punctuation">,</span> <span class="attr">&quot;friends&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;\u738b\u5927\u9524&quot;</span><span class="punctuation">,</span> <span class="string">&quot;\u767d\u5143\u82b3&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="attr">&quot;cars&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;brand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;BMW&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;max_speed&quot;</span><span class="punctuation">:</span> <span class="number">240</span><span class="punctuation">&#125;</span><span class="punctuation">,</span> <span class="punctuation">&#123;</span><span class="attr">&quot;brand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Audi&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;max_speed&quot;</span><span class="punctuation">:</span> <span class="number">280</span><span class="punctuation">&#125;</span><span class="punctuation">,</span> <span class="punctuation">&#123;</span><span class="attr">&quot;brand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Benz&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;max_speed&quot;</span><span class="punctuation">:</span> <span class="number">280</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果要将字典处理成JSON格式并写入文本文件，只需要将<code>dumps</code>函数换成<code>dump</code>函数并传入文件对象即可，代码如下所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">my_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;骆昊&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>: <span class="number">40</span>,</span><br><span class="line">    <span class="string">&#x27;friends&#x27;</span>: [<span class="string">&#x27;王大锤&#x27;</span>, <span class="string">&#x27;白元芳&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;cars&#x27;</span>: [</span><br><span class="line">        &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;BMW&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">240</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;Audi&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">280</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;Benz&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">280</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    json.dump(my_dict, file)</span><br></pre></td></tr></table></figure>
+
+<p>执行上面的代码，会创建<code>data.json</code>文件，文件的内容跟上面代码的输出是一样的。</p>
+<p><code>json</code>模块有四个比较重要的函数，分别是：</p>
+<ul>
+<li><code>dump</code> - 将Python对象按照JSON格式序列化到文件中</li>
+<li><code>dumps</code> - 将Python对象处理成JSON格式的字符串</li>
+<li><code>load</code> - 将文件中的JSON数据反序列化成对象</li>
+<li><code>loads</code> - 将字符串的内容反序列化成Python对象</li>
+</ul>
+<p>这里出现了两个概念，一个叫序列化，一个叫反序列化，<a href="https://zh.wikipedia.org/">维基百科</a>上的解释是：“序列化（serialization）在计算机科学的数据处理中，是指将数据结构或对象状态转换为可以存储或传输的形式，这样在需要的时候能够恢复到原先的状态，而且通过序列化的数据重新获取字节时，可以利用这些字节来产生原始对象的副本（拷贝）。与这个过程相反的动作，即从一系列字节中提取数据结构的操作，就是反序列化（deserialization）”。</p>
+<p>我们可以通过下面的代码，读取上面创建的<code>data.json</code>文件，将JSON格式的数据还原成Python中的字典。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    my_dict = json.load(file)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(my_dict))</span><br><span class="line">    <span class="built_in">print</span>(my_dict)</span><br></pre></td></tr></table></figure>
+
+<h3 id="包管理工具pip的使用"><a href="#包管理工具pip的使用" class="headerlink" title="包管理工具pip的使用"></a>包管理工具pip的使用</h3><p>Python标准库中的<code>json</code>模块在数据序列化和反序列化时性能并不是非常理想，为了解决这个问题，可以使用三方库<code>ujson</code>来替换<code>json</code>。所谓三方库，是指非公司内部开发和使用的，也不是来自于官方标准库的Python模块，这些模块通常由其他公司、组织或个人开发，所以被称为三方库。虽然Python语言的标准库虽然已经提供了诸多模块来方便我们的开发，但是对于一个强大的语言来说，它的生态圈一定也是非常繁荣的。</p>
+<p>之前安装Python解释器时，默认情况下已经勾选了安装pip，大家可以在命令提示符或终端中通过<code>pip --version</code>来确定是否已经拥有了pip。pip是Python的包管理工具，通过pip可以查找、安装、卸载、更新Python的三方库或工具，macOS和Linux系统应该使用pip3。例如要安装替代<code>json</code>模块的<code>ujson</code>，可以使用下面的命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ujson</span><br></pre></td></tr></table></figure>
+
+<p>在默认情况下，pip会访问<code>https://pypi.org/simple/</code>来获得三方库相关的数据，但是国内访问这个网站的速度并不是十分理想，因此国内用户可以使用豆瓣网提供的镜像来替代这个默认的下载源，操作如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ujson</span><br></pre></td></tr></table></figure>
+
+<p>可以通过<code>pip search</code>命令根据名字查找需要的三方库，可以通过<code>pip list</code>命令来查看已经安装过的三方库。如果想更新某个三方库，可以使用<code>pip install -U</code>或<code>pip install --upgrade</code>；如果要删除某个三方库，可以使用<code>pip uninstall</code>命令。</p>
+<p>搜索<code>ujson</code>三方库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">pip search ujson</span><br><span class="line"></span><br><span class="line">micropython-cpython-ujson (0.2)  - MicroPython module ujson ported to CPython</span><br><span class="line">pycopy-cpython-ujson (0.2)       - Pycopy module ujson ported to CPython</span><br><span class="line">ujson (3.0.0)                    - Ultra fast JSON encoder and decoder <span class="keyword">for</span> Python</span><br><span class="line">ujson-bedframe (1.33.0)          - Ultra fast JSON encoder and decoder <span class="keyword">for</span> Python</span><br><span class="line">ujson-segfault (2.1.57)          - Ultra fast JSON encoder and decoder <span class="keyword">for</span> Python. Continuing </span><br><span class="line">                                   development.</span><br><span class="line">ujson-ia (2.1.1)                 - Ultra fast JSON encoder and decoder <span class="keyword">for</span> Python (Internet </span><br><span class="line">                                   Archive fork)</span><br><span class="line">ujson-x (1.37)                   - Ultra fast JSON encoder and decoder <span class="keyword">for</span> Python</span><br><span class="line">ujson-x-legacy (1.35.1)          - Ultra fast JSON encoder and decoder <span class="keyword">for</span> Python</span><br><span class="line">drf_ujson (1.2)                  - Django Rest Framework UJSON Renderer</span><br><span class="line">drf-ujson2 (1.6.1)               - Django Rest Framework UJSON Renderer</span><br><span class="line">ujsonDB (0.1.0)                  - A lightweight and simple database using ujson.</span><br><span class="line">fast-json (0.3.2)                - Combines best parts of json and ujson <span class="keyword">for</span> fast serialization</span><br><span class="line">decimal-monkeypatch (0.4.3)      - Python 2 performance patches: decimal to cdecimal, json to </span><br><span class="line">                                   ujson <span class="keyword">for</span> psycopg2</span><br></pre></td></tr></table></figure>
+
+<p>查看已经安装的三方库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br><span class="line"></span><br><span class="line">Package                       Version</span><br><span class="line">----------------------------- ----------</span><br><span class="line">aiohttp                       3.5.4</span><br><span class="line">alipay                        0.7.4</span><br><span class="line">altgraph                      0.16.1</span><br><span class="line">amqp                          2.4.2</span><br><span class="line">...							  ...</span><br></pre></td></tr></table></figure>
+
+<p>更新<code>ujson</code>三方库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U ujson</span><br></pre></td></tr></table></figure>
+
+<p>删除<code>ujson</code>三方库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall -y ujson</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>提示</strong>：如果要更新<code>pip</code>自身，对于macOS系统来说，可以使用命令<code>pip install -U pip</code>。在Windows系统上，可以将命令替换为<code>python -m pip install -U --user pip</code>。</p>
+</blockquote>
+<h3 id="使用网络API获取数据"><a href="#使用网络API获取数据" class="headerlink" title="使用网络API获取数据"></a>使用网络API获取数据</h3><p>如果想在我们自己的程序中显示天气、路况、航班等信息，这些信息我们自己没有能力提供，所以必须使用网络数据服务。目前绝大多数的网络数据服务（或称之为网络API）都是基于<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">HTTP</a>或HTTPS提供JSON格式的数据，我们可以通过Python程序发送HTTP请求给指定的URL（统一资源定位符），这个URL就是所谓的网络API，如果请求成功，它会返回HTTP响应，而HTTP响应的消息体中就有我们需要的JSON格式的数据。关于HTTP的相关知识，可以看看阮一峰的<a href="http://www.ruanyifeng.com/blog/2016/08/http.html">《HTTP协议入门》</a>一文。</p>
+<p>国内有很多提供网络API接口的网站，例如<a href="https://www.juhe.cn/">聚合数据</a>、<a href="http://www.avatardata.cn/">阿凡达数据</a>等，这些网站上有免费的和付费的数据接口，国外的<a href="http://apis.io/">{API}Search</a>网站也提供了类似的功能，有兴趣的可以自行研究。下面的例子演示了如何使用<a href="http://docs.python-requests.org/zh_CN/latest/"><code>requests</code></a>库（基于HTTP进行网络资源访问的三方库）访问网络API获取国内新闻并显示新闻标题和链接。在这个例子中，我们使用了名为<a href="https://www.tianapi.com/">天行数据</a>的网站提供的国内新闻数据接口，其中的APIKey需要自己到网站上注册申请。在天行数据网站注册账号后会自动分配APIKey，但是要访问接口获取数据，需要绑定验证邮箱或手机，然后还要申请需要使用的接口，如下图所示。</p>
+<p><img src="C:\Users\lili\Desktop\Python_exercise\20210820151134.png" alt="20210820151134"></p>
+<p>Python通过URL接入网络，我们推荐大家使用<code>requests</code>三方库，它简单且强大，但需要自行安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+
+<p>获取国内新闻并显示新闻标题和链接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">resp = requests.get(<span class="string">&#x27;http://api.tianapi.com/guonei/?key=APIKey&amp;num=10&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> resp.status_code == <span class="number">200</span>:</span><br><span class="line">    data_model = resp.json()</span><br><span class="line">    <span class="keyword">for</span> news <span class="keyword">in</span> data_model[<span class="string">&#x27;newslist&#x27;</span>]:</span><br><span class="line">        <span class="built_in">print</span>(news[<span class="string">&#x27;title&#x27;</span>])</span><br><span class="line">        <span class="built_in">print</span>(news[<span class="string">&#x27;url&#x27;</span>])</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">60</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码通过<code>requests</code>模块的<code>get</code>函数向天行数据的国内新闻接口发起了一次请求，如果请求过程没有出现问题，<code>get</code>函数会返回一个<code>Response</code>对象，通过该对象的<code>status_code</code>属性表示HTTP响应状态码，如果不理解没关系，你只需要关注它的值，如果值等于<code>200</code>或者其他<code>2</code>字头的值，那么我们的请求是成功的。通过<code>Response</code>对象的<code>json()</code>方法可以将返回的JSON格式的数据直接处理成Python字典，非常方便。天行数据国内新闻接口返回的JSON格式的数据（部分）如下图所示。</p>
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820154455.png" width="100%">
+
+<blockquote>
+<p><strong>提示</strong>：上面代码中的APIKey需要换成自己在天行数据网站申请的APIKey。天行数据网站上还有提供了很多非常有意思的API接口，例如：垃圾分类、周公解梦等，大家可以仿照上面的代码来调用这些接口。每个接口都有对应的接口文档，文档中有关于如何使用接口的详细说明。</p>
+</blockquote>
+<h3 id="简单的总结-1"><a href="#简单的总结-1" class="headerlink" title="简单的总结"></a>简单的总结</h3><p>Python中实现序列化和反序列化除了使用<code>json</code>模块之外，还可以使用<code>pickle</code>和<code>shelve</code>模块，但是这两个模块是使用特有的序列化协议来序列化数据，因此序列化后的数据只能被Python识别，关于这两个模块的相关知识，有兴趣的读者可以自己查找网络上的资料。处理JSON格式的数据很显然是程序员必须掌握的一项技能，因为不管是访问网络API接口还是提供网络API接口给他人使用，都需要具备处理JSON格式数据的相关知识。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://lili095.github.io">李梓卓</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://lili095.github.io/2024/07/19/Python%E5%9F%BA%E7%A1%80(5)/">https://lili095.github.io/2024/07/19/Python%E5%9F%BA%E7%A1%80(5)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/19/Python%E5%9F%BA%E7%A1%80(6)/" title="Python基础(6)-并发编程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Python基础(6)-并发编程</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/19/Python%E5%9F%BA%E7%A1%80(4)/" title="Python基础(4)-面向对象-类与方法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Python基础(4)-面向对象-类与方法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2024/07/19/Python%E5%9F%BA%E7%A1%80(3)/" title="Python基础(3)-函数"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-19</div><div class="title">Python基础(3)-函数</div></div></a></div><div><a href="/2024/07/19/Python%E5%9F%BA%E7%A1%80(1)/" title="Python基础(1)-输出、变量、运算符、分支、循环"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-19</div><div class="title">Python基础(1)-输出、变量、运算符、分支、循环</div></div></a></div><div><a href="/2024/07/19/Python%E5%9F%BA%E7%A1%80(4)/" title="Python基础(4)-面向对象-类与方法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-19</div><div class="title">Python基础(4)-面向对象-类与方法</div></div></a></div><div><a href="/2024/07/09/Python%E6%A0%87%E5%87%86%E5%BA%93%E5%88%9D%E6%8E%A2/" title="Python标准库初探"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-09</div><div class="title">Python标准库初探</div></div></a></div><div><a href="/2024/07/19/Python%E5%9F%BA%E7%A1%80(6)/" title="Python基础(6)-并发编程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-19</div><div class="title">Python基础(6)-并发编程</div></div></a></div><div><a href="/2024/07/09/%E4%BD%BF%E7%94%A8Python%E6%93%8D%E4%BD%9C%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/" title="使用Python操作各类文件"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-09</div><div class="title">使用Python操作各类文件</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">文件读写和异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E5%92%8C%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">打开和关闭文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">读写文本文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-number">1.3.</span> <span class="toc-text">异常处理机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%AD%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">上下文语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text">读写二进制文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">简单的总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">对象的序列化和反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E6%A6%82%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">JSON概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%86%99JSON%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.</span> <span class="toc-text">读写JSON格式的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7pip%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">包管理工具pip的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%BD%91%E7%BB%9CAPI%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">2.4.</span> <span class="toc-text">使用网络API获取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E6%80%BB%E7%BB%93-1"><span class="toc-number">2.5.</span> <span class="toc-text">简单的总结</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://dailybing.com/api/v1')"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 李梓卓</div><div class="framework-info"><span>Framework </span><a href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
